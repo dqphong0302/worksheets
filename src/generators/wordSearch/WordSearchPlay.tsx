@@ -1,0 +1,271 @@
+import React, { useState, useCallback, useRef, useEffect } from 'react';
+import { PlayModeWrapper } from '../../components/play/PlayModeWrapper';
+import { CompletionPopup } from '../../components/play/CompletionPopup';
+import { WordSearchResult, WordSearchPlacement } from '../../types';
+
+interface WordSearchPlayProps {
+    title: string;
+    result: WordSearchResult;
+    words: string[];
+    onClose: () => void;
+}
+
+interface CellPosition {
+    row: number;
+    col: number;
+}
+
+export const WordSearchPlay: React.FC<WordSearchPlayProps> = ({
+    title,
+    result,
+    words,
+    onClose,
+}) => {
+    const [foundWords, setFoundWords] = useState<Set<string>>(new Set());
+    const [selecting, setSelecting] = useState(false);
+    const [startCell, setStartCell] = useState<CellPosition | null>(null);
+    const [currentCell, setCurrentCell] = useState<CellPosition | null>(null);
+    const [selectedCells, setSelectedCells] = useState<Set<string>>(new Set());
+    const [highlightedCells, setHighlightedCells] = useState<Map<string, string>>(new Map());
+    const [showAnswer, setShowAnswer] = useState(false);
+    const [showCompletion, setShowCompletion] = useState(false);
+    const gridRef = useRef<HTMLDivElement>(null);
+
+    // Show completion popup when all words found
+    useEffect(() => {
+        if (foundWords.size === words.length && words.length > 0 && !showAnswer) {
+            setTimeout(() => setShowCompletion(true), 500);
+        }
+    }, [foundWords.size, words.length, showAnswer]);
+
+    // Get cells between two positions (must be in a line)
+    const getCellsBetween = useCallback((start: CellPosition, end: CellPosition): CellPosition[] => {
+        const cells: CellPosition[] = [];
+        const rowDiff = end.row - start.row;
+        const colDiff = end.col - start.col;
+
+        // Must be a line (horizontal, vertical, or diagonal)
+        const maxDiff = Math.max(Math.abs(rowDiff), Math.abs(colDiff));
+        if (maxDiff === 0) return [start];
+
+        const rowStep = rowDiff !== 0 ? rowDiff / Math.abs(rowDiff) : 0;
+        const colStep = colDiff !== 0 ? colDiff / Math.abs(colDiff) : 0;
+
+        // Check if it's a valid line
+        if (rowDiff !== 0 && colDiff !== 0 && Math.abs(rowDiff) !== Math.abs(colDiff)) {
+            return [start]; // Not a valid diagonal
+        }
+
+        for (let i = 0; i <= maxDiff; i++) {
+            cells.push({
+                row: start.row + rowStep * i,
+                col: start.col + colStep * i,
+            });
+        }
+
+        return cells;
+    }, []);
+
+    // Check if selected word matches any placement
+    const checkWord = useCallback((cells: CellPosition[]): WordSearchPlacement | null => {
+        const selected = cells.map(c => result.grid[c.row]?.[c.col] || '').join('');
+        const reversed = selected.split('').reverse().join('');
+
+        for (const placement of result.placements) {
+            if (placement.word === selected || placement.word === reversed) {
+                return placement;
+            }
+        }
+        return null;
+    }, [result]);
+
+    const handleMouseDown = (row: number, col: number) => {
+        setSelecting(true);
+        setStartCell({ row, col });
+        setCurrentCell({ row, col });
+        setSelectedCells(new Set([`${row}-${col}`]));
+    };
+
+    const handleMouseMove = (row: number, col: number) => {
+        if (!selecting || !startCell) return;
+
+        setCurrentCell({ row, col });
+        const cells = getCellsBetween(startCell, { row, col });
+        setSelectedCells(new Set(cells.map(c => `${c.row}-${c.col}`)));
+    };
+
+    const handleMouseUp = () => {
+        if (!selecting || !startCell || !currentCell) {
+            setSelecting(false);
+            setSelectedCells(new Set());
+            return;
+        }
+
+        const cells = getCellsBetween(startCell, currentCell);
+        const matchedPlacement = checkWord(cells);
+
+        if (matchedPlacement && !foundWords.has(matchedPlacement.word)) {
+            // Found a word!
+            setFoundWords(prev => new Set([...prev, matchedPlacement.word]));
+
+            // Highlight the cells permanently
+            const colors = ['#22c55e', '#3b82f6', '#f59e0b', '#ec4899', '#8b5cf6', '#14b8a6'];
+            const colorIndex = foundWords.size % colors.length;
+            const color = colors[colorIndex];
+
+            setHighlightedCells(prev => {
+                const next = new Map(prev);
+                cells.forEach(c => next.set(`${c.row}-${c.col}`, color));
+                return next;
+            });
+        }
+
+        setSelecting(false);
+        setStartCell(null);
+        setCurrentCell(null);
+        setSelectedCells(new Set());
+    };
+
+    const handleReset = () => {
+        setFoundWords(new Set());
+        setHighlightedCells(new Map());
+        setShowAnswer(false);
+        setShowCompletion(false);
+    };
+
+    const handleShowAnswer = () => {
+        if (!showAnswer) {
+            // Show all words
+            const colors = ['#22c55e', '#3b82f6', '#f59e0b', '#ec4899', '#8b5cf6', '#14b8a6'];
+            const newHighlights = new Map<string, string>();
+
+            result.placements.forEach((placement, idx) => {
+                const color = colors[idx % colors.length];
+                for (let i = 0; i < placement.word.length; i++) {
+                    const row = placement.startRow + placement.direction.row * i;
+                    const col = placement.startCol + placement.direction.col * i;
+                    newHighlights.set(`${row}-${col}`, color);
+                }
+            });
+
+            setHighlightedCells(newHighlights);
+            setFoundWords(new Set(words));
+        } else {
+            // Hide answers - reset
+            setHighlightedCells(new Map());
+            setFoundWords(new Set());
+        }
+        setShowAnswer(!showAnswer);
+    };
+
+    // Reduce cell size for better visibility - max 40px, scale down for large grids
+    const cellSize = Math.min(40, Math.floor(450 / result.grid.length));
+
+    return (
+        <PlayModeWrapper
+            title={title}
+            onClose={onClose}
+            onReset={handleReset}
+            onShowAnswer={handleShowAnswer}
+            score={{ current: foundWords.size, total: words.length }}
+        >
+            <div className="flex gap-8 items-start" style={{ maxHeight: '75vh', overflow: 'auto' }}>
+                {/* Word Search Grid */}
+                <div
+                    ref={gridRef}
+                    className="rounded-2xl p-3"
+                    style={{
+                        background: 'rgba(255, 255, 255, 0.95)',
+                        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+                        flexShrink: 0,
+                    }}
+                    onMouseLeave={() => {
+                        if (selecting) handleMouseUp();
+                    }}
+                >
+                    <div
+                        className="grid"
+                        style={{
+                            gridTemplateColumns: `repeat(${result.grid[0]?.length || 10}, ${cellSize}px)`,
+                            gap: '2px',
+                            userSelect: 'none',
+                        }}
+                    >
+                        {result.grid.map((row, rowIdx) =>
+                            row.map((letter, colIdx) => {
+                                const key = `${rowIdx}-${colIdx}`;
+                                const isSelected = selectedCells.has(key);
+                                const highlightColor = highlightedCells.get(key);
+
+                                return (
+                                    <div
+                                        key={key}
+                                        className="flex items-center justify-center cursor-pointer font-bold transition-all duration-150"
+                                        style={{
+                                            width: cellSize,
+                                            height: cellSize,
+                                            fontSize: cellSize * 0.5,
+                                            borderRadius: '8px',
+                                            background: highlightColor
+                                                ? highlightColor
+                                                : isSelected
+                                                    ? 'rgba(99, 102, 241, 0.3)'
+                                                    : '#f1f5f9',
+                                            color: highlightColor ? 'white' : '#1e293b',
+                                            border: isSelected ? '2px solid #6366f1' : '2px solid transparent',
+                                            transform: isSelected ? 'scale(1.1)' : 'scale(1)',
+                                        }}
+                                        onMouseDown={() => handleMouseDown(rowIdx, colIdx)}
+                                        onMouseMove={() => handleMouseMove(rowIdx, colIdx)}
+                                        onMouseUp={handleMouseUp}
+                                    >
+                                        {letter}
+                                    </div>
+                                );
+                            })
+                        )}
+                    </div>
+                </div>
+
+                {/* Word List */}
+                <div
+                    className="rounded-2xl p-6 min-w-[200px]"
+                    style={{
+                        background: 'rgba(255, 255, 255, 0.15)',
+                        backdropFilter: 'blur(12px)',
+                    }}
+                >
+                    <h3 className="text-xl font-bold text-white mb-4">Words to Find</h3>
+                    <div className="flex flex-col gap-2">
+                        {words.map((word, idx) => {
+                            const isFound = foundWords.has(word);
+                            return (
+                                <div
+                                    key={idx}
+                                    className="px-4 py-2 rounded-lg text-lg font-medium transition-all duration-300"
+                                    style={{
+                                        background: isFound ? 'rgba(34, 197, 94, 0.3)' : 'rgba(255, 255, 255, 0.1)',
+                                        color: 'white',
+                                        textDecoration: isFound ? 'line-through' : 'none',
+                                        opacity: isFound ? 0.7 : 1,
+                                    }}
+                                >
+                                    {isFound && '✓ '}{word}
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </div>
+
+            <CompletionPopup
+                show={showCompletion}
+                title="🎉 Tuyệt vời!"
+                message="Bạn đã tìm hết tất cả từ!"
+                score={{ current: foundWords.size, total: words.length }}
+                onPlayAgain={handleReset}
+                onClose={() => setShowCompletion(false)}
+            />
+        </PlayModeWrapper>
+    );
+};

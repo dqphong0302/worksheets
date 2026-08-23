@@ -1,0 +1,1 @@
+export { MatchingImagesEditor } from './MatchingImagesEditor';

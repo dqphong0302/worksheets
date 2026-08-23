@@ -1,0 +1,1 @@
+export { WordSearchImagesEditor } from './WordSearchImagesEditor';

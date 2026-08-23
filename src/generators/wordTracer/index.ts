@@ -1,0 +1,1 @@
+export { WordTracerEditor } from './WordTracerEditor';

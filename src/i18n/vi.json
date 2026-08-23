@@ -1,0 +1,195 @@
+{
+    "app": {
+        "name": "Worksheet Generator Pro",
+        "tagline": "Tạo bài tập và học liệu tương tác trong vài phút",
+        "darkMode": "Chế Độ Tối",
+        "lightMode": "Chế Độ Sáng"
+    },
+    "home": {
+        "title": "Chọn Loại Bài Tập & Học Cụ",
+        "subtitle": "Hệ thống 15 công cụ tạo phiếu bài tập in ấn và trò chơi học tập tương tác"
+    },
+    "modules": {
+        "crossword": {
+            "name": "Ô Chữ",
+            "description": "Tạo ô chữ với gợi ý hàng ngang và hàng dọc"
+        },
+        "wordSearch": {
+            "name": "Tìm Từ",
+            "description": "Ẩn từ vựng trong lưới chữ cái đa hướng"
+        },
+        "matching": {
+            "name": "Nối Cặp Từ",
+            "description": "Nối các cặp từ, khái niệm với nhau"
+        },
+        "wordScramble": {
+            "name": "Xáo Chữ",
+            "description": "Sắp xếp lại các chữ cái bị xáo trộn"
+        },
+        "wordSearchImages": {
+            "name": "Tìm Từ + Hình",
+            "description": "Tìm từ vựng với hình ảnh minh họa sinh động"
+        },
+        "matchingImages": {
+            "name": "Nối Cặp + Hình",
+            "description": "Nối từ vựng với hình ảnh minh họa tương ứng"
+        },
+        "spellingTest": {
+            "name": "Bài Chính Tả",
+            "description": "Tạo bài kiểm tra chính tả kèm giọng đọc AI"
+        },
+        "wordTracer": {
+            "name": "Tập Viết Chữ",
+            "description": "Tạo chữ nét chấm để bé tập tô theo ô ly"
+        },
+        "mathWorksheet": {
+            "name": "Bài Tập Toán",
+            "description": "Tạo đề toán cộng trừ nhân chia tự động"
+        },
+        "findIdentical": {
+            "name": "Lật Thẻ Tìm Cặp",
+            "description": "Thẻ in cắt dán và trò chơi lật thẻ ghi nhớ"
+        },
+        "bingo": {
+            "name": "Bingo Lớp Học",
+            "description": "Tạo thẻ Bingo in cho cả lớp kèm máy bốc từ phát âm"
+        },
+        "flashcards": {
+            "name": "Thẻ Flashcards",
+            "description": "Thẻ học từ vựng 2 mặt gập đôi kèm lật thẻ 3D"
+        },
+        "cryptogram": {
+            "name": "Mật Mã Mật Thư",
+            "description": "Mã hóa câu danh ngôn bí mật thành mật mã giải đố"
+        },
+        "maze": {
+            "name": "Mê Cung Chữ Cái",
+            "description": "Mê cung mê hoặc kèm thu thập chữ cái theo lộ trình"
+        },
+        "sudoku": {
+            "name": "Sudoku Trí Tuệ",
+            "description": "Sudoku 4x4, 6x6, 9x9 với hình ảnh con vật, hoa quả"
+        }
+    },
+    "editor": {
+        "config": "Cấu Hình",
+        "preview": "Xem Trước",
+        "title": "Tiêu Đề",
+        "subtitle": "Phụ Đề (tùy chọn)",
+        "paperSize": "Khổ Giấy",
+        "fontSize": "Cỡ Chữ",
+        "showAnswerKey": "Tạo Trang Đáp Án",
+        "words": "Từ Vựng",
+        "wordsPlaceholder": "Nhập từ, mỗi từ một dòng",
+        "pairs": "Các Cặp",
+        "pairsPlaceholder": "Nhập cặp theo dạng: trái | phải",
+        "gridSize": "Kích Thước Lưới",
+        "allowDiagonal": "Cho Phép Chéo",
+        "allowReverse": "Cho Phép Đảo Ngược",
+        "uppercase": "Chữ In Hoa",
+        "clues": "Gợi Ý",
+        "cluesPlaceholder": "Nhập từ|gợi ý, mỗi dòng một cặp",
+        "paperSettings": "Cài Đặt Trang",
+        "zoom": "Phóng To/Thu Nhỏ",
+        "borderStyle": "Kiểu Viền",
+        "showStudentInfo": "Hiện Thông Tin Học Sinh",
+        "worksheetLanguage": "Ngôn ngữ Worksheet"
+    },
+    "worksheetLang": {
+        "english": "Tiếng Anh",
+        "vietnamese": "Tiếng Việt",
+        "name": "Name",
+        "class": "Class",
+        "date": "Date",
+        "nameVi": "Họ tên",
+        "classVi": "Lớp",
+        "dateVi": "Ngày"
+    },
+    "studentInfo": {
+        "name": "Họ tên",
+        "class": "Lớp",
+        "date": "Ngày",
+        "score": "Điểm"
+    },
+    "borders": {
+        "none": "Không viền",
+        "simple": "Đơn giản",
+        "double": "Viền đôi",
+        "dotted": "Chấm chấm",
+        "decorative": "Trang trí",
+        "elegant": "Thanh lịch"
+    },
+    "toolbar": {
+        "undo": "Hoàn Tác",
+        "redo": "Làm Lại",
+        "reset": "Đặt Lại",
+        "saveTemplate": "Lưu Mẫu",
+        "loadTemplate": "Tải Mẫu",
+        "export": "Xuất",
+        "exportPDF": "Xuất PDF",
+        "exportPNG": "Xuất PNG",
+        "exportDOCX": "Xuất DOCX",
+        "home": "Trang Chủ"
+    },
+    "templates": {
+        "title": "Mẫu",
+        "save": "Lưu Mẫu",
+        "load": "Tải Mẫu",
+        "name": "Tên Mẫu",
+        "noTemplates": "Chưa có mẫu nào",
+        "delete": "Xóa",
+        "import": "Nhập",
+        "export": "Xuất"
+    },
+    "common": {
+        "save": "Lưu",
+        "cancel": "Hủy",
+        "delete": "Xóa",
+        "close": "Đóng",
+        "download": "Tải Xuống",
+        "loading": "Đang tải...",
+        "error": "Lỗi",
+        "success": "Thành công"
+    },
+    "validation": {
+        "minWords": "Vui lòng nhập ít nhất {{min}} từ",
+        "duplicateWord": "Từ trùng lặp: {{word}}",
+        "invalidCharacters": "Ký tự không hợp lệ trong: {{word}}",
+        "tooLong": "Từ quá dài: {{word}} (tối đa {{max}} ký tự)"
+    },
+    "math": {
+        "operations": "Phép Tính",
+        "add": "Cộng (+)",
+        "subtract": "Trừ (−)",
+        "multiply": "Nhân (×)",
+        "divide": "Chia (÷)",
+        "numberRange": "Phạm Vi Số",
+        "minNumber": "Nhỏ nhất",
+        "maxNumber": "Lớn nhất",
+        "problemCount": "Số Câu Hỏi",
+        "layout": "Bố Cục",
+        "horizontal": "Ngang",
+        "vertical": "Dọc",
+        "columns": "Số Cột",
+        "allowCarry": "Cho Phép Nhớ",
+        "allowBorrow": "Cho Phép Mượn"
+    },
+    "tracer": {
+        "text": "Chữ Để Tô",
+        "style": "Kiểu Tô",
+        "dotted": "Chấm",
+        "faded": "Mờ",
+        "outline": "Viền",
+        "lineHeight": "Chiều Cao Dòng",
+        "showGuideLines": "Hiện Dòng Kẻ",
+        "repetitions": "Số Lần Lặp"
+    },
+    "spelling": {
+        "columns": "Số Cột",
+        "lineStyle": "Kiểu Dòng Kẻ",
+        "solid": "Liền",
+        "dashed": "Nét Đứt",
+        "dotted": "Chấm",
+        "showNumbers": "Hiện Số Thứ Tự"
+    }
+}

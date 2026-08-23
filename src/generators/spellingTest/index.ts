@@ -1,0 +1,1 @@
+export { SpellingTestEditor } from './SpellingTestEditor';

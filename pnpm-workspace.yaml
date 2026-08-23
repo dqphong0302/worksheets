@@ -1,0 +1,6 @@
+allowBuilds:
+  core-js: true
+  esbuild: true
+overrides:
+  dompurify: 3.4.13
+  nanoid: 5.1.16

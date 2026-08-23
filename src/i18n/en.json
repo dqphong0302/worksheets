@@ -1,0 +1,195 @@
+{
+    "app": {
+        "name": "Worksheet Generator Pro",
+        "tagline": "Create worksheets and interactive classroom games in minutes",
+        "darkMode": "Dark Mode",
+        "lightMode": "Light Mode"
+    },
+    "home": {
+        "title": "Choose Worksheet Type & Teaching Aid",
+        "subtitle": "15 powerful generators for printable classroom worksheets and interactive games"
+    },
+    "modules": {
+        "crossword": {
+            "name": "Crossword Puzzle",
+            "description": "Create crossword puzzles with across and down clues"
+        },
+        "wordSearch": {
+            "name": "Word Search",
+            "description": "Hide vocabulary words in a multi-directional letter grid"
+        },
+        "matching": {
+            "name": "Matching Lists",
+            "description": "Match pairs of terms and definitions"
+        },
+        "wordScramble": {
+            "name": "Word Scramble",
+            "description": "Unscramble jumbled letters into correct words"
+        },
+        "wordSearchImages": {
+            "name": "Word Search + Images",
+            "description": "Word search puzzle with visual picture clues"
+        },
+        "matchingImages": {
+            "name": "Matching + Images",
+            "description": "Match words with corresponding picture illustrations"
+        },
+        "spellingTest": {
+            "name": "Spelling Test",
+            "description": "Numbered lines for spelling tests with AI voice TTS"
+        },
+        "wordTracer": {
+            "name": "Word Tracer",
+            "description": "Traceable dotted letters for handwriting practice"
+        },
+        "mathWorksheet": {
+            "name": "Math Worksheet",
+            "description": "Generate math arithmetic drills and equations"
+        },
+        "findIdentical": {
+            "name": "Find Matching Pairs",
+            "description": "Printable cut-out cards and memory matching game"
+        },
+        "bingo": {
+            "name": "Classroom Bingo",
+            "description": "Generate printable bingo cards with digital voice caller"
+        },
+        "flashcards": {
+            "name": "Flashcards Maker",
+            "description": "Foldable double-sided flashcards with 3D review mode"
+        },
+        "cryptogram": {
+            "name": "Cryptogram Decoder",
+            "description": "Encode secret quotes and facts into codebreaking puzzles"
+        },
+        "maze": {
+            "name": "Letter Maze Adventure",
+            "description": "Procedural labyrinth mazes with checkpoint letter quests"
+        },
+        "sudoku": {
+            "name": "Visual Sudoku",
+            "description": "4x4, 6x6, 9x9 Sudoku with animals, fruits, and numbers"
+        }
+    },
+    "editor": {
+        "config": "Configuration",
+        "preview": "Preview",
+        "title": "Title",
+        "subtitle": "Subtitle (optional)",
+        "paperSize": "Paper Size",
+        "fontSize": "Font Size",
+        "showAnswerKey": "Generate Answer Key",
+        "words": "Words",
+        "wordsPlaceholder": "Enter words, one per line",
+        "pairs": "Pairs",
+        "pairsPlaceholder": "Enter pairs as: left | right",
+        "gridSize": "Grid Size",
+        "allowDiagonal": "Allow Diagonal",
+        "allowReverse": "Allow Reverse",
+        "uppercase": "Uppercase",
+        "clues": "Clues",
+        "cluesPlaceholder": "Enter word|clue, one per line",
+        "paperSettings": "Page Settings",
+        "zoom": "Zoom",
+        "borderStyle": "Border Style",
+        "showStudentInfo": "Show Student Info",
+        "worksheetLanguage": "Worksheet Language"
+    },
+    "worksheetLang": {
+        "english": "English",
+        "vietnamese": "Vietnamese",
+        "name": "Name",
+        "class": "Class",
+        "date": "Date",
+        "nameVi": "Họ tên",
+        "classVi": "Lớp",
+        "dateVi": "Ngày"
+    },
+    "studentInfo": {
+        "name": "Name",
+        "class": "Class",
+        "date": "Date",
+        "score": "Score"
+    },
+    "borders": {
+        "none": "No border",
+        "simple": "Simple",
+        "double": "Double line",
+        "dotted": "Dotted",
+        "decorative": "Decorative",
+        "elegant": "Elegant"
+    },
+    "toolbar": {
+        "undo": "Undo",
+        "redo": "Redo",
+        "reset": "Reset",
+        "saveTemplate": "Save Template",
+        "loadTemplate": "Load Template",
+        "export": "Export",
+        "exportPDF": "Export as PDF",
+        "exportPNG": "Export as PNG",
+        "exportDOCX": "Export as DOCX",
+        "home": "Home"
+    },
+    "templates": {
+        "title": "Templates",
+        "save": "Save Template",
+        "load": "Load Template",
+        "name": "Template Name",
+        "noTemplates": "No saved templates",
+        "delete": "Delete",
+        "import": "Import",
+        "export": "Export"
+    },
+    "common": {
+        "save": "Save",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "close": "Close",
+        "download": "Download",
+        "loading": "Loading...",
+        "error": "Error",
+        "success": "Success"
+    },
+    "validation": {
+        "minWords": "Please enter at least {{min}} words",
+        "duplicateWord": "Duplicate word: {{word}}",
+        "invalidCharacters": "Invalid characters in: {{word}}",
+        "tooLong": "Word too long: {{word}} (max {{max}} characters)"
+    },
+    "math": {
+        "operations": "Operations",
+        "add": "Addition (+)",
+        "subtract": "Subtraction (−)",
+        "multiply": "Multiplication (×)",
+        "divide": "Division (÷)",
+        "numberRange": "Number Range",
+        "minNumber": "Min",
+        "maxNumber": "Max",
+        "problemCount": "Number of Problems",
+        "layout": "Layout",
+        "horizontal": "Horizontal",
+        "vertical": "Vertical",
+        "columns": "Columns",
+        "allowCarry": "Allow Carrying",
+        "allowBorrow": "Allow Borrowing"
+    },
+    "tracer": {
+        "text": "Text to Trace",
+        "style": "Tracing Style",
+        "dotted": "Dotted",
+        "faded": "Faded",
+        "outline": "Outline",
+        "lineHeight": "Line Height",
+        "showGuideLines": "Show Guide Lines",
+        "repetitions": "Repetitions"
+    },
+    "spelling": {
+        "columns": "Columns",
+        "lineStyle": "Line Style",
+        "solid": "Solid",
+        "dashed": "Dashed",
+        "dotted": "Dotted",
+        "showNumbers": "Show Numbers"
+    }
+}
