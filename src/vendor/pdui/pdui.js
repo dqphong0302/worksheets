@@ -45,8 +45,9 @@
       toast.querySelector('[data-pd-toast-icon]').textContent = icons[type] || 'ℹ️';
       toast.querySelector('[data-pd-toast-message]').textContent = String(message);
       toast.hidden = false;
+      toast.classList.add('pd-toast--visible');
       clearTimeout(this.timer);
-      this.timer = setTimeout(() => { toast.hidden = true; }, Math.max(500, Number(duration) || 2500));
+      this.timer = setTimeout(() => { toast.hidden = true; toast.classList.remove('pd-toast--visible'); }, Math.max(500, Number(duration) || 2500));
     }
   };
 
@@ -111,6 +112,6 @@
     }
   };
 
-  window.PDUI = { Theme, Toast, Modal, Tabs, version: '1.0.0' };
+  window.PDUI = { Theme, Toast, Modal, Tabs, version: '1.2.0' };
   document.addEventListener('DOMContentLoaded', () => { Theme.init(); Modal.init(); Tabs.init(); });
 })(window, document);
