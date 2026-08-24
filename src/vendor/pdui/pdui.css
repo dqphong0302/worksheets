@@ -1,4 +1,4 @@
-/*! PhongDang UI v1.5.0 */
+/*! PhongDang UI v1.6.0 */
 /* source: pdui-tokens.css */
 /* PhongDang UI Design System — canonical tokens */
 :root {
@@ -70,21 +70,21 @@
 
 html.dark {
   color-scheme: dark;
-  /* Navy, not black: the dark surfaces carry the brand hue (~220°) and sit a
-     step lighter than the previous near-black ramp. */
-  --bg-body: #0e1729;
-  --bg-card: #152238;
-  --bg-card-subtle: #111c30;
-  --bg-input: #0e1729;
-  --bg-header: rgba(14, 23, 41, 0.9);
-  --bg-control: #22314c;
-  --bg-control-hover: #2e4160;
-  --border-control: #5c7093;
-  --border-color: #24344f;
-  --border-subtle: #1b283d;
+  /* Navy, not black: the dark surfaces carry the brand hue (~220°) and the
+     surfaces sit well above black so the brand hue is readable as colour. */
+  --bg-body: #1a2a45;
+  --bg-card: #22355a;
+  --bg-card-subtle: #1d2e4d;
+  --bg-input: #1a2a45;
+  --bg-header: rgba(34, 53, 90, 0.85);
+  --bg-control: #2e4570;
+  --bg-control-hover: #3a5688;
+  --border-control: #7089b5;
+  --border-color: #33486e;
+  --border-subtle: #2a3c5e;
   --text-main: #f8fafc;
-  --text-muted: #a3b2c9;
-  --text-subtle: #7889a3;
+  --text-muted: #aebbd0;
+  --text-subtle: #8ea0bd;
   --primary: #60a5fa;
   --primary-hover: #3b82f6;
   --primary-light: rgba(96, 165, 250, 0.15);

@@ -1,4 +1,4 @@
-/*! PhongDang UI Tailwind bridge v1.5.0 — Tailwind v4 */
+/*! PhongDang UI Tailwind bridge v1.6.0 — Tailwind v4 */
 /* Import AFTER "tailwindcss" so PDUI owns the shared scales. */
 @theme {
   --color-surface: var(--bg-card);
