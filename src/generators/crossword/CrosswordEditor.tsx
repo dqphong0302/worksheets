@@ -139,7 +139,7 @@ export const CrosswordEditor: React.FC<CrosswordEditorProps> = ({ onHome }) => {
                         {/* Play Mode Button */}
                         <Button
                             variant="primary"
-                            className="w-full mb-lg"
+                            className="w-full mb-6"
                             onClick={() => setPlayMode(true)}
                             style={{
                                 background: 'linear-gradient(135deg, #22c55e, #16a34a)',
@@ -154,7 +154,7 @@ export const CrosswordEditor: React.FC<CrosswordEditorProps> = ({ onHome }) => {
                         {/* Preset Picker */}
                         <PresetPicker onSelectTopic={handleApplyPreset} />
 
-                        <h3 className="mb-md" style={{ fontSize: '0.85rem', color: '#64748b' }}>
+                        <h3 className="mb-4" style={{ fontSize: '0.85rem', color: '#64748b' }}>
                             ⚙️ {t('editor.config')}
                         </h3>
 
@@ -242,7 +242,7 @@ export const CrosswordEditor: React.FC<CrosswordEditorProps> = ({ onHome }) => {
                             </div>
                             <Button
                                 variant="secondary"
-                                className="w-full mt-sm"
+                                className="w-full mt-2"
                                 onClick={() => {
                                     setConfig({
                                         ...config,
@@ -253,7 +253,7 @@ export const CrosswordEditor: React.FC<CrosswordEditorProps> = ({ onHome }) => {
                                 + Thêm từ
                             </Button>
                             {validation.errors[0] && (
-                                <p className="text-xs mt-sm" style={{ color: 'var(--color-danger)' }}>
+                                <p className="text-xs mt-2" style={{ color: 'var(--color-danger)' }}>
                                     {validation.errors[0]}
                                 </p>
                             )}
@@ -276,14 +276,14 @@ export const CrosswordEditor: React.FC<CrosswordEditorProps> = ({ onHome }) => {
                         {config.showAnswerKey && (
                             <Button
                                 variant="secondary"
-                                className="w-full mt-md"
+                                className="w-full mt-4"
                                 onClick={() => setShowAnswerPreview(!showAnswerPreview)}
                             >
                                 {showAnswerPreview ? 'Show Puzzle' : 'Show Answer Key'}
                             </Button>
                         )}
 
-                        <div className="mt-md text-sm" style={{ color: 'var(--text-secondary)' }}>
+                        <div className="mt-4 text-sm" style={{ color: 'var(--text-secondary)' }}>
                             <p>Words placed: {result.placements.length} / {config.words.length}</p>
                         </div>
                     </div>

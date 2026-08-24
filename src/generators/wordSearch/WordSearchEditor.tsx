@@ -134,7 +134,7 @@ export const WordSearchEditor: React.FC<WordSearchEditorProps> = ({ onHome }) =>
                         {/* Play Mode Button */}
                         <Button
                             variant="primary"
-                            className="w-full mb-lg"
+                            className="w-full mb-6"
                             onClick={() => setPlayMode(true)}
                             style={{
                                 background: 'linear-gradient(135deg, #22c55e, #16a34a)',
@@ -149,7 +149,7 @@ export const WordSearchEditor: React.FC<WordSearchEditorProps> = ({ onHome }) =>
                         {/* Preset Picker */}
                         <PresetPicker onSelectTopic={handleApplyPreset} />
 
-                        <h3 className="mb-md" style={{ fontSize: '0.85rem', color: '#64748b' }}>
+                        <h3 className="mb-4" style={{ fontSize: '0.85rem', color: '#64748b' }}>
                             ⚙️ {t('editor.config')} (for print/export)
                         </h3>
 
@@ -202,7 +202,7 @@ export const WordSearchEditor: React.FC<WordSearchEditorProps> = ({ onHome }) =>
                             onChange={e => setConfig({ ...config, gridSize: parseInt(e.target.value) || 12 })}
                         />
 
-                        <div className="flex flex-col gap-sm mb-md">
+                        <div className="flex flex-col gap-2 mb-4">
                             <Checkbox
                                 label={t('editor.allowDiagonal')}
                                 checked={config.allowDiagonal}
@@ -228,7 +228,7 @@ export const WordSearchEditor: React.FC<WordSearchEditorProps> = ({ onHome }) =>
                         {config.showAnswerKey && (
                             <Button
                                 variant="secondary"
-                                className="w-full mb-md"
+                                className="w-full mb-4"
                                 onClick={() => setShowAnswerPreview(!showAnswerPreview)}
                             >
                                 {showAnswerPreview ? 'Show Puzzle' : 'Show Answer Key'}

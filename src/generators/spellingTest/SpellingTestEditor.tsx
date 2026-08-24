@@ -178,7 +178,7 @@ export const SpellingTestEditor: React.FC<SpellingTestEditorProps> = ({ onHome }
                         {/* Preset Picker */}
                         <PresetPicker onSelectTopic={handleApplyPreset} />
 
-                        <h3 className="mb-md" style={{ fontSize: '0.85rem', color: '#64748b' }}>
+                        <h3 className="mb-4" style={{ fontSize: '0.85rem', color: '#64748b' }}>
                             ⚙️ {t('editor.config')}
                         </h3>
 

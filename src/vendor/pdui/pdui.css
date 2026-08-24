@@ -1,4 +1,4 @@
-/*! PhongDang UI v1.3.0 */
+/*! PhongDang UI v1.4.0 */
 /* source: pdui-tokens.css */
 /* PhongDang UI Design System — canonical tokens */
 :root {
@@ -12,6 +12,10 @@
   --bg-card-subtle: #f1f5f9;
   --bg-input: #f8fafc;
   --bg-header: rgba(255, 255, 255, 0.88);
+  /* Control surface: a button must stay visible on a card of the same colour. */
+  --bg-control: #ffffff;
+  --bg-control-hover: #f1f5f9;
+  --border-control: #cbd5e1;
   --border-color: #e2e8f0;
   --border-subtle: #edf2f7;
   --text-main: #0f172a;
@@ -71,6 +75,9 @@ html.dark {
   --bg-card-subtle: #0f172a;
   --bg-input: #0b0f19;
   --bg-header: rgba(11, 15, 25, 0.88);
+  --bg-control: #1e293b;
+  --bg-control-hover: #334155;
+  --border-control: #64748b;
   --border-color: #1e293b;
   --border-subtle: #172033;
   --text-main: #f8fafc;
@@ -290,9 +297,9 @@ body[data-pdui-profile="portal"] .pd-container { max-width: var(--container-port
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-control);
   border-radius: var(--radius-md);
-  background: var(--bg-card);
+  background: var(--bg-control);
   color: var(--text-main);
   font-weight: 700;
   cursor: pointer;
@@ -301,11 +308,11 @@ body[data-pdui-profile="portal"] .pd-container { max-width: var(--container-port
 
 .pd-btn.pd-btn { padding: 0.65rem 1rem; }
 .pd-icon-btn.pd-icon-btn { width: 44px; padding: 0; }
-.pd-btn:hover, .pd-icon-btn:hover { transform: translateY(-1px); border-color: var(--primary-border); }
+.pd-btn:hover, .pd-icon-btn:hover { transform: translateY(-1px); background: var(--bg-control-hover); border-color: var(--primary); }
 .pd-btn:active, .pd-icon-btn:active { transform: translateY(0); }
 .pd-btn[disabled], .pd-icon-btn[disabled] { cursor: not-allowed; opacity: 0.55; transform: none; }
 .pd-btn--primary.pd-btn--primary { color: #fff; border-color: transparent; background: linear-gradient(135deg, var(--primary), var(--accent-indigo)); box-shadow: var(--shadow-glow); }
-.pd-btn--secondary.pd-btn--secondary { background: var(--bg-card-subtle); }
+.pd-btn--secondary.pd-btn--secondary { background: var(--bg-control-hover); }
 .pd-btn--danger.pd-btn--danger { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 35%, transparent); background: var(--danger-light); }
 
 .pd-field { display: grid; gap: var(--space-2); }

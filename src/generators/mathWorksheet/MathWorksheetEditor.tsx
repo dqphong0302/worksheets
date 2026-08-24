@@ -217,7 +217,7 @@ export const MathWorksheetEditor: React.FC<MathWorksheetEditorProps> = ({ onHome
                         {/* Play Mode Button - PRIMARY FEATURE */}
                         <Button
                             variant="primary"
-                            className="w-full mb-lg"
+                            className="w-full mb-6"
                             onClick={() => setPlayMode(true)}
                             style={{
                                 background: 'linear-gradient(135deg, #22c55e, #16a34a)',
@@ -229,7 +229,7 @@ export const MathWorksheetEditor: React.FC<MathWorksheetEditorProps> = ({ onHome
                             🎮 Chơi Ngay / Play Now
                         </Button>
 
-                        <h3 className="mb-md" style={{ fontSize: '0.85rem', color: '#64748b' }}>
+                        <h3 className="mb-4" style={{ fontSize: '0.85rem', color: '#64748b' }}>
                             ⚙️ {t('editor.config')} (for print/export)
                         </h3>
 
@@ -241,7 +241,7 @@ export const MathWorksheetEditor: React.FC<MathWorksheetEditorProps> = ({ onHome
 
                         <div className="form-group">
                             <label className="label">{t('math.operations')}</label>
-                            <div className="flex flex-col gap-xs">
+                            <div className="flex flex-col gap-1">
                                 <Checkbox
                                     label={t('math.add')}
                                     checked={config.operations.includes('add')}
@@ -267,7 +267,7 @@ export const MathWorksheetEditor: React.FC<MathWorksheetEditorProps> = ({ onHome
 
                         <div className="form-group">
                             <label className="label">{t('math.numberRange')}</label>
-                            <div className="flex gap-sm">
+                            <div className="flex gap-2">
                                 <NumberInput
                                     label={t('math.minNumber')}
                                     value={config.minNumber}

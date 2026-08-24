@@ -1,24 +1,24 @@
 {
   "name": "PhongDang UI Design System",
-  "version": "1.3.0",
-  "builtAt": "2026-08-24T09:42:29.189Z",
-  "sourceDigest": "ce5a83fc400a6ddd6249ca5f31fcdd66d38fceff6eff0a28e3375a159438224c",
+  "version": "1.4.0",
+  "builtAt": "2026-08-24T12:57:30.666Z",
+  "sourceDigest": "69ccc69d6194e866f45ebcd53e789e315da0199edb1b5a224e2b0e98e5d3d8e0",
   "assets": {
     "pdui.css": {
-      "sha256": "e8e87fa1714db588d3970966f7c805b90b4317ae1759b753120a8d7fc1a86569",
-      "bytes": 12703
+      "sha256": "438cf309fa5fd5eadda18df67b0c775b7ce0d32720f75447f93115f7a9203171",
+      "bytes": 12992
     },
     "pdui.js": {
       "sha256": "1ac677355401827ce05811b7d5ec679682a933312545002faa686885b9a9db8f",
       "bytes": 5266
     },
     "pdui-theme.css": {
-      "sha256": "2501d399e6727ccec58fd6fd631840aecefe8bb7adce4d888f76cabcd1c7b5a1",
-      "bytes": 1468
+      "sha256": "cf091a65b91354e452c22d509d030f4745316f047125f389051d33f343530a97",
+      "bytes": 1603
     },
     "pdui-tailwind.mjs": {
-      "sha256": "a23dde0f5532161fc00b7a6b43e0823d892f808610edab3893828fe70d93c0f4",
-      "bytes": 1836
+      "sha256": "cafaa86e2ef471bc898820236bd523e51ef204e73b5121f69c55ea9dd1403e50",
+      "bytes": 1977
     },
     "pdui-theme.mjs": {
       "sha256": "f4e73e85ef1d31be185325def1a0a5092d15afff357eb0f5d7f73720383e5769",

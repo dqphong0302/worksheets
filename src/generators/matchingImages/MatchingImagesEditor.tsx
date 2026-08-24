@@ -207,7 +207,7 @@ export const MatchingImagesEditor: React.FC<MatchingImagesEditorProps> = ({ onHo
                     {/* Play Mode Button - PRIMARY FEATURE */}
                     <Button
                         variant="primary"
-                        className="w-full mb-lg"
+                        className="w-full mb-6"
                         onClick={() => setPlayMode(true)}
                         style={{
                             background: 'linear-gradient(135deg, #22c55e, #16a34a)',
@@ -219,7 +219,7 @@ export const MatchingImagesEditor: React.FC<MatchingImagesEditorProps> = ({ onHo
                         🎮 Chơi Ngay / Play Now
                     </Button>
 
-                    <h3 className="mb-md" style={{ fontSize: '0.85rem', color: '#64748b' }}>
+                    <h3 className="mb-4" style={{ fontSize: '0.85rem', color: '#64748b' }}>
                         ⚙️ {t('editor.config')} (for print/export)
                     </h3>
 
@@ -229,7 +229,7 @@ export const MatchingImagesEditor: React.FC<MatchingImagesEditorProps> = ({ onHo
                         onChange={e => setConfig({ ...config, title: e.target.value })}
                     />
 
-                    <div className="flex gap-sm mb-md">
+                    <div className="flex gap-2 mb-4">
                         <Checkbox
                             label="Left has images"
                             checked={config.leftHasImages}
@@ -248,7 +248,7 @@ export const MatchingImagesEditor: React.FC<MatchingImagesEditorProps> = ({ onHo
                         onChange={e => setConfig({ ...config, shuffleRight: e.target.checked })}
                     />
 
-                    <div className="form-group mt-md">
+                    <div className="form-group mt-4">
                         <label className="label">Pairs</label>
                         {config.leftItems.map((leftItem, i) => (
                             <div key={i} style={{

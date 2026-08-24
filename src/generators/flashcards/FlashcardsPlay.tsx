@@ -349,10 +349,10 @@ export const FlashcardsPlay: React.FC<FlashcardsPlayProps> = ({
                         {/* 3D Flip Card Container */}
                         <div
                             onClick={handleTrainerFlip}
-                            className="cursor-pointer perspective-1000 w-full max-w-md h-96 relative group"
+                            className="cursor-pointer perspective-[1000px] w-full max-w-md h-96 relative group"
                         >
                             <div
-                                className={`w-full h-full rounded-3xl p-6 transition-transform duration-500 transform-style-3d shadow-2xl flex flex-col items-center justify-between border-2 border-indigo-200 dark:border-indigo-800 ${isFlipped ? 'rotate-y-180 bg-gradient-to-br from-indigo-900 to-slate-900 text-white' : 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white'}`}
+                                className={`w-full h-full rounded-3xl p-6 transition-transform duration-500 transform-3d shadow-2xl flex flex-col items-center justify-between border-2 border-indigo-200 dark:border-indigo-800 ${isFlipped ? 'rotate-y-180 bg-gradient-to-br from-indigo-900 to-slate-900 text-white' : 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white'}`}
                             >
                                 {!isFlipped ? (
                                     /* Front Side: AI Image + Term + IPA */
@@ -398,7 +398,7 @@ export const FlashcardsPlay: React.FC<FlashcardsPlayProps> = ({
                                     </>
                                 ) : (
                                     /* Back Side: Vietnamese Meaning + Example */
-                                    <div className="transform-rotate-y-180 h-full w-full flex flex-col justify-between items-center text-center py-2">
+                                    <div className="rotate-y-180 backface-hidden h-full w-full flex flex-col justify-between items-center text-center py-2">
                                         <div className="badge badge-indigo">Nghĩa tiếng Việt & Ví dụ</div>
 
                                         <div className="my-auto">

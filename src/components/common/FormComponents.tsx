@@ -60,7 +60,7 @@ export const Input: React.FC<InputProps> = ({
                 className={`input ${error ? 'input-error' : ''} ${className}`}
                 {...props}
             />
-            {error && <span className="text-danger text-sm mt-xs">{error}</span>}
+            {error && <span className="text-danger text-sm mt-1">{error}</span>}
         </div>
     );
 };
@@ -91,7 +91,7 @@ export const Textarea: React.FC<TextareaProps> = ({
                 className={`textarea ${error ? 'input-error' : ''} ${className}`}
                 {...props}
             />
-            {error && <span className="text-danger text-sm mt-xs">{error}</span>}
+            {error && <span className="text-danger text-sm mt-1">{error}</span>}
         </div>
     );
 };
