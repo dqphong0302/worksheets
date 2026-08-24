@@ -165,7 +165,7 @@ export const MazeEditor: React.FC<MazeEditorProps> = ({ onHome }) => {
                         🎲 {i18n.language === 'vi' ? 'Sinh ngẫu nhiên mê cung mới' : 'Regenerate Maze'}
                     </Button>
 
-                    <h3 className="text-xs uppercase font-bold tracking-wider text-muted">
+                    <h3 className="text-xs uppercase font-bold tracking-wider text-ink-muted">
                         ⚙️ {t('editor.config')}
                     </h3>
 

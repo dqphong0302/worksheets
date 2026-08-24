@@ -124,7 +124,7 @@ export const TemplateModal: React.FC<TemplateModalProps> = ({
                 <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-700">
                     <div className="flex items-center gap-2">
                         <span className="text-2xl">📁</span>
-                        <h3 className="text-lg font-bold" style={{ color: 'var(--text-main)' }}>
+                        <h3 className="text-lg font-bold" style={{ color: 'var(--text-ink)' }}>
                             {mode === 'save' ? (i18n.language === 'vi' ? 'Lưu mẫu bài tập' : 'Save Template') : (i18n.language === 'vi' ? 'Kho mẫu bài tập đã lưu' : 'Saved Templates')}
                         </h3>
                     </div>

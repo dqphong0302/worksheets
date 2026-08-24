@@ -1,5 +1,9 @@
-/* ===== TAILWIND CSS v4 ===== */
+/* ===== TAILWIND CSS v4 + PhongDang UI ===== */
+/* Tailwind first, then the design system: PDUI owns the shared scales, and the
+   bridge exposes them as `surface` / `ink` / `brand` utilities. */
 @import "tailwindcss";
+@import "./vendor/pdui/pdui.css";
+@import "./vendor/pdui/pdui-theme.css";
 
 /* Tailwind v4 defaults dark: utilities to the operating-system theme.
    Worksheets owns its theme through the `.dark` class, so keep both systems aligned. */

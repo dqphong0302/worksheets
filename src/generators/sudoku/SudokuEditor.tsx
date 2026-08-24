@@ -142,7 +142,7 @@ export const SudokuEditor: React.FC<SudokuEditorProps> = ({ onHome }) => {
                             🎲 {i18n.language === 'vi' ? 'Sinh đề Sudoku ngẫu nhiên mới' : 'Regenerate Puzzle'}
                         </Button>
 
-                    <h3 className="text-xs uppercase font-bold tracking-wider text-muted">
+                    <h3 className="text-xs uppercase font-bold tracking-wider text-ink-muted">
                         ⚙️ {t('editor.config')}
                     </h3>
 

@@ -238,7 +238,7 @@ export const FlashcardsEditor: React.FC<FlashcardsEditorProps> = ({ onHome }) =>
                         {/* Preset Picker */}
                         <PresetPicker onSelectTopic={handleApplyPreset} />
 
-                        <h3 className="text-xs uppercase font-bold tracking-wider text-muted">
+                        <h3 className="text-xs uppercase font-bold tracking-wider text-ink-muted">
                             ⚙️ {t('editor.config')}
                         </h3>
 
@@ -298,7 +298,7 @@ export const FlashcardsEditor: React.FC<FlashcardsEditorProps> = ({ onHome }) =>
                         {/* Card List Items Editor */}
                         <div>
                             <div className="flex items-center justify-between mb-2">
-                                <label className="text-sm font-semibold text-main">
+                                <label className="text-sm font-semibold text-ink">
                                     {i18n.language === 'vi' ? `Danh sách thẻ (${config.items.length})` : `Flashcard Items (${config.items.length})`}
                                 </label>
                                 <Button variant="secondary" onClick={handleAddItem} style={{ padding: '0.25rem 0.6rem', fontSize: '0.8rem' }}>
@@ -317,7 +317,7 @@ export const FlashcardsEditor: React.FC<FlashcardsEditorProps> = ({ onHome }) =>
                                         }}
                                     >
                                         <div className="flex items-center gap-2">
-                                            <span className="text-xs font-bold text-muted">#{idx + 1}</span>
+                                            <span className="text-xs font-bold text-ink-muted">#{idx + 1}</span>
 
                                             {/* AI Image Thumbnail & Regenerate Button */}
                                             {item.imageUrl ? (
@@ -342,7 +342,7 @@ export const FlashcardsEditor: React.FC<FlashcardsEditorProps> = ({ onHome }) =>
                                                     onChange={e => handleUpdateItem(item.id, { iconOrEmoji: e.target.value })}
                                                     placeholder="Emoji"
                                                     className="w-10 px-1 py-1 rounded-lg border text-sm text-center"
-                                                    style={{ background: 'var(--bg-secondary)', borderColor: 'var(--border-color)', color: 'var(--text-main)' }}
+                                                    style={{ background: 'var(--bg-secondary)', borderColor: 'var(--border-color)', color: 'var(--text-ink)' }}
                                                 />
                                             )}
 
@@ -352,7 +352,7 @@ export const FlashcardsEditor: React.FC<FlashcardsEditorProps> = ({ onHome }) =>
                                                 onChange={e => handleUpdateItem(item.id, { frontText: e.target.value })}
                                                 placeholder="Từ vựng tiếng Anh"
                                                 className="flex-1 px-2.5 py-1 rounded-lg border text-sm font-bold"
-                                                style={{ background: 'var(--bg-secondary)', borderColor: 'var(--border-color)', color: 'var(--text-main)' }}
+                                                style={{ background: 'var(--bg-secondary)', borderColor: 'var(--border-color)', color: 'var(--text-ink)' }}
                                             />
                                             <button
                                                 onClick={() => handleRemoveItem(item.id)}
@@ -370,7 +370,7 @@ export const FlashcardsEditor: React.FC<FlashcardsEditorProps> = ({ onHome }) =>
                                                 onChange={e => handleUpdateItem(item.id, { ipa: e.target.value, frontSub: e.target.value })}
                                                 placeholder="Phiên âm IPA (VD: /ˈæpl/)"
                                                 className="px-2 py-1 rounded border text-xs font-mono"
-                                                style={{ background: 'var(--bg-secondary)', borderColor: 'var(--border-color)', color: 'var(--text-main)' }}
+                                                style={{ background: 'var(--bg-secondary)', borderColor: 'var(--border-color)', color: 'var(--text-ink)' }}
                                             />
                                             <input
                                                 type="text"
@@ -378,7 +378,7 @@ export const FlashcardsEditor: React.FC<FlashcardsEditorProps> = ({ onHome }) =>
                                                 onChange={e => handleUpdateItem(item.id, { backText: e.target.value })}
                                                 placeholder="Nghĩa tiếng Việt"
                                                 className="px-2 py-1 rounded border text-xs font-semibold"
-                                                style={{ background: 'var(--bg-secondary)', borderColor: 'var(--border-color)', color: 'var(--text-main)' }}
+                                                style={{ background: 'var(--bg-secondary)', borderColor: 'var(--border-color)', color: 'var(--text-ink)' }}
                                             />
                                         </div>
                                     </div>

@@ -23,7 +23,7 @@ export const PresetPicker: React.FC<PresetPickerProps> = ({ onSelectTopic }) => 
                 style={{
                     background: 'linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(99, 102, 241, 0.12))',
                     borderColor: 'rgba(56, 189, 248, 0.35)',
-                    color: 'var(--text-main)',
+                    color: 'var(--text-ink)',
                 }}
             >
                 <span className="flex items-center gap-1.5">
@@ -56,7 +56,7 @@ export const PresetPicker: React.FC<PresetPickerProps> = ({ onSelectTopic }) => 
                                 setIsOpen(false);
                             }}
                             className="w-full p-2 rounded-xl text-left text-xs font-semibold flex items-center justify-between transition-all hover:bg-sky-50 dark:hover:bg-slate-800"
-                            style={{ color: 'var(--text-main)' }}
+                            style={{ color: 'var(--text-ink)' }}
                         >
                             <span className="flex items-center gap-2">
                                 <span className="text-base">{topic.icon}</span>

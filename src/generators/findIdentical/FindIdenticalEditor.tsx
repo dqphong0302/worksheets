@@ -228,7 +228,7 @@ export const FindIdenticalEditor: React.FC<FindIdenticalEditorProps> = ({ onHome
                         🎮 {i18n.language === 'vi' ? 'Chơi Tương Tác / Play Now' : 'Play Now'}
                     </Button>
 
-                    <h3 className="text-xs uppercase font-bold tracking-wider text-muted">
+                    <h3 className="text-xs uppercase font-bold tracking-wider text-ink-muted">
                         ⚙️ {t('editor.config')}
                     </h3>
 
@@ -246,7 +246,7 @@ export const FindIdenticalEditor: React.FC<FindIdenticalEditorProps> = ({ onHome
 
                     <div>
                         <div className="flex items-center justify-between mb-2">
-                            <label className="text-sm font-semibold text-main">
+                            <label className="text-sm font-semibold text-ink">
                                 {i18n.language === 'vi' ? `Danh sách thẻ (${config.items.length} cặp)` : `Card items (${config.items.length} pairs)`}
                             </label>
                             <Button variant="secondary" onClick={handleAddItem} style={{ padding: '0.25rem 0.6rem', fontSize: '0.8rem' }}>
@@ -265,7 +265,7 @@ export const FindIdenticalEditor: React.FC<FindIdenticalEditorProps> = ({ onHome
                                     }}
                                 >
                                     <div className="flex items-center gap-2 mb-2">
-                                        <span className="text-xs font-bold text-muted">#{index + 1}</span>
+                                        <span className="text-xs font-bold text-ink-muted">#{index + 1}</span>
                                         <input
                                             type="text"
                                             value={item.label || ''}
@@ -275,7 +275,7 @@ export const FindIdenticalEditor: React.FC<FindIdenticalEditorProps> = ({ onHome
                                             style={{
                                                 background: 'var(--bg-secondary)',
                                                 borderColor: 'var(--border-color)',
-                                                color: 'var(--text-main)',
+                                                color: 'var(--text-ink)',
                                             }}
                                         />
                                         <button
@@ -305,7 +305,7 @@ export const FindIdenticalEditor: React.FC<FindIdenticalEditorProps> = ({ onHome
                                     ) : (
                                         <label
                                             className="block w-full py-1.5 text-center border border-dashed rounded-lg cursor-pointer text-xs transition-colors hover:bg-black/5 dark:hover:bg-white/5"
-                                            style={{ borderColor: 'var(--border-color)', color: 'var(--text-muted)' }}
+                                            style={{ borderColor: 'var(--border-color)', color: 'var(--text-ink-muted)' }}
                                         >
                                             📷 {i18n.language === 'vi' ? 'Tải ảnh lên (tùy chọn)' : 'Upload image (optional)'}
                                             <input

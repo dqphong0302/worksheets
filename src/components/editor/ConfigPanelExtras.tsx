@@ -36,7 +36,7 @@ export const ConfigPanelExtras: React.FC<ConfigPanelExtrasProps> = ({
             <div className="form-group">
                 <label className="label flex items-center justify-between">
                     <span>{t('editor.zoom')}</span>
-                    <span className="text-muted">{Math.round(zoom * 100)}%</span>
+                    <span className="text-ink-muted">{Math.round(zoom * 100)}%</span>
                 </label>
                 <input
                     type="range"

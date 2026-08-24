@@ -151,7 +151,7 @@ export const CryptogramEditor: React.FC<CryptogramEditorProps> = ({ onHome }) =>
                         {/* Preset Picker */}
                         <PresetPicker onSelectTopic={handleApplyPreset} />
 
-                    <h3 className="text-xs uppercase font-bold tracking-wider text-muted">
+                    <h3 className="text-xs uppercase font-bold tracking-wider text-ink-muted">
                         ⚙️ {t('editor.config')}
                     </h3>
 

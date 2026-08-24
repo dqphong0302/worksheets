@@ -183,8 +183,8 @@ export const CrosswordEditor: React.FC<CrosswordEditorProps> = ({ onHome }) => {
                                 gap: '8px',
                                 marginBottom: '8px',
                             }}>
-                                <span className="text-xs text-muted font-medium">Từ vựng</span>
-                                <span className="text-xs text-muted font-medium">Gợi ý</span>
+                                <span className="text-xs text-ink-muted font-medium">Từ vựng</span>
+                                <span className="text-xs text-ink-muted font-medium">Gợi ý</span>
                             </div>
                             <div style={{
                                 maxHeight: '300px',

@@ -1,0 +1,48 @@
+/*! PhongDang UI Tailwind bridge v1.3.0 — Tailwind v4 */
+/* Import AFTER "tailwindcss" so PDUI owns the shared scales. */
+@theme {
+  --color-surface: var(--bg-card);
+  --color-surface-subtle: var(--bg-card-subtle);
+  --color-surface-input: var(--bg-input);
+  --color-surface-body: var(--bg-body);
+  --color-surface-header: var(--bg-header);
+  --color-line: var(--border-color);
+  --color-line-subtle: var(--border-subtle);
+  --color-ink: var(--text-main);
+  --color-ink-muted: var(--text-muted);
+  --color-ink-subtle: var(--text-subtle);
+  --color-brand: var(--primary);
+  --color-brand-hover: var(--primary-hover);
+  --color-brand-soft: var(--primary-light);
+  --color-brand-line: var(--primary-border);
+  --color-accent: var(--accent-indigo);
+  --color-accent-hover: var(--accent-indigo-hover);
+  --color-accent-soft: var(--accent-indigo-light);
+  --color-accent-line: var(--accent-indigo-border);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-light);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-light);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-light);
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+@utility shadow-floating {
+  box-shadow: var(--shadow-floating);
+}
+
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+@utility shadow-glow-indigo {
+  box-shadow: var(--shadow-glow-indigo);
+}
+
+@utility font-heading {
+  font-family: var(--font-heading);
+}
