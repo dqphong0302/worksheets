@@ -1,4 +1,4 @@
-/*! PhongDang UI v1.4.0 */
+/*! PhongDang UI v1.5.0 */
 /* source: pdui-tokens.css */
 /* PhongDang UI Design System — canonical tokens */
 :root {
@@ -70,19 +70,21 @@
 
 html.dark {
   color-scheme: dark;
-  --bg-body: #0b0f19;
-  --bg-card: #111827;
-  --bg-card-subtle: #0f172a;
-  --bg-input: #0b0f19;
-  --bg-header: rgba(11, 15, 25, 0.88);
-  --bg-control: #1e293b;
-  --bg-control-hover: #334155;
-  --border-control: #64748b;
-  --border-color: #1e293b;
-  --border-subtle: #172033;
+  /* Navy, not black: the dark surfaces carry the brand hue (~220°) and sit a
+     step lighter than the previous near-black ramp. */
+  --bg-body: #0e1729;
+  --bg-card: #152238;
+  --bg-card-subtle: #111c30;
+  --bg-input: #0e1729;
+  --bg-header: rgba(14, 23, 41, 0.9);
+  --bg-control: #22314c;
+  --bg-control-hover: #2e4160;
+  --border-control: #5c7093;
+  --border-color: #24344f;
+  --border-subtle: #1b283d;
   --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-subtle: #64748b;
+  --text-muted: #a3b2c9;
+  --text-subtle: #7889a3;
   --primary: #60a5fa;
   --primary-hover: #3b82f6;
   --primary-light: rgba(96, 165, 250, 0.15);
@@ -91,10 +93,10 @@ html.dark {
   --accent-indigo-hover: #6366f1;
   --accent-indigo-light: rgba(129, 140, 248, 0.15);
   --accent-indigo-border: rgba(129, 140, 248, 0.3);
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 12px 28px -10px rgba(0, 0, 0, 0.62);
-  --shadow-card: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
-  --shadow-floating: 0 28px 54px -18px rgba(0, 0, 0, 0.72);
+  --shadow-sm: 0 1px 2px rgba(3, 7, 18, 0.4);
+  --shadow-md: 0 12px 28px -10px rgba(3, 7, 18, 0.66);
+  --shadow-card: 0 20px 40px -15px rgba(3, 7, 18, 0.64);
+  --shadow-floating: 0 28px 54px -18px rgba(3, 7, 18, 0.75);
   --shadow-glow: 0 0 35px -5px rgba(96, 165, 250, 0.35);
   --shadow-glow-indigo: 0 0 35px -5px rgba(129, 140, 248, 0.35);
 }
