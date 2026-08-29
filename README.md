@@ -46,8 +46,7 @@ pnpm preview
 ## Technology Stack
 
 - **React 19** + **TypeScript** + **Vite**
-- **jsPDF** + **html2canvas** for PDF export
-- **html2canvas** for high-resolution PDF/PNG export
+- **jsPDF** + **html2canvas** for high-resolution PDF/PNG export
 - **docx** for Word document export
 - **i18next** for internationalization
 - **IndexedDB** for local storage
