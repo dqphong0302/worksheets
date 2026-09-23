@@ -21,19 +21,19 @@ export const PaperPreview = React.forwardRef<HTMLDivElement, PaperPreviewProps>(
             switch (borderStyle) {
                 case 'simple':
                     return {
-                        border: '2px solid #334155',
+                        border: '2px solid #2c3a52',
                         borderRadius: '4px',
                         padding: '16mm',
                     };
                 case 'double':
                     return {
-                        border: '4px double #0f172a',
+                        border: '4px double #1c1917',
                         borderRadius: '4px',
                         padding: '16mm',
                     };
                 case 'dotted':
                     return {
-                        border: '3px dashed #64748b',
+                        border: '3px dashed #6b625a',
                         borderRadius: '8px',
                         padding: '16mm',
                     };
@@ -46,8 +46,8 @@ export const PaperPreview = React.forwardRef<HTMLDivElement, PaperPreviewProps>(
                     };
                 case 'elegant':
                     return {
-                        border: '2px solid #475569',
-                        boxShadow: 'inset 0 0 0 4px #ffffff, inset 0 0 0 6px #475569',
+                        border: '2px solid #57504a',
+                        boxShadow: 'inset 0 0 0 4px #ffffff, inset 0 0 0 6px #57504a',
                         padding: '16mm',
                     };
                 case 'none':
@@ -78,7 +78,7 @@ export const PaperPreview = React.forwardRef<HTMLDivElement, PaperPreviewProps>(
                         zoom: scale,
                         boxSizing: 'border-box',
                         backgroundColor: '#ffffff',
-                        color: '#0f172a',
+                        color: '#1c1917',
                         margin: '0 auto',
                     }}
                 >

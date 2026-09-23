@@ -154,20 +154,20 @@ export const BingoEditor: React.FC<BingoEditorProps> = ({ onHome }) => {
                             className="w-full"
                             onClick={() => setPlayMode(true)}
                             style={{
-                                background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+                                background: '#2f7a4f',
                                 fontSize: '1.1rem',
                                 padding: '0.85rem',
                                 boxShadow: '0 4px 15px rgba(34, 197, 94, 0.4)',
                             }}
                         >
-                            🎮 {i18n.language === 'vi' ? 'Chơi Tương Tác / Play Bingo' : 'Play Bingo Now'}
+                            {i18n.language === 'vi' ? 'Chơi Tương Tác / Play Bingo' : 'Play Bingo Now'}
                         </Button>
 
                         {/* Preset Picker */}
                         <PresetPicker onSelectTopic={handleApplyPreset} />
 
                     <h3 className="text-xs uppercase font-bold tracking-wider text-ink-muted">
-                        ⚙️ {t('editor.config')}
+                        {t('editor.config')}
                     </h3>
 
                     <Input
@@ -230,7 +230,7 @@ export const BingoEditor: React.FC<BingoEditorProps> = ({ onHome }) => {
                     {/* Card Switcher for preview */}
                     {result.cards.length > 1 && (
                         <div className="flex items-center justify-center gap-2 mb-4 no-print">
-                            <span className="text-xs font-bold text-slate-600 dark:text-slate-300">
+                            <span className="text-xs font-bold text-ink-muted">
                                 {i18n.language === 'vi' ? 'Xem trước thẻ số:' : 'Preview Card #:'}
                             </span>
                             <div className="flex gap-1 max-w-md overflow-x-auto p-1">
@@ -239,8 +239,8 @@ export const BingoEditor: React.FC<BingoEditorProps> = ({ onHome }) => {
                                         key={c.id}
                                         onClick={() => setActivePreviewCard(i)}
                                         className={`w-7 h-7 rounded-lg text-xs font-bold transition-colors ${activePreviewCard === i
-                                            ? 'bg-sky-500 text-white'
-                                            : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200'
+                                            ? 'bg-brand text-on-brand'
+                                            : 'bg-line text-ink'
                                             }`}
                                     >
                                         {i + 1}
@@ -254,7 +254,7 @@ export const BingoEditor: React.FC<BingoEditorProps> = ({ onHome }) => {
                         <div style={{ fontFamily: config.font, fontSize: config.fontSize }}>
                             {/* Student Header */}
                             {config.studentInfo.showStudentInfo && (
-                                <div className="flex justify-between items-center pb-4 mb-4 border-b border-slate-300 text-xs">
+                                <div className="flex justify-between items-center pb-4 mb-4 border-b border-line-control text-xs">
                                     <span>Họ và tên / Name: _______________________</span>
                                     <span>Lớp / Class: ________</span>
                                     <span>Ngày / Date: ________</span>
@@ -262,11 +262,11 @@ export const BingoEditor: React.FC<BingoEditorProps> = ({ onHome }) => {
                             )}
 
                             <div className="text-center mb-6">
-                                <h1 style={{ fontSize: '1.6em', fontWeight: 800, color: '#0f172a', marginBottom: '0.2em' }}>
+                                <h1 style={{ fontSize: '1.6em', fontWeight: 800, color: '#1c1917', marginBottom: '0.2em' }}>
                                     {config.title}
                                 </h1>
-                                <p style={{ fontSize: '0.85em', color: '#64748b' }}>
-                                    🎯 {i18n.language === 'vi'
+                                <p style={{ fontSize: '0.85em', color: '#6b625a' }}>
+                                    {i18n.language === 'vi'
                                         ? `Thẻ Bingo #${activePreviewCard + 1} • Đánh dấu các ô khi nghe gọi từ`
                                         : `Bingo Card #${activePreviewCard + 1} • Mark the cells as words are called`}
                                 </p>
@@ -314,11 +314,11 @@ export const BingoEditor: React.FC<BingoEditorProps> = ({ onHome }) => {
                                                                 key={c}
                                                                 style={{
                                                                     height: config.gridSize === 3 ? '95px' : config.gridSize === 4 ? '75px' : '62px',
-                                                                    border: '2px solid #cbd5e1',
+                                                                    border: '2px solid #d9cfc3',
                                                                     textAlign: 'center',
                                                                     padding: '6px',
                                                                     backgroundColor: isCenterFree ? '#fef3c7' : '#ffffff',
-                                                                    color: isCenterFree ? '#b45309' : '#0f172a',
+                                                                    color: isCenterFree ? '#b45309' : '#1c1917',
                                                                     fontWeight: isCenterFree ? 800 : 600,
                                                                     fontSize: isCenterFree ? '1.05em' : '0.88em',
                                                                     wordBreak: 'break-word',
@@ -336,8 +336,8 @@ export const BingoEditor: React.FC<BingoEditorProps> = ({ onHome }) => {
                             )}
 
                             {/* Instructions Footer */}
-                            <div className="mt-8 pt-4 border-t border-dashed border-slate-300 text-center text-xs text-slate-500">
-                                ✂️ {i18n.language === 'vi'
+                            <div className="mt-8 pt-4 border-t border-dashed border-line-control text-center text-xs text-ink-muted">
+                                {i18n.language === 'vi'
                                     ? `Tạo tự động bởi Worksheet Generator Pro • Có ${result.cards.length} thẻ ngẫu nhiên cho cả lớp`
                                     : `Generated by Worksheet Generator Pro • ${result.cards.length} unique cards generated`}
                             </div>

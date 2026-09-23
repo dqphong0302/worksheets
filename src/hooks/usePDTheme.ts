@@ -4,10 +4,11 @@ const THEME_STORAGE_KEY = 'pd_theme';
 
 export function usePDTheme() {
     const [isDark, setIsDark] = useState<boolean>(() => {
-        if (typeof window === 'undefined') return true;
+        if (typeof window === 'undefined') return false;
         const saved = localStorage.getItem(THEME_STORAGE_KEY) || localStorage.getItem('theme');
         if (saved) return saved === 'dark';
-        return document.documentElement.classList.contains('dark') || true;
+        // PDUI v2: lần đầu vào mặc định Sáng.
+        return false;
     });
 
     useEffect(() => {

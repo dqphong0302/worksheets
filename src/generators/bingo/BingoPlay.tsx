@@ -172,16 +172,16 @@ export const BingoPlay: React.FC<BingoPlayProps> = ({
                     <button
                         type="button"
                         onClick={() => { soundFx.playClick(); setMode('player'); }}
-                        className={`px-5 py-2 rounded-xl font-bold text-sm transition-all ${mode === 'player' ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/40' : 'text-slate-300 hover:text-white'}`}
+                        className={`px-5 py-2 rounded-xl font-bold text-sm transition-all ${mode === 'player' ? 'bg-brand text-on-brand shadow-lg ' : 'text-ink-subtle hover:text-white'}`}
                     >
-                        🎯 Thẻ Người Chơi / Player Card
+                        Thẻ Người Chơi / Player Card
                     </button>
                     <button
                         type="button"
                         onClick={() => { soundFx.playClick(); setMode('caller'); }}
-                        className={`px-5 py-2 rounded-xl font-bold text-sm transition-all ${mode === 'caller' ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-500/40' : 'text-slate-300 hover:text-white'}`}
+                        className={`px-5 py-2 rounded-xl font-bold text-sm transition-all ${mode === 'caller' ? 'bg-brand text-on-brand shadow-lg ' : 'text-ink-subtle hover:text-white'}`}
                     >
-                        📢 Máy Quay Số Giáo Viên / Caller Machine
+                        Máy Quay Số Giáo Viên / Caller Machine
                     </button>
                 </div>
 
@@ -196,11 +196,11 @@ export const BingoPlay: React.FC<BingoPlayProps> = ({
                                 backdropFilter: 'blur(16px)',
                             }}
                         >
-                            <div className="flex justify-between items-center mb-4 pb-3 border-b border-slate-200">
-                                <span className="font-extrabold text-slate-800 tracking-wider">
+                            <div className="flex justify-between items-center mb-4 pb-3 border-b border-line">
+                                <span className="font-bold text-ink tracking-wider">
                                     B • I • N • G • O
                                 </span>
-                                <span className="text-xs font-bold text-sky-600 bg-sky-50 px-2.5 py-1 rounded-full border border-sky-200">
+                                <span className="text-xs font-bold text-brand bg-brand-soft px-2.5 py-1 rounded-full border border-brand-line">
                                     Đã đánh dấu: {markedCount}/{totalCells}
                                 </span>
                             </div>
@@ -217,12 +217,12 @@ export const BingoPlay: React.FC<BingoPlayProps> = ({
                                             type="button"
                                             onClick={() => handleCellClick(r, c)}
                                             className={`aspect-square p-2 rounded-2xl flex flex-col items-center justify-center text-center font-bold transition-all transform hover:scale-105 cursor-pointer relative overflow-hidden border ${cell.marked
-                                                ? 'bg-gradient-to-br from-emerald-400 to-teal-500 text-white border-emerald-400 shadow-md shadow-emerald-500/30'
-                                                : 'bg-slate-50 hover:bg-slate-100 text-slate-800 border-slate-200 shadow-sm'
+                                                ? ' from-emerald-400 to-teal-500 text-white border-emerald-400 shadow-md shadow-emerald-500/30'
+                                                : 'bg-surface-subtle hover:bg-surface-subtle text-ink border-line shadow-sm'
                                                 }`}
                                         >
                                             {cell.marked && (
-                                                <span className="absolute top-1 right-1 text-xs">✓</span>
+                                                <span className="absolute top-1 right-1 text-xs"></span>
                                             )}
                                             <span className="text-xs sm:text-sm line-clamp-3 leading-tight">
                                                 {cell.text}
@@ -233,8 +233,8 @@ export const BingoPlay: React.FC<BingoPlayProps> = ({
                             </div>
                         </div>
 
-                        <p className="text-xs text-slate-400 text-center">
-                            💡 Bấm vào từng ô khi giáo viên đọc từ. Tạo thành 1 hàng ngang, dọc hoặc chéo để BINGO!
+                        <p className="text-xs text-ink-subtle text-center">
+                            Bấm vào từng ô khi giáo viên đọc từ. Tạo thành 1 hàng ngang, dọc hoặc chéo để BINGO!
                         </p>
                     </div>
                 ) : (
@@ -244,31 +244,31 @@ export const BingoPlay: React.FC<BingoPlayProps> = ({
                             className="p-8 rounded-3xl w-full max-w-lg border text-center shadow-2xl"
                             style={{
                                 background: 'rgba(255, 255, 255, 0.95)',
-                                borderColor: 'rgba(99, 102, 241, 0.3)',
+                                borderColor: 'rgba(29, 79, 145, 0.3)',
                                 backdropFilter: 'blur(16px)',
                             }}
                         >
-                            <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                            <span className="text-xs font-bold uppercase tracking-wider text-ink-muted">
                                 Máy Gọi Từ Bốc Thăm (Caller Machine)
                             </span>
 
                             {/* Main Draw Display */}
-                            <div className="my-6 min-h-[120px] flex flex-col items-center justify-center p-6 rounded-2xl bg-gradient-to-br from-indigo-50 to-sky-50 border-2 border-indigo-200">
+                            <div className="my-6 min-h-[120px] flex flex-col items-center justify-center p-6 rounded-2xl bg-brand border-2 border-brand-line">
                                 {currentCalled ? (
                                     <>
-                                        <span className="text-3xl sm:text-4xl font-extrabold text-indigo-900 mb-2">
+                                        <span className="text-3xl sm:text-4xl font-bold text-brand mb-2">
                                             {currentCalled}
                                         </span>
                                         <button
                                             type="button"
                                             onClick={() => soundFx.speakWord(currentCalled)}
-                                            className="text-xs font-semibold px-3 py-1 rounded-full bg-indigo-200 hover:bg-indigo-300 text-indigo-900 flex items-center gap-1 transition-colors"
+                                            className="text-xs font-semibold px-3 py-1 rounded-full bg-brand-soft hover:bg-indigo-300 text-brand flex items-center gap-1 transition-colors"
                                         >
-                                            🔊 Phát âm lại
+                                            Phát âm lại
                                         </button>
                                     </>
                                 ) : (
-                                    <span className="text-slate-400 text-sm font-medium">
+                                    <span className="text-ink-subtle text-sm font-medium">
                                         Bấm nút bên dưới để bốc từ ngẫu nhiên
                                     </span>
                                 )}
@@ -279,21 +279,21 @@ export const BingoPlay: React.FC<BingoPlayProps> = ({
                                 type="button"
                                 onClick={handleCallNext}
                                 disabled={remainingPool.length === 0}
-                                className="w-full py-4 rounded-2xl font-black text-lg text-white shadow-xl transition-all transform hover:scale-105 active:scale-95 disabled:opacity-50"
+                                className="w-full py-4 rounded-2xl font-bold text-lg text-white shadow-xl transition-all transform hover:scale-105 active:scale-95 disabled:opacity-50"
                                 style={{
-                                    background: 'linear-gradient(135deg, #6366f1, #0284c7)',
-                                    boxShadow: '0 10px 25px rgba(99, 102, 241, 0.4)',
+                                    background: '#1d4f91',
+                                    boxShadow: '0 10px 25px rgba(29, 79, 145, 0.4)',
                                 }}
                             >
-                                🎲 {remainingPool.length > 0 ? `Bốc Từ Tiếp Theo (${remainingPool.length} từ còn lại)` : 'Đã Hết Bộ Từ!'}
+                                {remainingPool.length > 0 ? `Bốc Từ Tiếp Theo (${remainingPool.length} từ còn lại)` : 'Đã Hết Bộ Từ!'}
                             </button>
                         </div>
 
                         {/* Called History Board */}
                         {calledHistory.length > 0 && (
                             <div className="w-full max-w-lg p-5 rounded-2xl bg-white/10 border border-white/10 backdrop-blur-md">
-                                <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider mb-3">
-                                    📋 Danh Sách Từ Đã Gọi ({calledHistory.length})
+                                <h4 className="text-xs font-bold text-ink-subtle uppercase tracking-wider mb-3">
+                                    Danh Sách Từ Đã Gọi ({calledHistory.length})
                                 </h4>
                                 <div className="flex flex-wrap gap-2 max-h-36 overflow-y-auto pr-1">
                                     {calledHistory.map((item, idx) => (

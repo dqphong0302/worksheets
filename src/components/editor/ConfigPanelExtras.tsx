@@ -29,7 +29,7 @@ export const ConfigPanelExtras: React.FC<ConfigPanelExtrasProps> = ({
             borderTop: '1px solid var(--color-border)',
         }}>
             <h4 style={{ marginBottom: 'var(--space-md)', fontSize: '0.9rem' }}>
-                📄 {t('editor.paperSettings')}
+                {t('editor.paperSettings')}
             </h4>
 
             {/* Zoom control */}

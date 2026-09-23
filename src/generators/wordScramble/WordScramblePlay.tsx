@@ -100,8 +100,8 @@ export const WordScramblePlay: React.FC<WordScramblePlayProps> = ({
                                 key={idx}
                                 className="rounded-xl p-4"
                                 style={{
-                                    background: correct === true ? '#dcfce7' : '#f8fafc',
-                                    border: `2px solid ${correct === null ? '#e2e8f0' : correct ? '#22c55e' : '#ef4444'}`,
+                                    background: correct === true ? '#dcfce7' : '#faf8f5',
+                                    border: `2px solid ${correct === null ? '#e8e2da' : correct ? '#22c55e' : '#ef4444'}`,
                                 }}
                             >
                                 <div className="flex items-center gap-3 mb-3">
@@ -112,14 +112,14 @@ export const WordScramblePlay: React.FC<WordScramblePlayProps> = ({
                                         className="px-4 py-2 rounded-lg font-mono text-lg tracking-widest font-bold"
                                         style={{
                                             background: '#e0e7ff',
-                                            color: '#6366f1',
+                                            color: '#1d4f91',
                                         }}
                                     >
                                         {word.scrambled}
                                     </div>
                                     {word.hint && (
                                         <span className="text-xs px-2 py-1 rounded-full" style={{ background: '#fef3c7', color: '#92400e' }}>
-                                            💡 {word.hint}
+                                            {word.hint}
                                         </span>
                                     )}
                                 </div>
@@ -134,7 +134,7 @@ export const WordScramblePlay: React.FC<WordScramblePlayProps> = ({
                                         }}
                                         className="flex-1 min-w-0 px-4 py-2 rounded-lg text-lg font-semibold"
                                         style={{
-                                            border: '2px solid #e2e8f0',
+                                            border: '2px solid #e8e2da',
                                             background: 'white',
                                             outline: 'none',
                                         }}
@@ -144,7 +144,7 @@ export const WordScramblePlay: React.FC<WordScramblePlayProps> = ({
                                         onClick={() => handleCheck(idx)}
                                         className="px-4 py-2 rounded-lg font-semibold transition-all duration-200 hover:scale-105 whitespace-nowrap flex-shrink-0"
                                         style={{
-                                            background: correct === true ? '#22c55e' : '#6366f1',
+                                            background: correct === true ? '#22c55e' : '#1d4f91',
                                             color: 'white',
                                             minWidth: '80px',
                                         }}

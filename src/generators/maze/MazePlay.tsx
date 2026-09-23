@@ -111,14 +111,14 @@ export const MazePlay: React.FC<MazePlayProps> = ({
                 {/* Header info */}
                 {checkpointWord && (
                     <div className="flex items-center gap-2 px-4 py-2 rounded-2xl bg-white/10 border border-white/10 text-white text-sm">
-                        <span className="font-bold text-sky-300">Từ cần thu thập:</span>
+                        <span className="font-bold text-brand">Từ cần thu thập:</span>
                         <div className="flex gap-1">
                             {checkpointWord.split('').map((char, i) => {
                                 const found = collectedLetters.includes(char);
                                 return (
                                     <span
                                         key={i}
-                                        className={`w-6 h-6 rounded flex items-center justify-center font-bold text-xs ${found ? 'bg-emerald-500 text-white' : 'bg-slate-700 text-slate-400'}`}
+                                        className={`w-6 h-6 rounded flex items-center justify-center font-bold text-xs ${found ? 'bg-emerald-500 text-white' : 'bg-slate-700 text-ink-subtle'}`}
                                     >
                                         {char}
                                     </span>
@@ -137,7 +137,7 @@ export const MazePlay: React.FC<MazePlayProps> = ({
                             display: 'grid',
                             gridTemplateColumns: `repeat(${width}, ${cellSize}px)`,
                             gap: '0',
-                            backgroundColor: '#0f172a',
+                            backgroundColor: '#1c1917',
                             border: '3px solid #38bdf8',
                             borderRadius: '8px',
                             overflow: 'hidden',
@@ -156,15 +156,15 @@ export const MazePlay: React.FC<MazePlayProps> = ({
                                         style={{
                                             width: `${cellSize}px`,
                                             height: `${cellSize}px`,
-                                            borderTop: cell.top ? '2.5px solid #94a3b8' : '2.5px solid transparent',
-                                            borderRight: cell.right ? '2.5px solid #94a3b8' : '2.5px solid transparent',
-                                            borderBottom: cell.bottom ? '2.5px solid #94a3b8' : '2.5px solid transparent',
-                                            borderLeft: cell.left ? '2.5px solid #94a3b8' : '2.5px solid transparent',
+                                            borderTop: cell.top ? '2.5px solid #9a9086' : '2.5px solid transparent',
+                                            borderRight: cell.right ? '2.5px solid #9a9086' : '2.5px solid transparent',
+                                            borderBottom: cell.bottom ? '2.5px solid #9a9086' : '2.5px solid transparent',
+                                            borderLeft: cell.left ? '2.5px solid #9a9086' : '2.5px solid transparent',
                                             backgroundColor: isPlayer
                                                 ? '#0284c7'
                                                 : visited
                                                     ? 'rgba(56, 189, 248, 0.15)'
-                                                    : '#0f172a',
+                                                    : '#1c1917',
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
@@ -222,8 +222,8 @@ export const MazePlay: React.FC<MazePlayProps> = ({
                     </div>
                 </div>
 
-                <p className="text-xs text-slate-400 text-center hidden sm:block">
-                    💡 Dùng các phím mũi tên [↑, ↓, ←, →] hoặc [W, A, S, D] để điều khiển nhân vật qua mê cung
+                <p className="text-xs text-ink-subtle text-center hidden sm:block">
+                    Dùng các phím mũi tên [↑, ↓, ←, →] hoặc [W, A, S, D] để điều khiển nhân vật qua mê cung
                 </p>
             </div>
 

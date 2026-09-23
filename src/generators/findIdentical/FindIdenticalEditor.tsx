@@ -218,18 +218,18 @@ export const FindIdenticalEditor: React.FC<FindIdenticalEditorProps> = ({ onHome
                         className="w-full"
                         onClick={() => setPlayMode(true)}
                         style={{
-                            background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+                            background: '#2f7a4f',
                             fontSize: '1.1rem',
                             padding: '0.85rem',
                             boxShadow: '0 4px 15px rgba(34, 197, 94, 0.4)',
                         }}
                         disabled={config.items.length < 2}
                     >
-                        🎮 {i18n.language === 'vi' ? 'Chơi Tương Tác / Play Now' : 'Play Now'}
+                        {i18n.language === 'vi' ? 'Chơi Tương Tác / Play Now' : 'Play Now'}
                     </Button>
 
                     <h3 className="text-xs uppercase font-bold tracking-wider text-ink-muted">
-                        ⚙️ {t('editor.config')}
+                        {t('editor.config')}
                     </h3>
 
                     <Input
@@ -282,9 +282,7 @@ export const FindIdenticalEditor: React.FC<FindIdenticalEditorProps> = ({ onHome
                                             onClick={() => handleRemoveItem(item.id)}
                                             className="text-red-500 hover:text-red-700 px-1 text-lg font-bold"
                                             title="Delete"
-                                        >
-                                            ✕
-                                        </button>
+                                        ><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
                                     </div>
 
                                     {item.imageData ? (
@@ -298,16 +296,14 @@ export const FindIdenticalEditor: React.FC<FindIdenticalEditorProps> = ({ onHome
                                                 onClick={() => handleUpdateItem(item.id, { imageData: undefined })}
                                                 className="absolute top-1 right-1 w-5 h-5 bg-red-500 text-white rounded-full text-xs flex items-center justify-center"
                                                 title="Remove image"
-                                            >
-                                                ✕
-                                            </button>
+                                            ><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
                                         </div>
                                     ) : (
                                         <label
                                             className="block w-full py-1.5 text-center border border-dashed rounded-lg cursor-pointer text-xs transition-colors hover:bg-black/5 dark:hover:bg-white/5"
                                             style={{ borderColor: 'var(--border-color)', color: 'var(--text-ink-muted)' }}
                                         >
-                                            📷 {i18n.language === 'vi' ? 'Tải ảnh lên (tùy chọn)' : 'Upload image (optional)'}
+                                            {i18n.language === 'vi' ? 'Tải ảnh lên (tùy chọn)' : 'Upload image (optional)'}
                                             <input
                                                 type="file"
                                                 accept="image/*"
@@ -337,8 +333,8 @@ export const FindIdenticalEditor: React.FC<FindIdenticalEditorProps> = ({ onHome
                                 <h1 style={{ fontSize: '1.5em', fontWeight: 700, marginBottom: '0.25em' }}>
                                     {config.title}
                                 </h1>
-                                <p style={{ fontSize: '0.85em', color: '#64748b' }}>
-                                    ✂️ {i18n.language === 'vi'
+                                <p style={{ fontSize: '0.85em', color: '#6b625a' }}>
+                                    {i18n.language === 'vi'
                                         ? 'Cắt theo đường nét đứt để tạo bộ thẻ bài lật tìm cặp giống nhau'
                                         : 'Cut along the dotted lines to create memory flashcards'}
                                 </p>
@@ -357,7 +353,7 @@ export const FindIdenticalEditor: React.FC<FindIdenticalEditorProps> = ({ onHome
                                     <div
                                         key={card.id}
                                         style={{
-                                            border: '2px dashed #94a3b8',
+                                            border: '2px dashed #9a9086',
                                             borderRadius: '12px',
                                             padding: '12px',
                                             textAlign: 'center',
@@ -386,7 +382,7 @@ export const FindIdenticalEditor: React.FC<FindIdenticalEditorProps> = ({ onHome
                                             </div>
                                         )}
                                         {config.showLabels && (
-                                            <span style={{ fontSize: '0.8em', fontWeight: 600, color: '#1e293b' }}>
+                                            <span style={{ fontSize: '0.8em', fontWeight: 600, color: '#243044' }}>
                                                 {card.label}
                                             </span>
                                         )}

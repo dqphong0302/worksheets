@@ -44,7 +44,7 @@ export const WordTracerPlay: React.FC<WordTracerPlayProps> = ({
 
         ctx.scale(2, 2);
         ctx.lineCap = 'round';
-        ctx.strokeStyle = '#1e293b';
+        ctx.strokeStyle = '#243044';
         ctx.lineWidth = 3;
         contextRef.current = ctx;
 
@@ -60,13 +60,13 @@ export const WordTracerPlay: React.FC<WordTracerPlayProps> = ({
 
         // Draw guide text (light gray)
         ctx.font = `${fontSize * 3}px ${font}`;
-        ctx.fillStyle = '#e2e8f0';
+        ctx.fillStyle = '#e8e2da';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(currentWord, canvasWidth / 2, canvasHeight / 2);
 
         // Draw baseline
-        ctx.strokeStyle = '#cbd5e1';
+        ctx.strokeStyle = '#d9cfc3';
         ctx.lineWidth = 1;
         ctx.setLineDash([5, 5]);
         ctx.beginPath();
@@ -76,7 +76,7 @@ export const WordTracerPlay: React.FC<WordTracerPlayProps> = ({
         ctx.setLineDash([]);
 
         // Reset for drawing
-        ctx.strokeStyle = '#1e293b';
+        ctx.strokeStyle = '#243044';
         ctx.lineWidth = 3;
     };
 
@@ -189,7 +189,7 @@ export const WordTracerPlay: React.FC<WordTracerPlayProps> = ({
                         className="rounded-xl cursor-crosshair"
                         style={{
                             background: 'white',
-                            border: '2px solid #e2e8f0',
+                            border: '2px solid #e8e2da',
                             touchAction: 'none',
                         }}
                         onMouseDown={startDrawing}
@@ -210,17 +210,17 @@ export const WordTracerPlay: React.FC<WordTracerPlayProps> = ({
                                 color: '#dc2626',
                             }}
                         >
-                            🗑️ Xóa
+                            Xóa
                         </button>
 
                         <button
                             onClick={markComplete}
                             className="px-6 py-2 rounded-lg font-bold text-white transition-all hover:scale-105"
                             style={{
-                                background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+                                background: '#2f7a4f',
                             }}
                         >
-                            ✓ Tiếp theo
+                            Tiếp theo
                         </button>
                     </div>
                 </div>
@@ -236,7 +236,7 @@ export const WordTracerPlay: React.FC<WordTracerPlayProps> = ({
                                 background: completedWords.has(idx)
                                     ? 'rgba(34, 197, 94, 0.4)'
                                     : idx === currentWordIndex
-                                        ? 'rgba(99, 102, 241, 0.8)'
+                                        ? 'rgba(29, 79, 145, 0.8)'
                                         : 'rgba(255, 255, 255, 0.2)',
                                 color: 'white',
                                 border: idx === currentWordIndex ? '2px solid white' : 'none',
@@ -249,8 +249,8 @@ export const WordTracerPlay: React.FC<WordTracerPlayProps> = ({
 
                 {/* Instructions */}
                 <div className="text-white text-sm opacity-70 text-center">
-                    <p>✏️ Dùng chuột hoặc ngón tay để viết theo mẫu</p>
-                    <p>📱 Hỗ trợ màn hình cảm ứng</p>
+                    <p>Dùng chuột hoặc ngón tay để viết theo mẫu</p>
+                    <p>Hỗ trợ màn hình cảm ứng</p>
                 </div>
             </div>
 

@@ -152,12 +152,12 @@ export const FindIdenticalPlay: React.FC<FindIdenticalPlayProps> = ({
                     <div className="px-4 py-2 rounded-xl text-white" style={{
                         background: 'rgba(255, 255, 255, 0.1)',
                     }}>
-                        <span className="text-lg">🎯 Lượt: <strong>{moves}</strong></span>
+                        <span className="text-lg">Lượt: <strong>{moves}</strong></span>
                     </div>
                     <div className="px-4 py-2 rounded-xl text-white" style={{
                         background: 'rgba(34, 197, 94, 0.2)',
                     }}>
-                        <span className="text-lg">✅ Tìm thấy: <strong>{matchedCount}/{totalPairs}</strong></span>
+                        <span className="text-lg">Tìm thấy: <strong>{matchedCount}/{totalPairs}</strong></span>
                     </div>
                 </div>
 
@@ -191,12 +191,10 @@ export const FindIdenticalPlay: React.FC<FindIdenticalPlayProps> = ({
                                     className="absolute inset-0 rounded-xl flex items-center justify-center text-4xl"
                                     style={{
                                         backfaceVisibility: 'hidden',
-                                        background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+                                        background: '#1d4f91',
                                         boxShadow: '0 4px 15px rgba(0,0,0,0.3)',
                                     }}
-                                >
-                                    ❓
-                                </div>
+                                ><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></svg></div>
 
                                 {/* Card Back (Revealed) */}
                                 <div
@@ -205,7 +203,7 @@ export const FindIdenticalPlay: React.FC<FindIdenticalPlayProps> = ({
                                         backfaceVisibility: 'hidden',
                                         transform: 'rotateY(180deg)',
                                         background: card.isMatched
-                                            ? 'linear-gradient(135deg, #22c55e, #16a34a)'
+                                            ? '#2f7a4f'
                                             : 'white',
                                         boxShadow: '0 4px 15px rgba(0,0,0,0.3)',
                                     }}
@@ -223,7 +221,7 @@ export const FindIdenticalPlay: React.FC<FindIdenticalPlayProps> = ({
                                     )}
                                     {card.isMatched && (
                                         <div className="absolute inset-0 bg-green-500/50 flex items-center justify-center">
-                                            <span className="text-4xl">✓</span>
+                                            <span className="text-4xl"></span>
                                         </div>
                                     )}
                                 </div>
@@ -234,7 +232,7 @@ export const FindIdenticalPlay: React.FC<FindIdenticalPlayProps> = ({
 
                 {/* Instructions */}
                 <p className="text-white/70 text-center">
-                    🖱️ Click vào các thẻ để lật. Tìm các cặp hình giống nhau!
+                    Click vào các thẻ để lật. Tìm các cặp hình giống nhau!
                 </p>
             </div>
 

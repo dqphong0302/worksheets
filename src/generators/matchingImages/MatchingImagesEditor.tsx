@@ -210,17 +210,17 @@ export const MatchingImagesEditor: React.FC<MatchingImagesEditorProps> = ({ onHo
                         className="w-full mb-6"
                         onClick={() => setPlayMode(true)}
                         style={{
-                            background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+                            background: '#2f7a4f',
                             fontSize: '1.2rem',
                             padding: '1rem',
                             boxShadow: '0 4px 15px rgba(34, 197, 94, 0.4)',
                         }}
                     >
-                        🎮 Chơi Ngay / Play Now
+                        Chơi Ngay / Play Now
                     </Button>
 
-                    <h3 className="mb-4" style={{ fontSize: '0.85rem', color: '#64748b' }}>
-                        ⚙️ {t('editor.config')} (for print/export)
+                    <h3 className="mb-4" style={{ fontSize: '0.85rem', color: '#6b625a' }}>
+                        {t('editor.config')} (for print/export)
                     </h3>
 
                     <Input
@@ -272,9 +272,7 @@ export const MatchingImagesEditor: React.FC<MatchingImagesEditorProps> = ({ onHo
                                             borderRadius: 'var(--radius-sm)',
                                             cursor: 'pointer',
                                             background: leftItem.imageData ? '#e8f5e9' : 'transparent',
-                                        }}>
-                                            📷
-                                            <input
+                                        }}><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3"/></svg><input
                                                 type="file"
                                                 accept="image/*"
                                                 onChange={e => handleImageUpload('left', i, e)}
@@ -298,9 +296,7 @@ export const MatchingImagesEditor: React.FC<MatchingImagesEditorProps> = ({ onHo
                                             borderRadius: 'var(--radius-sm)',
                                             cursor: 'pointer',
                                             background: config.rightItems[i]?.imageData ? '#e8f5e9' : 'transparent',
-                                        }}>
-                                            📷
-                                            <input
+                                        }}><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3"/></svg><input
                                                 type="file"
                                                 accept="image/*"
                                                 onChange={e => handleImageUpload('right', i, e)}
@@ -312,9 +308,7 @@ export const MatchingImagesEditor: React.FC<MatchingImagesEditorProps> = ({ onHo
                                         variant="ghost"
                                         onClick={() => handleRemovePair(i)}
                                         style={{ padding: '0.25em 0.5em' }}
-                                    >
-                                        ✕
-                                    </Button>
+                                    ><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></Button>
                                 </div>
                             </div>
                         ))}

@@ -277,7 +277,7 @@ export const CrosswordPlay: React.FC<CrosswordPlayProps> = ({
                                             style={{
                                                 width: cellSize,
                                                 height: cellSize,
-                                                border: '1px solid #94a3b8',
+                                                border: '1px solid #9a9086',
                                                 background: isSelected
                                                     ? '#fef08a'
                                                     : userLetter && isCorrect
@@ -294,7 +294,7 @@ export const CrosswordPlay: React.FC<CrosswordPlayProps> = ({
                                                         left: 2,
                                                         fontSize: '9px',
                                                         fontWeight: 500,
-                                                        color: '#64748b',
+                                                        color: '#6b625a',
                                                     }}
                                                 >
                                                     {cell.number}
@@ -302,7 +302,7 @@ export const CrosswordPlay: React.FC<CrosswordPlayProps> = ({
                                             )}
                                             <span
                                                 className="absolute inset-0 flex items-center justify-center font-bold text-lg"
-                                                style={{ color: '#1e293b' }}
+                                                style={{ color: '#243044' }}
                                             >
                                                 {userLetter}
                                             </span>
@@ -322,7 +322,7 @@ export const CrosswordPlay: React.FC<CrosswordPlayProps> = ({
                             className="rounded-xl p-4"
                             style={{
                                 background: 'rgba(254, 240, 138, 0.9)',
-                                color: '#1e293b',
+                                color: '#243044',
                             }}
                         >
                             <div className="text-sm font-semibold opacity-70 mb-1">
@@ -404,8 +404,8 @@ export const CrosswordPlay: React.FC<CrosswordPlayProps> = ({
                         className="flex items-center justify-center gap-3 mb-4 p-3 rounded-xl cursor-pointer"
                         style={{
                             background: direction === 'down'
-                                ? 'linear-gradient(135deg, #22c55e, #16a34a)'
-                                : 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+                                ? '#2f7a4f'
+                                : '#1d4f91',
                         }}
                         onClick={() => setDirection(d => d === 'across' ? 'down' : 'across')}
                     >
@@ -419,7 +419,7 @@ export const CrosswordPlay: React.FC<CrosswordPlayProps> = ({
                     {/* Instructions */}
                     <div className="text-white text-sm opacity-70">
                         <p>⌨️ Gõ chữ cái để điền. Dùng ← → ↑ ↓ để di chuyển.</p>
-                        <p>🔄 Tab hoặc click 2 lần để đổi hướng.</p>
+                        <p>Tab hoặc click 2 lần để đổi hướng.</p>
                     </div>
                 </div>
             </div>

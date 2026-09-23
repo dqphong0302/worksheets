@@ -110,21 +110,21 @@ export const MathWorksheetPlay: React.FC<MathWorksheetPlayProps> = ({
                                 className="flex flex-col items-center p-4 rounded-xl transition-all duration-200"
                                 style={{
                                     background: correct === null
-                                        ? '#f8fafc'
+                                        ? '#faf8f5'
                                         : correct
                                             ? '#dcfce7'
                                             : '#fef2f2',
                                     border: `2px solid ${correct === null
-                                        ? '#e2e8f0'
+                                        ? '#e8e2da'
                                         : correct
                                             ? '#22c55e'
                                             : '#ef4444'
                                         }`,
                                 }}
                             >
-                                <div className="text-3xl font-bold mb-3" style={{ color: '#1e293b' }}>
+                                <div className="text-3xl font-bold mb-3" style={{ color: '#243044' }}>
                                     <span>{problem.num1}</span>
-                                    <span className="mx-2" style={{ color: '#6366f1' }}>{problem.operator}</span>
+                                    <span className="mx-2" style={{ color: '#1d4f91' }}>{problem.operator}</span>
                                     <span>{problem.num2}</span>
                                     <span className="mx-2">=</span>
                                 </div>
@@ -138,7 +138,7 @@ export const MathWorksheetPlay: React.FC<MathWorksheetPlayProps> = ({
                                     }}
                                     className="w-20 h-12 text-center text-2xl font-bold rounded-lg"
                                     style={{
-                                        border: '2px solid #e2e8f0',
+                                        border: '2px solid #e8e2da',
                                         outline: 'none',
                                     }}
                                     placeholder="?"
@@ -159,11 +159,11 @@ export const MathWorksheetPlay: React.FC<MathWorksheetPlayProps> = ({
                         onClick={handleCheckAll}
                         className="px-8 py-3 rounded-xl text-lg font-bold transition-all duration-200 hover:scale-105"
                         style={{
-                            background: '#6366f1',
+                            background: '#1d4f91',
                             color: 'white',
                         }}
                     >
-                        ✓ Check All
+                        Check All
                     </button>
                 </div>
             </div>

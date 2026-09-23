@@ -48,7 +48,7 @@ export const EditorPage: React.FC = () => {
     if (!type || !EditorMap[type]) {
         return (
             <div className="flex items-center justify-center h-full min-h-screen">
-                <div className="text-center p-8 rounded-2xl bg-white dark:bg-slate-800 shadow-xl border border-slate-200 dark:border-slate-700">
+                <div className="text-center p-8 rounded-2xl bg-white shadow-xl border border-line">
                     <h2 className="text-xl font-bold mb-4">Module not found</h2>
                     <button className="btn btn-primary" onClick={handleHome}>
                         ← Go Home

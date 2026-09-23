@@ -30,7 +30,7 @@ export const MatchingPlay: React.FC<MatchingPlayProps> = ({
         }
     }, [connections, leftItems.length, showAnswer]);
 
-    const colors = ['#22c55e', '#3b82f6', '#f59e0b', '#ec4899', '#8b5cf6', '#14b8a6', '#f43f5e', '#84cc16'];
+    const colors = ['#22c55e', '#1d4f91', '#f59e0b', '#ec4899', '#8b5cf6', '#14b8a6', '#f43f5e', '#84cc16'];
 
     const handleLeftClick = (idx: number) => {
         if (connections.has(idx)) {
@@ -119,9 +119,9 @@ export const MatchingPlay: React.FC<MatchingPlayProps> = ({
                                             ? colors[colorIdx]
                                             : '#ef4444'
                                         : selectedLeft === idx
-                                            ? 'rgba(99, 102, 241, 0.8)'
+                                            ? 'rgba(29, 79, 145, 0.8)'
                                             : 'rgba(255, 255, 255, 0.9)',
-                                    color: isConnected || selectedLeft === idx ? 'white' : '#1e293b',
+                                    color: isConnected || selectedLeft === idx ? 'white' : '#243044',
                                     minWidth: '150px',
                                     boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
                                 }}
@@ -179,7 +179,7 @@ export const MatchingPlay: React.FC<MatchingPlayProps> = ({
                                             ? colors[colorIdx]
                                             : '#ef4444'
                                         : 'rgba(255, 255, 255, 0.9)',
-                                    color: isConnected ? 'white' : '#1e293b',
+                                    color: isConnected ? 'white' : '#243044',
                                     minWidth: '150px',
                                     boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
                                 }}

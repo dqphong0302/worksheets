@@ -167,10 +167,10 @@ export const MatchingImagesPlay: React.FC<MatchingImagesPlayProps> = ({
                 {/* Stats */}
                 <div className="flex gap-6 text-white">
                     <div className="px-4 py-2 rounded-xl" style={{ background: 'rgba(255,255,255,0.15)' }}>
-                        🎯 Moves: <span className="font-bold">{moves}</span>
+                        Moves: <span className="font-bold">{moves}</span>
                     </div>
                     <div className="px-4 py-2 rounded-xl" style={{ background: 'rgba(255,255,255,0.15)' }}>
-                        ✅ Pairs: <span className="font-bold">{matchedPairs.size}/{leftItems.length}</span>
+                        Pairs: <span className="font-bold">{matchedPairs.size}/{leftItems.length}</span>
                     </div>
                 </div>
 
@@ -213,14 +213,12 @@ export const MatchingImagesPlay: React.FC<MatchingImagesPlayProps> = ({
                                         style={{
                                             backfaceVisibility: 'hidden',
                                             background: card.isMatched
-                                                ? 'linear-gradient(135deg, #22c55e, #16a34a)'
-                                                : 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+                                                ? '#2f7a4f'
+                                                : '#1d4f91',
                                             color: 'white',
                                             boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
                                         }}
-                                    >
-                                        🎴
-                                    </div>
+                                    ></div>
 
                                     {/* Front (content) */}
                                     <div
@@ -233,7 +231,7 @@ export const MatchingImagesPlay: React.FC<MatchingImagesPlayProps> = ({
                                                 : 'white',
                                             border: card.isMatched
                                                 ? '3px solid #22c55e'
-                                                : '2px solid #e2e8f0',
+                                                : '2px solid #e8e2da',
                                             boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
                                         }}
                                     >
@@ -253,7 +251,7 @@ export const MatchingImagesPlay: React.FC<MatchingImagesPlayProps> = ({
                                                 className="text-center font-semibold"
                                                 style={{
                                                     fontSize: Math.max(10, cardSize / 8),
-                                                    color: '#1e293b',
+                                                    color: '#243044',
                                                     wordBreak: 'break-word',
                                                 }}
                                             >
@@ -264,7 +262,7 @@ export const MatchingImagesPlay: React.FC<MatchingImagesPlayProps> = ({
                                             className="text-xs mt-1 px-1 rounded"
                                             style={{
                                                 background: card.side === 'left' ? '#dbeafe' : '#fef3c7',
-                                                color: card.side === 'left' ? '#1e40af' : '#92400e',
+                                                color: card.side === 'left' ? '#1d4f91' : '#92400e',
                                             }}
                                         >
                                             {card.side === 'left' ? 'A' : 'B'}
@@ -278,8 +276,8 @@ export const MatchingImagesPlay: React.FC<MatchingImagesPlayProps> = ({
 
                 {/* Instructions */}
                 <div className="text-white text-sm opacity-70 text-center">
-                    <p>🎴 Lật 2 thẻ để tìm cặp phù hợp (A ↔ B)</p>
-                    <p>💡 Cặp đúng sẽ giữ nguyên, cặp sai sẽ úp lại</p>
+                    <p>Lật 2 thẻ để tìm cặp phù hợp (A ↔ B)</p>
+                    <p>Cặp đúng sẽ giữ nguyên, cặp sai sẽ úp lại</p>
                 </div>
             </div>
 

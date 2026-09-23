@@ -218,13 +218,13 @@ export const FlashcardsEditor: React.FC<FlashcardsEditorProps> = ({ onHome }) =>
                             className="w-full"
                             onClick={() => setPlayMode(true)}
                             style={{
-                                background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+                                background: '#2f7a4f',
                                 fontSize: '1.1rem',
                                 padding: '0.85rem',
                                 boxShadow: '0 4px 15px rgba(34, 197, 94, 0.4)',
                             }}
                         >
-                            🎮 {i18n.language === 'vi' ? 'Chơi 4 Mini-Games Tương Tác' : 'Play 4 Flashcard Mini-Games'}
+                            {i18n.language === 'vi' ? 'Chơi 4 Mini-Games Tương Tác' : 'Play 4 Flashcard Mini-Games'}
                         </Button>
 
                         {/* AI Dictionary & Image Generation Suite */}
@@ -239,7 +239,7 @@ export const FlashcardsEditor: React.FC<FlashcardsEditorProps> = ({ onHome }) =>
                         <PresetPicker onSelectTopic={handleApplyPreset} />
 
                         <h3 className="text-xs uppercase font-bold tracking-wider text-ink-muted">
-                            ⚙️ {t('editor.config')}
+                            {t('editor.config')}
                         </h3>
 
                         <Input
@@ -325,15 +325,13 @@ export const FlashcardsEditor: React.FC<FlashcardsEditorProps> = ({ onHome }) =>
                                                     <img
                                                         src={item.imageUrl}
                                                         alt={item.frontText}
-                                                        className="w-10 h-10 object-cover rounded-lg border border-slate-200 shadow-sm"
+                                                        className="w-10 h-10 object-cover rounded-lg border border-line shadow-sm"
                                                     />
                                                     <button
                                                         onClick={() => handleRegenerateItemImage(item.id, item.frontText)}
                                                         className="absolute inset-0 bg-black/60 rounded-lg text-white opacity-0 group-hover/img:opacity-100 flex items-center justify-center text-xs transition-opacity"
                                                         title="Sinh lại ảnh AI khác"
-                                                    >
-                                                        🔄
-                                                    </button>
+                                                    ><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></button>
                                                 </div>
                                             ) : (
                                                 <input
@@ -358,9 +356,7 @@ export const FlashcardsEditor: React.FC<FlashcardsEditorProps> = ({ onHome }) =>
                                                 onClick={() => handleRemoveItem(item.id)}
                                                 className="text-red-500 hover:text-red-700 px-1 text-base font-bold"
                                                 title="Delete"
-                                            >
-                                                ✕
-                                            </button>
+                                            ><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
                                         </div>
 
                                         <div className="grid grid-cols-2 gap-2">
@@ -396,11 +392,11 @@ export const FlashcardsEditor: React.FC<FlashcardsEditorProps> = ({ onHome }) =>
                         <PaperPreview ref={previewRef} paperSize={config.paperSize} scale={config.zoom}>
                             <div style={{ fontFamily: config.font, fontSize: config.fontSize }}>
                                 <div className="text-center mb-6">
-                                    <h1 style={{ fontSize: '1.5em', fontWeight: 800, color: '#0f172a', marginBottom: '0.2em' }}>
+                                    <h1 style={{ fontSize: '1.5em', fontWeight: 800, color: '#1c1917', marginBottom: '0.2em' }}>
                                         {config.title}
                                     </h1>
-                                    <p style={{ fontSize: '0.85em', color: '#64748b' }}>
-                                        ✂️ {config.cardLayout === 'fold'
+                                    <p style={{ fontSize: '0.85em', color: '#6b625a' }}>
+                                        {config.cardLayout === 'fold'
                                             ? 'Cắt theo viền ngoài, sau đó gấp đôi theo đường nét đứt giữa để thành thẻ 2 mặt'
                                             : 'Cắt rời từng thẻ dọc theo các đường viền nét đứt'}
                                     </p>
@@ -418,7 +414,7 @@ export const FlashcardsEditor: React.FC<FlashcardsEditorProps> = ({ onHome }) =>
                                         <div
                                             key={card.id}
                                             style={{
-                                                border: config.showCutLines ? '1.5px dashed #94a3b8' : '1px solid #e2e8f0',
+                                                border: config.showCutLines ? '1.5px dashed #9a9086' : '1px solid #e8e2da',
                                                 borderRadius: '14px',
                                                 padding: '10px',
                                                 backgroundColor: '#ffffff',
@@ -447,18 +443,18 @@ export const FlashcardsEditor: React.FC<FlashcardsEditorProps> = ({ onHome }) =>
 
                                                         <div style={{ fontWeight: 800, fontSize: '1.1em', color: '#0284c7' }}>{card.frontText}</div>
                                                         {config.showIpa && card.ipa && (
-                                                            <div style={{ fontSize: '0.72em', color: '#64748b', fontFamily: 'monospace' }}>{card.ipa}</div>
+                                                            <div style={{ fontSize: '0.72em', color: '#6b625a', fontFamily: 'monospace' }}>{card.ipa}</div>
                                                         )}
                                                     </div>
 
                                                     {/* Folding Line */}
-                                                    <div style={{ width: '1px', height: '85%', borderRight: '1.5px dotted #cbd5e1', margin: '0 4px' }} />
+                                                    <div style={{ width: '1px', height: '85%', borderRight: '1.5px dotted #d9cfc3', margin: '0 4px' }} />
 
                                                     {/* Right Half: Back (Meaning + Example) */}
                                                     <div style={{ flex: 1, textAlign: 'center', padding: '4px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                                                        <div style={{ fontWeight: 800, fontSize: '1.05em', color: '#0f172a' }}>{card.backText}</div>
+                                                        <div style={{ fontWeight: 800, fontSize: '1.05em', color: '#1c1917' }}>{card.backText}</div>
                                                         {config.showExamples && card.exampleEn && (
-                                                            <div style={{ fontSize: '0.7em', color: '#64748b', marginTop: '4px', fontStyle: 'italic', lineHeight: '1.3' }}>
+                                                            <div style={{ fontSize: '0.7em', color: '#6b625a', marginTop: '4px', fontStyle: 'italic', lineHeight: '1.3' }}>
                                                                 "{card.exampleEn}"
                                                             </div>
                                                         )}
@@ -479,12 +475,12 @@ export const FlashcardsEditor: React.FC<FlashcardsEditorProps> = ({ onHome }) =>
 
                                                     <div style={{ fontWeight: 800, fontSize: '1.15em', color: '#0284c7' }}>{card.frontText}</div>
                                                     {config.showIpa && card.ipa && (
-                                                        <div style={{ fontSize: '0.75em', color: '#64748b', fontFamily: 'monospace' }}>{card.ipa}</div>
+                                                        <div style={{ fontSize: '0.75em', color: '#6b625a', fontFamily: 'monospace' }}>{card.ipa}</div>
                                                     )}
-                                                    <div style={{ fontWeight: 700, fontSize: '0.95em', color: '#0f172a', marginTop: '4px' }}>{card.backText}</div>
+                                                    <div style={{ fontWeight: 700, fontSize: '0.95em', color: '#1c1917', marginTop: '4px' }}>{card.backText}</div>
                                                     {config.showExamples && card.exampleEn && (
-                                                        <div style={{ fontSize: '0.7em', color: '#64748b', fontStyle: 'italic', marginTop: '2px', lineHeight: '1.2' }}>
-                                                            "{card.exampleEn}"
+                                                        <div style={{ fontSize: '0.7em', color: '#6b625a', fontStyle: 'italic', marginTop: '2px', lineHeight: '1.2' }}>
+                                                                "{card.exampleEn}"
                                                         </div>
                                                     )}
                                                 </div>

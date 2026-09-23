@@ -121,27 +121,27 @@ export const TemplateModal: React.FC<TemplateModalProps> = ({
                 }}
             >
                 {/* Header */}
-                <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-700">
+                <div className="flex items-center justify-between pb-4 border-b border-line">
                     <div className="flex items-center gap-2">
-                        <span className="text-2xl">📁</span>
+                        <span className="text-2xl"></span>
                         <h3 className="text-lg font-bold" style={{ color: 'var(--text-ink)' }}>
                             {mode === 'save' ? (i18n.language === 'vi' ? 'Lưu mẫu bài tập' : 'Save Template') : (i18n.language === 'vi' ? 'Kho mẫu bài tập đã lưu' : 'Saved Templates')}
                         </h3>
                     </div>
 
                     {/* Mode Toggle Tabs */}
-                    <div className="flex gap-1 p-1 rounded-xl bg-slate-100 dark:bg-slate-800">
+                    <div className="flex gap-1 p-1 rounded-xl bg-surface-subtle">
                         <button
                             type="button"
                             onClick={() => { soundFx.playClick(); setMode('save'); }}
-                            className={`px-3 py-1 text-xs font-bold rounded-lg transition-colors ${mode === 'save' ? 'bg-sky-500 text-white shadow-sm' : 'text-slate-500'}`}
+                            className={`px-3 py-1 text-xs font-bold rounded-lg transition-colors ${mode === 'save' ? 'bg-brand text-on-brand shadow-sm' : 'text-ink-muted'}`}
                         >
                             Lưu Mẫu
                         </button>
                         <button
                             type="button"
                             onClick={() => { soundFx.playClick(); setMode('load'); }}
-                            className={`px-3 py-1 text-xs font-bold rounded-lg transition-colors ${mode === 'load' ? 'bg-sky-500 text-white shadow-sm' : 'text-slate-500'}`}
+                            className={`px-3 py-1 text-xs font-bold rounded-lg transition-colors ${mode === 'load' ? 'bg-brand text-on-brand shadow-sm' : 'text-ink-muted'}`}
                         >
                             Mẫu Đã Lưu ({filteredTemplates.length})
                         </button>
@@ -153,7 +153,7 @@ export const TemplateModal: React.FC<TemplateModalProps> = ({
                     {mode === 'save' ? (
                         <div className="space-y-4">
                             <div>
-                                <label className="block text-xs font-bold mb-1.5 uppercase text-slate-500">
+                                <label className="block text-xs font-bold mb-1.5 uppercase text-ink-muted">
                                     {i18n.language === 'vi' ? 'Tên mẫu bài tập để ghi nhớ' : 'Template Name'}
                                 </label>
                                 <input
@@ -165,8 +165,8 @@ export const TemplateModal: React.FC<TemplateModalProps> = ({
                                 />
                             </div>
 
-                            <p className="text-xs text-slate-400">
-                                💡 Mẫu bài tập sẽ được lưu an toàn trong trình duyệt của bạn (IndexedDB). Bạn có thể mở lại bất cứ lúc nào.
+                            <p className="text-xs text-ink-subtle">
+                                Mẫu bài tập sẽ được lưu an toàn trong trình duyệt của bạn (IndexedDB). Bạn có thể mở lại bất cứ lúc nào.
                             </p>
 
                             <button
@@ -174,14 +174,14 @@ export const TemplateModal: React.FC<TemplateModalProps> = ({
                                 onClick={handleSave}
                                 className="btn btn-primary w-full !py-3 font-bold"
                             >
-                                💾 {i18n.language === 'vi' ? 'Xác nhận Lưu Mẫu' : 'Save to Browser'}
+                                {i18n.language === 'vi' ? 'Xác nhận Lưu Mẫu' : 'Save to Browser'}
                             </button>
                         </div>
                     ) : (
                         <div className="space-y-3">
                             {filteredTemplates.length === 0 ? (
-                                <div className="text-center py-10 text-slate-400">
-                                    <div className="text-4xl mb-2">📂</div>
+                                <div className="text-center py-10 text-ink-subtle">
+                                    <div className="text-4xl mb-2"></div>
                                     <p className="text-sm font-semibold">Chưa có mẫu nào cho công cụ này.</p>
                                     <p className="text-xs mt-1">Hãy chuyển sang tab "Lưu Mẫu" để lưu bài tập hiện tại.</p>
                                 </div>
@@ -189,15 +189,15 @@ export const TemplateModal: React.FC<TemplateModalProps> = ({
                                 filteredTemplates.map(tpl => (
                                     <div
                                         key={tpl.id}
-                                        className="p-3.5 rounded-2xl border flex items-center justify-between transition-all hover:border-sky-500"
+                                        className="p-3.5 rounded-2xl border flex items-center justify-between transition-all hover:border-brand"
                                         style={{
                                             background: 'var(--bg-body)',
                                             borderColor: 'var(--border-color)',
                                         }}
                                     >
                                         <div>
-                                            <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">{tpl.name}</h4>
-                                            <span className="text-[11px] text-slate-400">
+                                            <h4 className="text-sm font-bold text-ink">{tpl.name}</h4>
+                                            <span className="text-[11px] text-ink-subtle">
                                                 {new Date(tpl.updatedAt).toLocaleDateString('vi-VN')} {new Date(tpl.updatedAt).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}
                                             </span>
                                         </div>
@@ -219,26 +219,24 @@ export const TemplateModal: React.FC<TemplateModalProps> = ({
                                                 onClick={() => handleDelete(tpl.id)}
                                                 className="w-8 h-8 rounded-lg text-red-500 hover:bg-red-500/10 flex items-center justify-center font-bold text-sm"
                                                 title="Xóa mẫu"
-                                            >
-                                                ✕
-                                            </button>
+                                            ><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
                                         </div>
                                     </div>
                                 ))
                             )}
 
                             {/* Export / Import Buttons */}
-                            <div className="pt-3 border-t border-slate-200 dark:border-slate-700 flex justify-between items-center text-xs">
+                            <div className="pt-3 border-t border-line flex justify-between items-center text-xs">
                                 <button
                                     type="button"
                                     onClick={handleExportJSON}
                                     className="btn btn-secondary !py-1.5 !px-3 !text-xs"
                                 >
-                                    📥 Xuất ra file JSON
+                                    Xuất ra file JSON
                                 </button>
 
                                 <label className="btn btn-secondary !py-1.5 !px-3 !text-xs cursor-pointer">
-                                    📤 Nhập từ file JSON
+                                    Nhập từ file JSON
                                     <input
                                         type="file"
                                         accept=".json"
@@ -252,7 +250,7 @@ export const TemplateModal: React.FC<TemplateModalProps> = ({
                 </div>
 
                 {/* Footer close */}
-                <div className="pt-3 border-t border-slate-200 dark:border-slate-700 flex justify-end">
+                <div className="pt-3 border-t border-line flex justify-end">
                     <button
                         type="button"
                         onClick={() => { soundFx.playClick(); onClose(); }}

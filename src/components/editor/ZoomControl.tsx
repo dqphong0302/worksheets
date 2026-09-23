@@ -109,9 +109,7 @@ export const ZoomControl: React.FC<ZoomControlProps> = ({ zoom, onZoomChange }) 
                 className="text-xs ml-2"
                 style={{ color: 'var(--text-ink-muted)' }}
                 title="Cuộn chuột trên thanh này để zoom"
-            >
-                🖱️
-            </span>
+            ></span>
         </div>
     );
 };

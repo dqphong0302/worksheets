@@ -139,20 +139,20 @@ export const CryptogramEditor: React.FC<CryptogramEditorProps> = ({ onHome }) =>
                             className="w-full"
                             onClick={() => setPlayMode(true)}
                             style={{
-                                background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+                                background: '#2f7a4f',
                                 fontSize: '1.1rem',
                                 padding: '0.85rem',
                                 boxShadow: '0 4px 15px rgba(34, 197, 94, 0.4)',
                             }}
                         >
-                            🎮 {i18n.language === 'vi' ? 'Giải Mã Tương Tác / Play Decoder' : 'Solve Cryptogram'}
+                            {i18n.language === 'vi' ? 'Giải Mã Tương Tác / Play Decoder' : 'Solve Cryptogram'}
                         </Button>
 
                         {/* Preset Picker */}
                         <PresetPicker onSelectTopic={handleApplyPreset} />
 
                     <h3 className="text-xs uppercase font-bold tracking-wider text-ink-muted">
-                        ⚙️ {t('editor.config')}
+                        {t('editor.config')}
                     </h3>
 
                     <Input
@@ -211,7 +211,7 @@ export const CryptogramEditor: React.FC<CryptogramEditorProps> = ({ onHome }) =>
                     <PaperPreview ref={previewRef} paperSize={config.paperSize} scale={config.zoom}>
                         <div style={{ fontFamily: config.font, fontSize: config.fontSize }}>
                             {config.studentInfo.showStudentInfo && (
-                                <div className="flex justify-between items-center pb-4 mb-4 border-b border-slate-300 text-xs">
+                                <div className="flex justify-between items-center pb-4 mb-4 border-b border-line-control text-xs">
                                     <span>Họ và tên / Name: _______________________</span>
                                     <span>Lớp / Class: ________</span>
                                     <span>Ngày / Date: ________</span>
@@ -219,11 +219,11 @@ export const CryptogramEditor: React.FC<CryptogramEditorProps> = ({ onHome }) =>
                             )}
 
                             <div className="text-center mb-6">
-                                <h1 style={{ fontSize: '1.6em', fontWeight: 800, color: '#0f172a', marginBottom: '0.2em' }}>
+                                <h1 style={{ fontSize: '1.6em', fontWeight: 800, color: '#1c1917', marginBottom: '0.2em' }}>
                                     {config.title}
                                 </h1>
-                                <p style={{ fontSize: '0.85em', color: '#64748b' }}>
-                                    🔍 {i18n.language === 'vi'
+                                <p style={{ fontSize: '0.85em', color: '#6b625a' }}>
+                                    {i18n.language === 'vi'
                                         ? 'Sử dụng bảng giải mã bên dưới để tìm ra thông điệp bí mật ẩn giấu'
                                         : 'Use the decoder key table to crack the secret code'}
                                 </p>
@@ -231,22 +231,22 @@ export const CryptogramEditor: React.FC<CryptogramEditorProps> = ({ onHome }) =>
 
                             {/* Decoder Key Table */}
                             {config.showDecoderKeyTable && (
-                                <div className="mb-8 p-3 rounded-xl border border-slate-300 bg-slate-50">
-                                    <div className="text-xs font-bold text-center text-slate-600 mb-2 uppercase tracking-wider">
-                                        📋 Bảng Tra Cứu Giải Mã (Decoder Key Table)
+                                <div className="mb-8 p-3 rounded-xl border border-line-control bg-surface-subtle">
+                                    <div className="text-xs font-bold text-center text-ink-muted mb-2 uppercase tracking-wider">
+                                        Bảng Tra Cứu Giải Mã (Decoder Key Table)
                                     </div>
                                     <table className="w-full text-center border-collapse text-xs">
                                         <tbody>
-                                            <tr className="bg-sky-100/60 font-bold border-b border-slate-300">
+                                            <tr className="bg-brand-soft font-bold border-b border-line-control">
                                                 {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(l => (
-                                                    <td key={l} className="p-1 border-r border-slate-300 last:border-r-0">
+                                                    <td key={l} className="p-1 border-r border-line-control last:border-r-0">
                                                         {l}
                                                     </td>
                                                 ))}
                                             </tr>
-                                            <tr className="font-mono text-[11px] text-slate-700">
+                                            <tr className="font-mono text-[11px] text-ink">
                                                 {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(l => (
-                                                    <td key={l} className="p-1 border-r border-slate-300 last:border-r-0">
+                                                    <td key={l} className="p-1 border-r border-line-control last:border-r-0">
                                                         {result.keyMap[l] || ''}
                                                     </td>
                                                 ))}
@@ -280,17 +280,17 @@ export const CryptogramEditor: React.FC<CryptogramEditorProps> = ({ onHome }) =>
                                                         style={{
                                                             width: '26px',
                                                             height: '32px',
-                                                            borderBottom: '2px solid #0f172a',
+                                                            borderBottom: '2px solid #1c1917',
                                                             textAlign: 'center',
                                                             fontWeight: 700,
                                                             fontSize: '1.2em',
-                                                            color: isHint ? '#0284c7' : '#0f172a',
+                                                            color: isHint ? '#0284c7' : '#1c1917',
                                                         }}
                                                     >
                                                         {isHint ? char : ''}
                                                     </div>
                                                     {/* Symbol Below */}
-                                                    <div style={{ fontSize: '0.85em', fontWeight: 600, color: '#64748b', marginTop: '4px' }}>
+                                                    <div style={{ fontSize: '0.85em', fontWeight: 600, color: '#6b625a', marginTop: '4px' }}>
                                                         {symbol}
                                                     </div>
                                                 </div>
@@ -302,8 +302,8 @@ export const CryptogramEditor: React.FC<CryptogramEditorProps> = ({ onHome }) =>
 
                             {/* Answer Key */}
                             {config.showAnswerKey && (
-                                <div className="mt-12 pt-4 border-t border-dashed border-slate-300">
-                                    <div className="text-xs font-bold text-slate-500 mb-1 uppercase tracking-wider">
+                                <div className="mt-12 pt-4 border-t border-dashed border-line-control">
+                                    <div className="text-xs font-bold text-ink-muted mb-1 uppercase tracking-wider">
                                         Đáp án (Answer Key):
                                     </div>
                                     <div className="text-sm font-semibold text-emerald-700">

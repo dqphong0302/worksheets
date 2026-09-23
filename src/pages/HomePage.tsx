@@ -40,7 +40,7 @@ const MatchingIcon = () => (
         <rect x="38" y="27" width="18" height="10" rx="3" />
         <rect x="38" y="42" width="18" height="10" rx="3" />
         <path d="M26 17 L38 32" stroke="#38bdf8" strokeWidth="2.2" strokeDasharray="3 3" />
-        <path d="M26 32 L38 47" stroke="#6366f1" strokeWidth="2.2" strokeDasharray="3 3" />
+        <path d="M26 32 L38 47" stroke="#1d4f91" strokeWidth="2.2" strokeDasharray="3 3" />
         <path d="M26 47 L38 17" stroke="#10b981" strokeWidth="2.2" strokeDasharray="3 3" />
     </svg>
 );
@@ -56,7 +56,7 @@ const WordScrambleIcon = () => (
         <text x="41.5" y="34" fontSize="9" fontWeight="bold" fill="currentColor" stroke="none" textAnchor="middle">T</text>
         <text x="55.5" y="34" fontSize="9" fontWeight="bold" fill="currentColor" stroke="none" textAnchor="middle">?</text>
         <path d="M14 44 C14 50, 28 50, 28 44" stroke="#38bdf8" strokeWidth="2" fill="none" />
-        <path d="M42 44 C42 50, 56 50, 56 44" stroke="#6366f1" strokeWidth="2" fill="none" />
+        <path d="M42 44 C42 50, 56 50, 56 44" stroke="#1d4f91" strokeWidth="2" fill="none" />
     </svg>
 );
 
@@ -85,7 +85,7 @@ const MatchingImagesIcon = () => (
         <rect x="38" y="36" width="18" height="14" rx="3" />
         <text x="47" y="46" fontSize="8" fontWeight="bold" fill="currentColor" stroke="none" textAnchor="middle">Dog</text>
         <path d="M26 19 L38 43" stroke="#38bdf8" strokeWidth="2" strokeDasharray="3 3" />
-        <path d="M26 43 L38 19" stroke="#6366f1" strokeWidth="2" strokeDasharray="3 3" />
+        <path d="M26 43 L38 19" stroke="#1d4f91" strokeWidth="2" strokeDasharray="3 3" />
     </svg>
 );
 
@@ -161,7 +161,7 @@ const CryptogramIcon = () => (
         <rect x="8" y="10" width="48" height="44" rx="6" />
         <circle cx="20" cy="24" r="5" stroke="#38bdf8" />
         <text x="20" y="27" fontSize="8" fontWeight="bold" fill="currentColor" stroke="none" textAnchor="middle">1</text>
-        <path d="M36 20 L44 28 M44 20 L36 28" stroke="#6366f1" strokeWidth="2" />
+        <path d="M36 20 L44 28 M44 20 L36 28" stroke="#1d4f91" strokeWidth="2" />
         <line x1="14" y1="42" x2="26" y2="42" stroke="currentColor" strokeWidth="2" />
         <line x1="32" y1="42" x2="44" y2="42" stroke="currentColor" strokeWidth="2" />
         <text x="20" y="39" fontSize="10" fontWeight="bold" fill="#10b981" stroke="none" textAnchor="middle">A</text>
@@ -266,7 +266,7 @@ const CATEGORIES: ModuleCategory[] = [
         icon: '🔗',
         nameVi: 'Nối ghép & Trò chơi Lớp học',
         nameEn: 'Matching & Classroom Games',
-        color: '#6366f1',
+        color: '#1d4f91',
         modules: [
             {
                 id: 'matching',
@@ -426,7 +426,7 @@ export const HomePage: React.FC = () => {
                             onClick={toggleLanguage}
                             title="Chuyển đổi ngôn ngữ / Switch Language"
                         >
-                            <span>🌐</span>
+                            <span><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg></span>
                             <span className="font-mono">{i18n.language.toUpperCase()}</span>
                         </button>
                         <button
@@ -438,7 +438,7 @@ export const HomePage: React.FC = () => {
                             }}
                             title="Chuyển chế độ Sáng / Tối"
                         >
-                            <span>{isDark ? '☀️' : '🌙'}</span>
+                            {isDark ? <svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg> : <svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>}
                             <span>{isDark ? (i18n.language === 'vi' ? 'Sáng' : 'Light') : (i18n.language === 'vi' ? 'Tối' : 'Dark')}</span>
                         </button>
                     </div>
@@ -454,28 +454,28 @@ export const HomePage: React.FC = () => {
                     <div className="max-w-4xl mx-auto text-center">
                         {/* Badges */}
                         <div className="flex flex-wrap justify-center items-center gap-2.5 mb-5">
-                            <span className="badge badge-primary">✨ {totalModules} {i18n.language === 'vi' ? 'Bộ Học Cụ & Bài Tập' : 'Education Tools'}</span>
-                            <span className="badge badge-indigo">🎮 {i18n.language === 'vi' ? 'Chế Độ Chơi Tương Tác' : 'Interactive Play Mode'}</span>
-                            <span className="badge badge-success">🖨️ {i18n.language === 'vi' ? 'In A4 & Xuất PDF/DOCX' : 'Print & PDF/DOCX Export'}</span>
+                            <span className="badge badge-primary">{totalModules} {i18n.language === 'vi' ? 'Bộ Học Cụ & Bài Tập' : 'Education Tools'}</span>
+                            <span className="badge badge-indigo">{i18n.language === 'vi' ? 'Chế Độ Chơi Tương Tác' : 'Interactive Play Mode'}</span>
+                            <span className="badge badge-success">{i18n.language === 'vi' ? 'In A4 & Xuất PDF/DOCX' : 'Print & PDF/DOCX Export'}</span>
                         </div>
 
-                        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white leading-tight">
+                        <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-ink dark:text-white leading-tight">
                             {i18n.language === 'vi' ? (
                                 <>
-                                    Tạo phiếu bài tập <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-500">nhanh chóng</span>.
+                                    Tạo phiếu bài tập <span className="text-brand">nhanh chóng</span>.
                                     <br />
-                                    Học sinh chơi trực tiếp <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-400">hào hứng</span>.
+                                    Học sinh chơi trực tiếp <span className="text-tan">hào hứng</span>.
                                 </>
                             ) : (
                                 <>
-                                    Create worksheets <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-500">in seconds</span>.
+                                    Create worksheets <span className="text-brand">in seconds</span>.
                                     <br />
-                                    Students play <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-400">interactively</span>.
+                                    Students play <span className="text-tan">interactively</span>.
                                 </>
                             )}
                         </h2>
 
-                        <p className="text-lg max-w-2xl mx-auto text-slate-600 dark:text-slate-400 mb-8">
+                        <p className="text-lg max-w-2xl mx-auto text-ink-muted mb-8">
                             {i18n.language === 'vi'
                                 ? 'Đa dạng 15 thể loại học cụ và bài tập: Ô chữ, Tìm từ, Xáo chữ, Nối cặp, Bingo lớp học, Thẻ Flashcards, Mật thư, Mê cung, Sudoku, Bài tập toán... In ấn chất lượng cao hoặc mở chế độ chơi trực tiếp.'
                                 : '15 versatile learning activities: Crosswords, Word Searches, Scramble, Bingo, Flashcards, Cryptograms, Mazes, Sudoku, Math Drills... High-quality print ready or interactive play mode.'}
@@ -488,16 +488,14 @@ export const HomePage: React.FC = () => {
                                     type="text"
                                     value={searchQuery}
                                     onChange={e => setSearchQuery(e.target.value)}
-                                    placeholder={i18n.language === 'vi' ? '🔍 Tìm kiếm công cụ bài tập...' : '🔍 Search worksheet tools...'}
+                                    placeholder={i18n.language === 'vi' ? 'Tìm kiếm công cụ bài tập...' : 'Search worksheet tools...'}
                                     className="input w-full pl-4 pr-10 py-2.5 rounded-xl text-sm"
                                 />
                                 {searchQuery && (
                                     <button
                                         onClick={() => setSearchQuery('')}
-                                        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
-                                    >
-                                        ✕
-                                    </button>
+                                        className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-subtle hover:text-ink-muted"
+                                    ><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
                                 )}
                             </div>
 
@@ -527,11 +525,11 @@ export const HomePage: React.FC = () => {
                 <section className="max-w-7xl mx-auto px-6 pb-20">
                     {filteredCategories.length === 0 ? (
                         <div className="card p-12 text-center max-w-md mx-auto">
-                            <div className="text-5xl mb-4">🔍</div>
-                            <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-slate-100">
+                            <div className="text-5xl mb-4"><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+                            <h3 className="text-xl font-bold mb-2 text-ink">
                                 {i18n.language === 'vi' ? 'Không tìm thấy công cụ' : 'No tools found'}
                             </h3>
-                            <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+                            <p className="text-sm text-ink-muted mb-4">
                                 {i18n.language === 'vi' ? 'Vui lòng thử tìm với từ khóa khác.' : 'Please try searching with different keywords.'}
                             </p>
                             <button
@@ -557,12 +555,12 @@ export const HomePage: React.FC = () => {
                                         {category.icon}
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+                                        <h3 className="text-xl font-bold text-ink">
                                             {i18n.language === 'vi' ? category.nameVi : category.nameEn}
                                         </h3>
                                     </div>
-                                    <div className="flex-1 h-px bg-slate-200 dark:bg-slate-800 ml-2" />
-                                    <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                                    <div className="flex-1 h-px bg-line ml-2" />
+                                    <span className="text-xs font-semibold text-ink-muted">
                                         {category.modules.length} {i18n.language === 'vi' ? 'công cụ' : 'tools'}
                                     </span>
                                 </div>
@@ -581,7 +579,7 @@ export const HomePage: React.FC = () => {
                                                 {module.hasPlayMode && (
                                                     <div className="absolute top-3.5 right-3.5">
                                                         <span className="badge badge-success !text-[11px] !py-0.5">
-                                                            🎮 Play
+                                                            Play
                                                         </span>
                                                     </div>
                                                 )}
@@ -598,7 +596,7 @@ export const HomePage: React.FC = () => {
 
                                                 {/* Action link */}
                                                 <div
-                                                    className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-sm font-semibold transition-colors"
+                                                    className="mt-4 pt-3 border-t border-line flex items-center justify-between text-sm font-semibold transition-colors"
                                                     style={{ color: category.color }}
                                                 >
                                                     <span>{i18n.language === 'vi' ? 'Tạo bài tập' : 'Open generator'}</span>
@@ -616,14 +614,13 @@ export const HomePage: React.FC = () => {
 
             {/* Footer */}
             <footer className="footer pd-footer">
+      <p className="pd-eco-line">Hệ sinh thái của ThS. Đặng Quốc Phong: <a href="https://phongdang.io.vn" target="_blank" rel="noopener noreferrer">phongdang.io.vn</a> · <a href="https://classtools.vn" target="_blank" rel="noopener noreferrer">classtools.vn</a></p>
                 <div className="container footer-inner pd-container pd-footer__inner">
                     <div className="footer-copy">
                         © 2026 <strong>Worksheet Generator Pro</strong> • <span>{i18n.language === 'vi' ? 'Một công cụ thuộc hệ sinh thái' : 'Part of the ecosystem'}</span> <a href="https://phongdang.io.vn" target="_blank" rel="noopener noreferrer" className="footer-domain">Phong Đặng</a>
                     </div>
                     <div className="footer-links pd-footer__links">
-                        <a href="https://phongdang.io.vn" target="_blank" rel="noopener noreferrer" className="footer-link">🌐 phongdang.io.vn</a>
-                        <a href="https://github.com/dqphong0302" target="_blank" rel="noopener noreferrer" className="footer-link">💻 GitHub</a>
-                        <a href="https://classtools.vn" target="_blank" rel="noopener noreferrer" className="footer-link">🏫 classtools.vn</a>
+                        <a href="https://github.com/dqphong0302" target="_blank" rel="noopener noreferrer" className="footer-link">GitHub</a>
                     </div>
                 </div>
             </footer>

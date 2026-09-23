@@ -1,4 +1,4 @@
-/*! PhongDang UI Tailwind bridge v1.6.0 — Tailwind v4 */
+/*! PhongDang UI Tailwind bridge v2.0.0 — Tailwind v4 */
 /* Import AFTER "tailwindcss" so PDUI owns the shared scales. */
 @theme {
   --color-surface: var(--bg-card);
@@ -18,6 +18,10 @@
   --color-brand-hover: var(--primary-hover);
   --color-brand-soft: var(--primary-light);
   --color-brand-line: var(--primary-border);
+  --color-on-brand: var(--on-primary);
+  --color-tan: var(--accent);
+  --color-tan-soft: var(--accent-soft);
+  --color-tan-ink: var(--accent-text);
   --color-accent: var(--accent-indigo);
   --color-accent-hover: var(--accent-indigo-hover);
   --color-accent-soft: var(--accent-indigo-light);

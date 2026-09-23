@@ -109,7 +109,7 @@ export const WordSearchPlay: React.FC<WordSearchPlayProps> = ({
             setFoundWords(prev => new Set([...prev, matchedPlacement.word]));
 
             // Highlight the cells permanently
-            const colors = ['#22c55e', '#3b82f6', '#f59e0b', '#ec4899', '#8b5cf6', '#14b8a6'];
+            const colors = ['#22c55e', '#1d4f91', '#f59e0b', '#ec4899', '#8b5cf6', '#14b8a6'];
             const colorIndex = foundWords.size % colors.length;
             const color = colors[colorIndex];
 
@@ -136,7 +136,7 @@ export const WordSearchPlay: React.FC<WordSearchPlayProps> = ({
     const handleShowAnswer = () => {
         if (!showAnswer) {
             // Show all words
-            const colors = ['#22c55e', '#3b82f6', '#f59e0b', '#ec4899', '#8b5cf6', '#14b8a6'];
+            const colors = ['#22c55e', '#1d4f91', '#f59e0b', '#ec4899', '#8b5cf6', '#14b8a6'];
             const newHighlights = new Map<string, string>();
 
             result.placements.forEach((placement, idx) => {
@@ -209,10 +209,10 @@ export const WordSearchPlay: React.FC<WordSearchPlayProps> = ({
                                             background: highlightColor
                                                 ? highlightColor
                                                 : isSelected
-                                                    ? 'rgba(99, 102, 241, 0.3)'
-                                                    : '#f1f5f9',
-                                            color: highlightColor ? 'white' : '#1e293b',
-                                            border: isSelected ? '2px solid #6366f1' : '2px solid transparent',
+                                                    ? 'rgba(29, 79, 145, 0.3)'
+                                                    : '#f6f2ed',
+                                            color: highlightColor ? 'white' : '#243044',
+                                            border: isSelected ? '2px solid #1d4f91' : '2px solid transparent',
                                             transform: isSelected ? 'scale(1.1)' : 'scale(1)',
                                         }}
                                         onMouseDown={() => handleMouseDown(rowIdx, colIdx)}

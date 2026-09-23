@@ -146,9 +146,9 @@ export const Toolbar: React.FC<ToolbarProps> = ({
                     <BackIcon />
                     <span className="hidden sm:inline">{i18n.language === 'vi' ? 'Quay lại' : 'Back'}</span>
                 </button>
-                <div className="h-6 w-px bg-slate-200 dark:bg-slate-700 hidden sm:block" />
-                <h2 className="text-base font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
-                    <span className="text-xl">📄</span>
+                <div className="h-6 w-px bg-line hidden sm:block" />
+                <h2 className="text-base font-bold text-ink flex items-center gap-2">
+                    <span className="text-xl"><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg></span>
                     <span>{title}</span>
                 </h2>
             </div>
@@ -165,7 +165,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
                         }}
                         title="Lưu hoặc quản lý các mẫu bài tập"
                     >
-                        <span>💾</span>
+                        <span><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7M7 3v4a1 1 0 0 0 1 1h7"/></svg></span>
                         <span className="hidden lg:inline text-xs">Mẫu</span>
                     </button>
                 )}
@@ -206,7 +206,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
                     <ResetIcon />
                 </button>
 
-                <div className="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1 hidden sm:block" />
+                <div className="h-6 w-px bg-line mx-1 hidden sm:block" />
 
                 {/* Direct Print */}
                 <button
@@ -235,22 +235,22 @@ export const Toolbar: React.FC<ToolbarProps> = ({
                     {showExportMenu && (
                         <div className="dropdown-menu">
                             <div className="dropdown-item" onClick={() => handleExport('pdf')}>
-                                <span>📄</span>
+                                <span><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg></span>
                                 <span>Xuất PDF (A4)</span>
                             </div>
                             <div className="dropdown-item" onClick={() => handleExport('png')}>
-                                <span>🖼️</span>
+                                <span><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></svg></span>
                                 <span>Xuất Ảnh PNG (HD)</span>
                             </div>
                             <div className="dropdown-item" onClick={() => handleExport('docx')}>
-                                <span>📝</span>
+                                <span><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.38 3.62a1 1 0 0 1 3 3L7.37 18.64a2 2 0 0 1-.86.5l-2.87.84a.5.5 0 0 1-.62-.62l.84-2.87a2 2 0 0 1 .5-.86z"/></svg></span>
                                 <span>Xuất File Word (DOCX)</span>
                             </div>
                         </div>
                     )}
                 </div>
 
-                <div className="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1 hidden sm:block" />
+                <div className="h-6 w-px bg-line mx-1 hidden sm:block" />
 
                 {/* Language Switcher */}
                 <button
@@ -258,7 +258,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
                     onClick={toggleLanguage}
                     title="Đổi ngôn ngữ giao diện (VI / EN)"
                 >
-                    <span>🌐</span>
+                    <span><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg></span>
                     <span className="font-mono text-xs">{i18n.language.toUpperCase()}</span>
                 </button>
 
@@ -271,7 +271,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
                     }}
                     title="Chuyển chế độ Sáng / Tối"
                 >
-                    <span>{isDark ? '☀️' : '🌙'}</span>
+                    {isDark ? <svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg> : <svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>}
                     <span className="hidden lg:inline text-xs">{isDark ? (i18n.language === 'vi' ? 'Sáng' : 'Light') : (i18n.language === 'vi' ? 'Tối' : 'Dark')}</span>
                 </button>
             </div>

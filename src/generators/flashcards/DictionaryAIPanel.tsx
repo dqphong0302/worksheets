@@ -110,32 +110,32 @@ export const DictionaryAIPanel: React.FC<DictionaryAIPanelProps> = ({
     }));
 
     return (
-        <div className="card p-5 mb-6 border-2 border-indigo-200 dark:border-indigo-900/50 bg-gradient-to-b from-indigo-50/50 to-transparent dark:from-indigo-950/20 shadow-md rounded-2xl">
+        <div className="card p-5 mb-6 border-2 border-brand-line bg-brand to-transparent shadow-md rounded-2xl">
             {/* Header */}
             <div className="flex items-center justify-between gap-3 mb-4">
                 <div className="flex items-center gap-2.5">
-                    <span className="text-2xl">🤖</span>
+                    <span className="text-2xl"><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg></span>
                     <div>
-                        <h4 className="font-extrabold text-slate-900 dark:text-white text-base leading-tight">
+                        <h4 className="font-bold text-ink dark:text-white text-base leading-tight">
                             {i18n.language === 'vi' ? 'AI Visual Flashcards & Từ Điển Thông Minh' : 'Smart Dictionary & AI Visual Flashcards'}
                         </h4>
-                        <span className="text-xs text-indigo-600 dark:text-indigo-400 font-medium">
+                        <span className="text-xs text-brand font-medium">
                             {i18n.language === 'vi' ? 'Tự động tra nghĩa, phiên âm IPA & tạo hình ảnh AI' : 'Auto IPA, Vietnamese Meaning & AI Illustrations'}
                         </span>
                     </div>
                 </div>
 
                 {/* Mode toggle */}
-                <div className="flex bg-slate-200/80 dark:bg-slate-800 p-1 rounded-xl text-xs font-semibold">
+                <div className="flex bg-line p-1 rounded-xl text-xs font-semibold">
                     <button
                         onClick={() => setMode('single')}
-                        className={`px-3 py-1 rounded-lg transition-all ${mode === 'single' ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-sm' : 'text-slate-600 dark:text-slate-400'}`}
+                        className={`px-3 py-1 rounded-lg transition-all ${mode === 'single' ? 'bg-white text-brand dark:text-white shadow-sm' : 'text-ink-muted'}`}
                     >
                         {i18n.language === 'vi' ? 'Tra 1 từ' : 'Single Word'}
                     </button>
                     <button
                         onClick={() => setMode('batch')}
-                        className={`px-3 py-1 rounded-lg transition-all ${mode === 'batch' ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-sm' : 'text-slate-600 dark:text-slate-400'}`}
+                        className={`px-3 py-1 rounded-lg transition-all ${mode === 'batch' ? 'bg-white text-brand dark:text-white shadow-sm' : 'text-ink-muted'}`}
                     >
                         {i18n.language === 'vi' ? 'Tạo theo chủ đề' : 'Batch AI Deck'}
                     </button>
@@ -176,25 +176,25 @@ export const DictionaryAIPanel: React.FC<DictionaryAIPanelProps> = ({
 
                     {/* Preview card result */}
                     {previewItem && (
-                        <div className="mt-3 p-4 bg-white dark:bg-slate-900 border border-indigo-200 dark:border-indigo-800 rounded-xl flex flex-col sm:flex-row items-center gap-4 animate-scaleIn">
+                        <div className="mt-3 p-4 bg-white border border-brand-line rounded-xl flex flex-col sm:flex-row items-center gap-4 animate-scaleIn">
                             {previewItem.imageUrl && (
                                 <img
                                     src={previewItem.imageUrl}
                                     alt={previewItem.frontText}
-                                    className="w-24 h-24 object-cover rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm shrink-0"
+                                    className="w-24 h-24 object-cover rounded-xl border border-line shadow-sm shrink-0"
                                 />
                             )}
                             <div className="flex-1 text-center sm:text-left min-w-0">
                                 <div className="flex items-center gap-2 justify-center sm:justify-start">
-                                    <span className="text-xl font-bold text-slate-900 dark:text-white">{previewItem.frontText}</span>
+                                    <span className="text-xl font-bold text-ink dark:text-white">{previewItem.frontText}</span>
                                     <span className="badge badge-primary">{previewItem.partOfSpeech}</span>
-                                    <span className="text-xs text-slate-500 font-mono">{previewItem.ipa}</span>
+                                    <span className="text-xs text-ink-muted font-mono">{previewItem.ipa}</span>
                                 </div>
                                 <div className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 mt-1">
                                     {previewItem.backText}
                                 </div>
                                 {previewItem.exampleEn && (
-                                    <div className="text-xs text-slate-500 italic mt-1 line-clamp-2">
+                                    <div className="text-xs text-ink-muted italic mt-1 line-clamp-2">
                                         "{previewItem.exampleEn}"
                                     </div>
                                 )}
@@ -204,7 +204,7 @@ export const DictionaryAIPanel: React.FC<DictionaryAIPanelProps> = ({
                                 onClick={handleAddSingleToDeck}
                                 className="!py-2 !px-4 shrink-0 w-full sm:w-auto"
                             >
-                                ➕ {i18n.language === 'vi' ? 'Thêm thẻ này' : 'Add to Deck'}
+                                {i18n.language === 'vi' ? 'Thêm thẻ này' : 'Add to Deck'}
                             </Button>
                         </div>
                     )}
@@ -214,8 +214,8 @@ export const DictionaryAIPanel: React.FC<DictionaryAIPanelProps> = ({
                 <div className="space-y-4">
                     {/* Topic presets */}
                     <div>
-                        <span className="text-xs font-bold text-slate-700 dark:text-slate-300 mb-2 block uppercase tracking-wider">
-                            🌟 {i18n.language === 'vi' ? 'Hoặc chọn nhanh chủ đề gợi ý sẵn:' : 'Or pick ready-made topics:'}
+                        <span className="text-xs font-bold text-ink mb-2 block uppercase tracking-wider">
+                            {i18n.language === 'vi' ? 'Hoặc chọn nhanh chủ đề gợi ý sẵn:' : 'Or pick ready-made topics:'}
                         </span>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                             {POPULAR_THEMES.map((theme, idx) => (
@@ -226,10 +226,10 @@ export const DictionaryAIPanel: React.FC<DictionaryAIPanelProps> = ({
                                         handleBatchGenerate(theme.words);
                                     }}
                                     disabled={isGeneratingBatch}
-                                    className="text-left text-xs p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 hover:border-indigo-500 hover:bg-indigo-50/50 dark:hover:bg-indigo-950/40 transition-all font-medium flex items-center justify-between group"
+                                    className="text-left text-xs p-2.5 rounded-xl border border-line bg-white/70 hover:border-brand hover:bg-brand-soft transition-all font-medium flex items-center justify-between group"
                                 >
                                     <span className="line-clamp-1">{theme.label}</span>
-                                    <span className="text-indigo-500 group-hover:translate-x-1 transition-transform">⚡</span>
+                                    <span className="text-brand group-hover:translate-x-1 transition-transform"><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></span>
                                 </button>
                             ))}
                         </div>
@@ -237,8 +237,8 @@ export const DictionaryAIPanel: React.FC<DictionaryAIPanelProps> = ({
 
                     {/* Custom word list input */}
                     <div>
-                        <label className="text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5 block">
-                            📝 {i18n.language === 'vi' ? 'Nhập danh sách từ tiếng Anh (cách nhau bằng dấu phẩy):' : 'Enter word list (comma separated):'}
+                        <label className="text-xs font-bold text-ink mb-1.5 block">
+                            {i18n.language === 'vi' ? 'Nhập danh sách từ tiếng Anh (cách nhau bằng dấu phẩy):' : 'Enter word list (comma separated):'}
                         </label>
                         <textarea
                             value={batchText}
@@ -253,7 +253,7 @@ export const DictionaryAIPanel: React.FC<DictionaryAIPanelProps> = ({
                             disabled={isGeneratingBatch || !batchText.trim()}
                             className="w-full !py-2.5"
                             style={{
-                                background: 'linear-gradient(135deg, #6366f1, #4f46e5)',
+                                background: '#1d4f91',
                             }}
                         >
                             {isGeneratingBatch

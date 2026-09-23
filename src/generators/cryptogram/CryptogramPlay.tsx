@@ -104,7 +104,7 @@ export const CryptogramPlay: React.FC<CryptogramPlayProps> = ({
             <div className="flex flex-col items-center gap-6 max-w-3xl w-full">
                 {/* Score and Progress */}
                 <div className="w-full flex items-center justify-between text-white text-xs font-bold px-2">
-                    <span className="text-sky-300">Đã giải mã: {solvedLettersCount}/{distinctLetters.length} chữ cái</span>
+                    <span className="text-brand">Đã giải mã: {solvedLettersCount}/{distinctLetters.length} chữ cái</span>
                     <span>Bấm vào ô ký hiệu rồi gõ chữ cái để giải mã</span>
                 </div>
 
@@ -123,7 +123,7 @@ export const CryptogramPlay: React.FC<CryptogramPlayProps> = ({
                                 const isLetter = /[A-Z]/.test(char);
                                 if (!isLetter) {
                                     return (
-                                        <div key={charIdx} className="text-2xl font-bold text-slate-700 pb-4">
+                                        <div key={charIdx} className="text-2xl font-bold text-ink pb-4">
                                             {char}
                                         </div>
                                     );
@@ -146,19 +146,19 @@ export const CryptogramPlay: React.FC<CryptogramPlayProps> = ({
                                         {/* Letter Guess Slot */}
                                         <div
                                             className={`w-9 h-11 rounded-xl flex items-center justify-center font-bold text-xl border-2 transition-all ${isSelected
-                                                ? 'border-sky-500 bg-sky-50 text-sky-900 shadow-md shadow-sky-500/30 scale-105'
+                                                ? 'border-brand bg-brand-soft text-brand shadow-md  scale-105'
                                                 : isCorrect
                                                     ? 'border-emerald-500 bg-emerald-50 text-emerald-800'
                                                     : guess
                                                         ? 'border-amber-400 bg-amber-50 text-amber-900'
-                                                        : 'border-slate-300 bg-white text-slate-800 hover:border-slate-400'
+                                                        : 'border-line-control bg-white text-ink hover:border-line-control'
                                                 }`}
                                         >
                                             {guess || ''}
                                         </div>
 
                                         {/* Cipher Symbol Underneath */}
-                                        <div className="text-xs font-mono font-bold text-slate-500 mt-1">
+                                        <div className="text-xs font-mono font-bold text-ink-muted mt-1">
                                             {symbol}
                                         </div>
                                     </div>
@@ -179,8 +179,8 @@ export const CryptogramPlay: React.FC<CryptogramPlayProps> = ({
                                     type="button"
                                     onClick={() => handleKeyInput(letter)}
                                     className={`w-8 h-10 rounded-xl font-bold text-sm transition-all transform hover:scale-110 active:scale-95 ${isUsed
-                                        ? 'bg-slate-700 text-slate-400 opacity-60'
-                                        : 'bg-gradient-to-b from-sky-500 to-sky-600 text-white shadow-sm'
+                                        ? 'bg-slate-700 text-ink-subtle opacity-60'
+                                        : ' bg-brand  text-on-brand shadow-sm'
                                         }`}
                                 >
                                     {letter}

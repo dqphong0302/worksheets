@@ -67,7 +67,7 @@ body {
   top: -100px;
   left: 1rem;
   background: var(--primary);
-  color: #ffffff;
+  color: var(--on-primary);
   padding: 0.5rem 1rem;
   border-radius: var(--radius-md);
   z-index: 9999;
@@ -132,8 +132,8 @@ body {
   width: 42px;
   height: 42px;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--primary), var(--accent-indigo));
-  color: #ffffff;
+  background: var(--primary);
+  color: var(--on-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -143,7 +143,7 @@ body {
 
 .brand-title, .pd-brand__title {
   font-size: 1.15rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text-main);
   display: block;
@@ -262,8 +262,8 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
-  color: #ffffff;
+  background: var(--primary);
+  color: var(--on-primary);
   box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
 }
 
@@ -295,7 +295,7 @@ body {
 }
 
 .btn-success {
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: var(--success);
   color: #ffffff;
   box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
 }
@@ -486,7 +486,7 @@ body {
   background: var(--paper-bg);
   box-shadow: var(--paper-shadow);
   position: relative;
-  color: #0f172a;
+  color: #1c1917;
   border-radius: 4px;
   margin: 0 auto;
 }

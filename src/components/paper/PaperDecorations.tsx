@@ -41,7 +41,7 @@ const BorderPatterns: Record<BorderStyle, React.ReactNode> = {
             position: 'absolute',
             inset: '6mm',
             border: '4px solid transparent',
-            borderImage: 'repeating-linear-gradient(45deg, #6366f1, #6366f1 10px, #818cf8 10px, #818cf8 20px) 4',
+            borderImage: 'repeating-linear-gradient(45deg, #1d4f91, #1d4f91 10px, #7fb0ee 10px, #7fb0ee 20px) 4',
             pointerEvents: 'none',
         }} />
     ),

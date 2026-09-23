@@ -220,17 +220,17 @@ export const MathWorksheetEditor: React.FC<MathWorksheetEditorProps> = ({ onHome
                             className="w-full mb-6"
                             onClick={() => setPlayMode(true)}
                             style={{
-                                background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+                                background: '#2f7a4f',
                                 fontSize: '1.2rem',
                                 padding: '1rem',
                                 boxShadow: '0 4px 15px rgba(34, 197, 94, 0.4)',
                             }}
                         >
-                            🎮 Chơi Ngay / Play Now
+                            Chơi Ngay / Play Now
                         </Button>
 
-                        <h3 className="mb-4" style={{ fontSize: '0.85rem', color: '#64748b' }}>
-                            ⚙️ {t('editor.config')} (for print/export)
+                        <h3 className="mb-4" style={{ fontSize: '0.85rem', color: '#6b625a' }}>
+                            {t('editor.config')} (for print/export)
                         </h3>
 
                         <Input

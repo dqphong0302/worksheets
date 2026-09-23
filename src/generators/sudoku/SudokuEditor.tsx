@@ -125,13 +125,13 @@ export const SudokuEditor: React.FC<SudokuEditorProps> = ({ onHome }) => {
                             className="w-full"
                             onClick={() => setPlayMode(true)}
                             style={{
-                                background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+                                background: '#2f7a4f',
                                 fontSize: '1.1rem',
                                 padding: '0.85rem',
                                 boxShadow: '0 4px 15px rgba(34, 197, 94, 0.4)',
                             }}
                         >
-                            🎮 {i18n.language === 'vi' ? 'Chơi Sudoku Online / Play Sudoku' : 'Play Sudoku'}
+                            {i18n.language === 'vi' ? 'Chơi Sudoku Online / Play Sudoku' : 'Play Sudoku'}
                         </Button>
 
                         <Button
@@ -139,11 +139,11 @@ export const SudokuEditor: React.FC<SudokuEditorProps> = ({ onHome }) => {
                             className="w-full"
                             onClick={() => setRegenerateKey(k => k + 1)}
                         >
-                            🎲 {i18n.language === 'vi' ? 'Sinh đề Sudoku ngẫu nhiên mới' : 'Regenerate Puzzle'}
+                            {i18n.language === 'vi' ? 'Sinh đề Sudoku ngẫu nhiên mới' : 'Regenerate Puzzle'}
                         </Button>
 
                     <h3 className="text-xs uppercase font-bold tracking-wider text-ink-muted">
-                        ⚙️ {t('editor.config')}
+                        {t('editor.config')}
                     </h3>
 
                     <Input
@@ -216,7 +216,7 @@ export const SudokuEditor: React.FC<SudokuEditorProps> = ({ onHome }) => {
                     <PaperPreview ref={previewRef} paperSize={config.paperSize} scale={config.zoom}>
                         <div style={{ fontFamily: config.font, fontSize: config.fontSize }}>
                             {config.studentInfo.showStudentInfo && (
-                                <div className="flex justify-between items-center pb-4 mb-4 border-b border-slate-300 text-xs">
+                                <div className="flex justify-between items-center pb-4 mb-4 border-b border-line-control text-xs">
                                     <span>Họ và tên / Name: _______________________</span>
                                     <span>Lớp / Class: ________</span>
                                     <span>Ngày / Date: ________</span>
@@ -224,11 +224,11 @@ export const SudokuEditor: React.FC<SudokuEditorProps> = ({ onHome }) => {
                             )}
 
                             <div className="text-center mb-6">
-                                <h1 style={{ fontSize: '1.6em', fontWeight: 800, color: '#0f172a', marginBottom: '0.2em' }}>
+                                <h1 style={{ fontSize: '1.6em', fontWeight: 800, color: '#1c1917', marginBottom: '0.2em' }}>
                                     {config.title}
                                 </h1>
-                                <p style={{ fontSize: '0.85em', color: '#64748b' }}>
-                                    🧩 {i18n.language === 'vi'
+                                <p style={{ fontSize: '0.85em', color: '#6b625a' }}>
+                                    {i18n.language === 'vi'
                                         ? `Điền các ${config.theme === 'numbers' ? 'con số' : 'hình ảnh'} sao cho mỗi hàng, mỗi cột và mỗi ô khối không bị lặp lại.`
                                         : 'Fill in the grid so that every row, column, and block contains each symbol without duplicates.'}
                                 </p>
@@ -238,13 +238,13 @@ export const SudokuEditor: React.FC<SudokuEditorProps> = ({ onHome }) => {
                             <div className={`grid ${config.puzzlesPerPage === 2 ? 'grid-cols-2 gap-6' : 'grid-cols-1 gap-6 max-w-sm mx-auto'} my-6`}>
                                 {result.puzzles.map((puzzle, pIdx) => (
                                     <div key={pIdx} className="flex flex-col items-center">
-                                        <div className="text-xs font-bold text-slate-500 mb-2 uppercase">
+                                        <div className="text-xs font-bold text-ink-muted mb-2 uppercase">
                                             Bảng Sudoku #{pIdx + 1}
                                         </div>
                                         <table
                                             style={{
                                                 borderCollapse: 'collapse',
-                                                border: '3px solid #0f172a',
+                                                border: '3px solid #1c1917',
                                                 width: '100%',
                                                 maxWidth: config.size === 4 ? '260px' : '320px',
                                                 tableLayout: 'fixed',
@@ -263,13 +263,13 @@ export const SudokuEditor: React.FC<SudokuEditorProps> = ({ onHome }) => {
                                                                     key={c}
                                                                     style={{
                                                                         height: config.size === 4 ? '58px' : config.size === 6 ? '46px' : '36px',
-                                                                        borderRight: isRightEdge ? '2.5px solid #0f172a' : '1px solid #cbd5e1',
-                                                                        borderBottom: isBottomEdge ? '2.5px solid #0f172a' : '1px solid #cbd5e1',
+                                                                        borderRight: isRightEdge ? '2.5px solid #1c1917' : '1px solid #d9cfc3',
+                                                                        borderBottom: isBottomEdge ? '2.5px solid #1c1917' : '1px solid #d9cfc3',
                                                                         textAlign: 'center',
                                                                         fontSize: config.size === 4 ? '24px' : config.size === 6 ? '18px' : '14px',
                                                                         fontWeight: val ? 800 : 400,
-                                                                        backgroundColor: val ? '#f8fafc' : '#ffffff',
-                                                                        color: '#0f172a',
+                                                                        backgroundColor: val ? '#faf8f5' : '#ffffff',
+                                                                        color: '#1c1917',
                                                                     }}
                                                                 >
                                                                     {symbol}
@@ -286,8 +286,8 @@ export const SudokuEditor: React.FC<SudokuEditorProps> = ({ onHome }) => {
 
                             {/* Answer Key */}
                             {config.showAnswerKey && (
-                                <div className="mt-8 pt-4 border-t border-dashed border-slate-300">
-                                    <div className="text-xs font-bold text-slate-500 mb-2 uppercase tracking-wider">
+                                <div className="mt-8 pt-4 border-t border-dashed border-line-control">
+                                    <div className="text-xs font-bold text-ink-muted mb-2 uppercase tracking-wider">
                                         Đáp án (Answer Key):
                                     </div>
                                     <div className="flex gap-6 justify-center">

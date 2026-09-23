@@ -298,33 +298,33 @@ export const FlashcardsPlay: React.FC<FlashcardsPlayProps> = ({
         <PlayModeWrapper title={title} onClose={onClose}>
             <div className="max-w-3xl mx-auto px-4 py-4 flex flex-col items-center">
                 {/* Mini-Game Navigation Bar */}
-                <div className="flex flex-wrap justify-center gap-2 mb-6 bg-slate-200/80 dark:bg-slate-800 p-1.5 rounded-2xl w-full max-w-xl shadow-inner">
+                <div className="flex flex-wrap justify-center gap-2 mb-6 bg-line p-1.5 rounded-2xl w-full max-w-xl shadow-inner">
                     <button
                         onClick={() => { soundFx.playClick(); setGameMode('trainer'); }}
-                        className={`flex-1 py-2 px-3 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-1.5 ${gameMode === 'trainer' ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-md' : 'text-slate-600 dark:text-slate-300 hover:text-indigo-500'}`}
+                        className={`flex-1 py-2 px-3 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-1.5 ${gameMode === 'trainer' ? 'bg-white text-brand dark:text-white shadow-md' : 'text-ink-muted hover:text-brand'}`}
                     >
-                        <span>🗂️</span>
+                        <span><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg></span>
                         <span>Thẻ 3D</span>
                     </button>
                     <button
                         onClick={() => { soundFx.playClick(); setGameMode('pictureQuiz'); setQuizIndex(0); setQuizScore(0); }}
-                        className={`flex-1 py-2 px-3 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-1.5 ${gameMode === 'pictureQuiz' ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-md' : 'text-slate-600 dark:text-slate-300 hover:text-indigo-500'}`}
+                        className={`flex-1 py-2 px-3 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-1.5 ${gameMode === 'pictureQuiz' ? 'bg-white text-brand dark:text-white shadow-md' : 'text-ink-muted hover:text-brand'}`}
                     >
-                        <span>🎯</span>
+                        <span><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
                         <span>Đoán Tranh</span>
                     </button>
                     <button
                         onClick={() => { soundFx.playClick(); setGameMode('memoryMatch'); initMemoryGame(); }}
-                        className={`flex-1 py-2 px-3 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-1.5 ${gameMode === 'memoryMatch' ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-md' : 'text-slate-600 dark:text-slate-300 hover:text-indigo-500'}`}
+                        className={`flex-1 py-2 px-3 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-1.5 ${gameMode === 'memoryMatch' ? 'bg-white text-brand dark:text-white shadow-md' : 'text-ink-muted hover:text-brand'}`}
                     >
-                        <span>🧩</span>
+                        <span><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.39 4.39a1 1 0 0 0 1.68-.47 2.5 2.5 0 1 1 3.01 3.01 1 1 0 0 0-.47 1.68l1.68 1.68a2.41 2.41 0 0 1 0 3.41l-1.61 1.61a1 1 0 0 1-1.7-.42 2.5 2.5 0 1 0-3 3 1 1 0 0 1 .43 1.7l-1.61 1.61a2.41 2.41 0 0 1-3.41 0l-1.68-1.68a1 1 0 0 0-1.68.47 2.5 2.5 0 1 1-3.01-3.01 1 1 0 0 0 .47-1.68l-1.68-1.68a2.41 2.41 0 0 1 0-3.41L4.36 8.6a1 1 0 0 1 1.7.42 2.5 2.5 0 1 0 3-3 1 1 0 0 1-.43-1.7l1.61-1.61a2.41 2.41 0 0 1 3.41 0z"/></svg></span>
                         <span>Lật Ghép Cặp</span>
                     </button>
                     <button
                         onClick={() => { soundFx.playClick(); setGameMode('audioQuiz'); setAudioQuizIndex(0); setAudioScore(0); }}
-                        className={`flex-1 py-2 px-3 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-1.5 ${gameMode === 'audioQuiz' ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-md' : 'text-slate-600 dark:text-slate-300 hover:text-indigo-500'}`}
+                        className={`flex-1 py-2 px-3 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-1.5 ${gameMode === 'audioQuiz' ? 'bg-white text-brand dark:text-white shadow-md' : 'text-ink-muted hover:text-brand'}`}
                     >
-                        <span>🎧</span>
+                        <span></span>
                         <span>Nghe & Chọn</span>
                     </button>
                 </div>
@@ -335,13 +335,13 @@ export const FlashcardsPlay: React.FC<FlashcardsPlayProps> = ({
                 {gameMode === 'trainer' && currentCard && (
                     <div className="w-full flex flex-col items-center">
                         {/* Progress Bar */}
-                        <div className="w-full max-w-md flex items-center justify-between text-xs font-semibold text-slate-500 mb-2">
+                        <div className="w-full max-w-md flex items-center justify-between text-xs font-semibold text-ink-muted mb-2">
                             <span>Thẻ {currentIndex + 1} / {items.length}</span>
                             <span className="text-emerald-600 dark:text-emerald-400">Đã thuộc: {masteredIds.size}</span>
                         </div>
-                        <div className="w-full max-w-md h-2 bg-slate-200 dark:bg-slate-700 rounded-full mb-6 overflow-hidden">
+                        <div className="w-full max-w-md h-2 bg-line rounded-full mb-6 overflow-hidden">
                             <div
-                                className="h-full bg-gradient-to-r from-sky-500 to-indigo-600 transition-all duration-300"
+                                className="h-full bg-brand transition-all duration-300"
                                 style={{ width: `${((currentIndex + 1) / items.length) * 100}%` }}
                             />
                         </div>
@@ -352,48 +352,46 @@ export const FlashcardsPlay: React.FC<FlashcardsPlayProps> = ({
                             className="cursor-pointer perspective-[1000px] w-full max-w-md h-96 relative group"
                         >
                             <div
-                                className={`w-full h-full rounded-3xl p-6 transition-transform duration-500 transform-3d shadow-2xl flex flex-col items-center justify-between border-2 border-indigo-200 dark:border-indigo-800 ${isFlipped ? 'rotate-y-180 bg-gradient-to-br from-indigo-900 to-slate-900 text-white' : 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white'}`}
+                                className={`w-full h-full rounded-3xl p-6 transition-transform duration-500 transform-3d shadow-2xl flex flex-col items-center justify-between border-2 border-brand-line ${isFlipped ? 'rotate-y-180  bg-brand to-slate-900 text-on-brand' : 'bg-white text-ink dark:text-white'}`}
                             >
                                 {!isFlipped ? (
                                     /* Front Side: AI Image + Term + IPA */
                                     <>
-                                        <div className="w-full flex justify-between items-center text-xs text-slate-400">
+                                        <div className="w-full flex justify-between items-center text-xs text-ink-subtle">
                                             <span className="badge badge-primary">{currentCard.partOfSpeech || 'Vocabulary'}</span>
                                             <button
                                                 onClick={(e) => {
                                                     e.stopPropagation();
                                                     soundFx.speakWord(currentCard.frontText);
                                                 }}
-                                                className="p-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 text-lg"
+                                                className="p-1.5 rounded-full hover:bg-surface-subtle text-lg"
                                                 title="Phát âm tiếng Anh"
-                                            >
-                                                🔊
-                                            </button>
+                                            ><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><path d="M16 9a5 5 0 0 1 0 6M19.4 18.4a9 9 0 0 0 0-12.7"/></svg></button>
                                         </div>
 
                                         {currentCard.imageUrl ? (
                                             <img
                                                 src={currentCard.imageUrl}
                                                 alt={currentCard.frontText}
-                                                className="w-44 h-44 object-cover rounded-2xl shadow-md border border-slate-100 dark:border-slate-700"
+                                                className="w-44 h-44 object-cover rounded-2xl shadow-md border border-line"
                                             />
                                         ) : (
                                             <div className="text-6xl my-4">{currentCard.iconOrEmoji || '✨'}</div>
                                         )}
 
                                         <div className="text-center">
-                                            <h3 className="text-3xl font-extrabold tracking-tight text-indigo-600 dark:text-indigo-400">
+                                            <h3 className="text-3xl font-bold tracking-tight text-brand">
                                                 {currentCard.frontText}
                                             </h3>
                                             {currentCard.ipa && (
-                                                <p className="text-sm font-mono text-slate-500 dark:text-slate-400 mt-1">
+                                                <p className="text-sm font-mono text-ink-muted mt-1">
                                                     {currentCard.ipa}
                                                 </p>
                                             )}
                                         </div>
 
-                                        <div className="text-xs text-slate-400 flex items-center gap-1">
-                                            <span>👆 Bấm để xem nghĩa tiếng Việt</span>
+                                        <div className="text-xs text-ink-subtle flex items-center gap-1">
+                                            <span>Bấm để xem nghĩa tiếng Việt</span>
                                         </div>
                                     </>
                                 ) : (
@@ -402,7 +400,7 @@ export const FlashcardsPlay: React.FC<FlashcardsPlayProps> = ({
                                         <div className="badge badge-indigo">Nghĩa tiếng Việt & Ví dụ</div>
 
                                         <div className="my-auto">
-                                            <h3 className="text-3xl font-black text-emerald-400 mb-2">
+                                            <h3 className="text-3xl font-bold text-emerald-400 mb-2">
                                                 {currentCard.backText}
                                             </h3>
                                             {currentCard.exampleEn && (
@@ -411,13 +409,13 @@ export const FlashcardsPlay: React.FC<FlashcardsPlayProps> = ({
                                                 </div>
                                             )}
                                             {currentCard.exampleVi && (
-                                                <p className="text-xs text-slate-400 mt-1.5">
+                                                <p className="text-xs text-ink-subtle mt-1.5">
                                                     → {currentCard.exampleVi}
                                                 </p>
                                             )}
                                         </div>
 
-                                        <div className="text-xs text-indigo-300">
+                                        <div className="text-xs text-brand">
                                             Bấm lần nữa để lật lại mặt trước
                                         </div>
                                     </div>
@@ -431,14 +429,14 @@ export const FlashcardsPlay: React.FC<FlashcardsPlayProps> = ({
                                 onClick={handleMarkReview}
                                 className="flex-1 py-3 px-4 rounded-2xl bg-amber-500 hover:bg-amber-600 text-white font-bold shadow-lg transition-transform hover:scale-105 flex items-center justify-center gap-2 text-sm"
                             >
-                                <span>🔄</span>
+                                <span><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></span>
                                 <span>Cần ôn lại</span>
                             </button>
                             <button
                                 onClick={handleMarkMastered}
                                 className="flex-1 py-3 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-lg transition-transform hover:scale-105 flex items-center justify-center gap-2 text-sm"
                             >
-                                <span>⭐</span>
+                                <span><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.5 2.3a.53.53 0 0 1 .95 0l2.31 4.68a2.12 2.12 0 0 0 1.6 1.16l5.16.76a.53.53 0 0 1 .3.9l-3.74 3.64a2.12 2.12 0 0 0-.61 1.88l.88 5.14a.53.53 0 0 1-.77.56l-4.62-2.43a2.12 2.12 0 0 0-1.97 0L6.4 21.02a.53.53 0 0 1-.77-.56l.88-5.14a2.12 2.12 0 0 0-.61-1.88L2.16 9.8a.53.53 0 0 1 .29-.9l5.17-.76a2.12 2.12 0 0 0 1.6-1.16z"/></svg></span>
                                 <span>Đã thuộc</span>
                             </button>
                         </div>
@@ -450,13 +448,13 @@ export const FlashcardsPlay: React.FC<FlashcardsPlayProps> = ({
                 {/* ======================================================== */}
                 {gameMode === 'pictureQuiz' && quizCurrentCard && (
                     <div className="w-full max-w-md flex flex-col items-center animate-fadeIn">
-                        <div className="w-full flex justify-between items-center text-xs font-bold text-slate-500 mb-4">
+                        <div className="w-full flex justify-between items-center text-xs font-bold text-ink-muted mb-4">
                             <span>Câu {quizIndex + 1} / {items.length}</span>
-                            <span className="text-indigo-600 dark:text-indigo-400">Điểm: {quizScore}</span>
+                            <span className="text-brand">Điểm: {quizScore}</span>
                         </div>
 
                         {/* Picture Display */}
-                        <div className="w-full h-56 bg-white dark:bg-slate-800 rounded-3xl p-3 shadow-xl border-2 border-indigo-100 dark:border-indigo-900 flex items-center justify-center mb-6 overflow-hidden">
+                        <div className="w-full h-56 bg-white rounded-3xl p-3 shadow-xl border-2 border-brand-line flex items-center justify-center mb-6 overflow-hidden">
                             {quizCurrentCard.imageUrl ? (
                                 <img
                                     src={quizCurrentCard.imageUrl}
@@ -468,7 +466,7 @@ export const FlashcardsPlay: React.FC<FlashcardsPlayProps> = ({
                             )}
                         </div>
 
-                        <div className="text-center font-bold text-sm text-slate-700 dark:text-slate-200 mb-4">
+                        <div className="text-center font-bold text-sm text-ink mb-4">
                             Bức tranh minh họa cho từ tiếng Anh nào?
                         </div>
 
@@ -477,7 +475,7 @@ export const FlashcardsPlay: React.FC<FlashcardsPlayProps> = ({
                             {quizOptions.map((optWord, idx) => {
                                 const isCorrect = optWord === quizCurrentCard.frontText;
                                 const isChosen = selectedOption === optWord;
-                                let btnStyle = 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white hover:border-indigo-500';
+                                let btnStyle = 'bg-white border-line text-ink dark:text-white hover:border-brand';
 
                                 if (isAnswered) {
                                     if (isCorrect) btnStyle = 'bg-emerald-600 text-white border-emerald-600 scale-105 shadow-lg';
@@ -504,9 +502,9 @@ export const FlashcardsPlay: React.FC<FlashcardsPlayProps> = ({
                 {/* ======================================================== */}
                 {gameMode === 'memoryMatch' && (
                     <div className="w-full max-w-lg flex flex-col items-center animate-fadeIn">
-                        <div className="w-full flex justify-between items-center text-xs font-bold text-slate-500 mb-4">
+                        <div className="w-full flex justify-between items-center text-xs font-bold text-ink-muted mb-4">
                             <span>Lật ghép cặp Tranh - Từ</span>
-                            <span className="text-indigo-600 dark:text-indigo-400">Số lượt: {turns}</span>
+                            <span className="text-brand">Số lượt: {turns}</span>
                         </div>
 
                         {/* Cards Grid */}
@@ -516,7 +514,7 @@ export const FlashcardsPlay: React.FC<FlashcardsPlayProps> = ({
                                     key={card.uid}
                                     onClick={() => handleFlipMemoryCard(idx)}
                                     disabled={card.isMatched || card.isFlipped}
-                                    className={`aspect-square rounded-2xl p-2 border-2 flex flex-col items-center justify-center transition-all duration-300 shadow-md ${card.isMatched ? 'bg-emerald-100 dark:bg-emerald-950/40 border-emerald-500 opacity-60' : card.isFlipped ? 'bg-white dark:bg-slate-800 border-indigo-500 scale-105' : 'bg-gradient-to-br from-indigo-500 to-sky-600 border-transparent text-white hover:scale-105'}`}
+                                    className={`aspect-square rounded-2xl p-2 border-2 flex flex-col items-center justify-center transition-all duration-300 shadow-md ${card.isMatched ? 'bg-emerald-100 dark:bg-emerald-950/40 border-emerald-500 opacity-60' : card.isFlipped ? 'bg-white border-brand scale-105' : ' bg-brand  border-transparent text-on-brand hover:scale-105'}`}
                                 >
                                     {card.isFlipped || card.isMatched ? (
                                         card.type === 'image' ? (
@@ -526,12 +524,12 @@ export const FlashcardsPlay: React.FC<FlashcardsPlayProps> = ({
                                                 <span className="text-3xl">{card.content}</span>
                                             )
                                         ) : (
-                                            <span className="font-extrabold text-sm text-indigo-600 dark:text-indigo-400 text-center leading-tight">
+                                            <span className="font-bold text-sm text-brand text-center leading-tight">
                                                 {card.content}
                                             </span>
                                         )
                                     ) : (
-                                        <span className="text-2xl font-black opacity-80">❓</span>
+                                        <span className="text-2xl font-bold opacity-80"><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></svg></span>
                                     )}
                                 </button>
                             ))}
@@ -544,20 +542,18 @@ export const FlashcardsPlay: React.FC<FlashcardsPlayProps> = ({
                 {/* ======================================================== */}
                 {gameMode === 'audioQuiz' && audioCurrentCard && (
                     <div className="w-full max-w-md flex flex-col items-center animate-fadeIn">
-                        <div className="w-full flex justify-between items-center text-xs font-bold text-slate-500 mb-4">
+                        <div className="w-full flex justify-between items-center text-xs font-bold text-ink-muted mb-4">
                             <span>Luyện nghe {audioQuizIndex + 1} / {items.length}</span>
-                            <span className="text-indigo-600 dark:text-indigo-400">Điểm: {audioScore}</span>
+                            <span className="text-brand">Điểm: {audioScore}</span>
                         </div>
 
                         {/* Big Speaker Play Button */}
                         <div className="mb-6 text-center">
                             <button
                                 onClick={() => soundFx.speakWord(audioCurrentCard.frontText)}
-                                className="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500 to-sky-500 text-white text-4xl flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-transform mx-auto mb-2"
-                            >
-                                🔊
-                            </button>
-                            <span className="text-xs text-slate-500 font-medium">Bấm vào loa để nghe lại âm thanh</span>
+                                className="w-24 h-24 rounded-full bg-brand text-on-brand text-4xl flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-transform mx-auto mb-2"
+                            ><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><path d="M16 9a5 5 0 0 1 0 6M19.4 18.4a9 9 0 0 0 0-12.7"/></svg></button>
+                            <span className="text-xs text-ink-muted font-medium">Bấm vào loa để nghe lại âm thanh</span>
                         </div>
 
                         {/* 4 Picture Choices */}
@@ -565,7 +561,7 @@ export const FlashcardsPlay: React.FC<FlashcardsPlayProps> = ({
                             {audioOptions.map((opt) => {
                                 const isCorrect = opt.id === audioCurrentCard.id;
                                 const isChosen = selectedAudioCardId === opt.id;
-                                let borderStyle = 'border-slate-200 dark:border-slate-700 hover:border-indigo-500';
+                                let borderStyle = 'border-line hover:border-brand';
 
                                 if (selectedAudioCardId) {
                                     if (isCorrect) borderStyle = 'border-emerald-500 ring-4 ring-emerald-400/30 scale-105';
@@ -577,7 +573,7 @@ export const FlashcardsPlay: React.FC<FlashcardsPlayProps> = ({
                                         key={opt.id}
                                         onClick={() => handleSelectAudioOption(opt)}
                                         disabled={!!selectedAudioCardId}
-                                        className={`aspect-square bg-white dark:bg-slate-800 rounded-2xl p-2 border-2 shadow-md flex flex-col items-center justify-center transition-all ${borderStyle}`}
+                                        className={`aspect-square bg-white rounded-2xl p-2 border-2 shadow-md flex flex-col items-center justify-center transition-all ${borderStyle}`}
                                     >
                                         {opt.imageUrl ? (
                                             <img src={opt.imageUrl} alt={opt.frontText} className="w-full h-full object-cover rounded-xl" />

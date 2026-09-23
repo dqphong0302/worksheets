@@ -97,13 +97,13 @@ export const SudokuPlay: React.FC<SudokuPlayProps> = ({
             <div className="flex flex-col items-center gap-6 max-w-xl w-full">
                 {/* Sudoku Board Canvas */}
                 <div
-                    className="p-4 sm:p-6 rounded-3xl border shadow-2xl bg-white border-slate-200 flex flex-col items-center"
+                    className="p-4 sm:p-6 rounded-3xl border shadow-2xl bg-white border-line flex flex-col items-center"
                 >
                     <div
                         style={{
                             display: 'grid',
                             gridTemplateColumns: `repeat(${size}, minmax(0, 1fr))`,
-                            border: '3px solid #0f172a',
+                            border: '3px solid #1c1917',
                             borderRadius: '12px',
                             overflow: 'hidden',
                             maxWidth: size === 4 ? '320px' : size === 6 ? '380px' : '440px',
@@ -117,8 +117,8 @@ export const SudokuPlay: React.FC<SudokuPlayProps> = ({
                                 const isSameVal = selectedValue && val === selectedValue;
                                 const isError = val !== null && val !== solutionGrid[r][c];
 
-                                const borderRight = (c + 1) % boxCols === 0 && c < size - 1 ? '2.5px solid #0f172a' : '1px solid #cbd5e1';
-                                const borderBottom = (r + 1) % boxRows === 0 && r < size - 1 ? '2.5px solid #0f172a' : '1px solid #cbd5e1';
+                                const borderRight = (c + 1) % boxCols === 0 && c < size - 1 ? '2.5px solid #1c1917' : '1px solid #d9cfc3';
+                                const borderBottom = (r + 1) % boxRows === 0 && r < size - 1 ? '2.5px solid #1c1917' : '1px solid #d9cfc3';
 
                                 const symbol = val ? symbolMap[val - 1] || `${val}` : '';
 
@@ -136,9 +136,9 @@ export const SudokuPlay: React.FC<SudokuPlayProps> = ({
                                                 : isSameVal
                                                     ? '#e0f2fe'
                                                     : isInitial
-                                                        ? '#f8fafc'
+                                                        ? '#faf8f5'
                                                         : '#ffffff',
-                                            color: isError ? '#ef4444' : isInitial ? '#0f172a' : '#0284c7',
+                                            color: isError ? '#ef4444' : isInitial ? '#1c1917' : '#0284c7',
                                             fontWeight: isInitial ? 800 : 700,
                                             fontSize: size === 4 ? '26px' : size === 6 ? '20px' : '17px',
                                         }}
@@ -162,7 +162,7 @@ export const SudokuPlay: React.FC<SudokuPlayProps> = ({
                                     key={num}
                                     type="button"
                                     onClick={() => handleNumberInput(num)}
-                                    className="w-12 h-12 rounded-2xl bg-sky-500 hover:bg-sky-600 active:scale-95 text-white font-black text-xl shadow-lg shadow-sky-500/30 flex items-center justify-center transition-all"
+                                    className="w-12 h-12 rounded-2xl bg-brand hover:bg-brand active:scale-95 text-on-brand font-bold text-xl shadow-lg flex items-center justify-center transition-all"
                                 >
                                     {symbol}
                                 </button>
@@ -186,7 +186,7 @@ export const SudokuPlay: React.FC<SudokuPlayProps> = ({
                             className="px-4 h-12 rounded-2xl bg-amber-500 hover:bg-amber-600 active:scale-95 text-white font-bold text-sm shadow-md flex items-center justify-center transition-all"
                             title="Gợi ý số đúng cho ô đang chọn"
                         >
-                            💡 Gợi ý
+                            Gợi ý
                         </button>
                     </div>
                 </div>

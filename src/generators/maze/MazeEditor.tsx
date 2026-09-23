@@ -145,13 +145,13 @@ export const MazeEditor: React.FC<MazeEditorProps> = ({ onHome }) => {
                             className="w-full"
                             onClick={() => setPlayMode(true)}
                             style={{
-                                background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+                                background: '#2f7a4f',
                                 fontSize: '1.1rem',
                                 padding: '0.85rem',
                                 boxShadow: '0 4px 15px rgba(34, 197, 94, 0.4)',
                             }}
                         >
-                            🎮 {i18n.language === 'vi' ? 'Chơi Vượt Mê Cung / Play Maze' : 'Play Maze Now'}
+                            {i18n.language === 'vi' ? 'Chơi Vượt Mê Cung / Play Maze' : 'Play Maze Now'}
                         </Button>
 
                         {/* Preset Picker */}
@@ -162,11 +162,11 @@ export const MazeEditor: React.FC<MazeEditorProps> = ({ onHome }) => {
                         className="w-full"
                         onClick={() => setRegenerateKey(k => k + 1)}
                     >
-                        🎲 {i18n.language === 'vi' ? 'Sinh ngẫu nhiên mê cung mới' : 'Regenerate Maze'}
+                        {i18n.language === 'vi' ? 'Sinh ngẫu nhiên mê cung mới' : 'Regenerate Maze'}
                     </Button>
 
                     <h3 className="text-xs uppercase font-bold tracking-wider text-ink-muted">
-                        ⚙️ {t('editor.config')}
+                        {t('editor.config')}
                     </h3>
 
                     <Input
@@ -222,7 +222,7 @@ export const MazeEditor: React.FC<MazeEditorProps> = ({ onHome }) => {
                     <PaperPreview ref={previewRef} paperSize={config.paperSize} scale={config.zoom}>
                         <div style={{ fontFamily: config.font, fontSize: config.fontSize }}>
                             {config.studentInfo.showStudentInfo && (
-                                <div className="flex justify-between items-center pb-4 mb-4 border-b border-slate-300 text-xs">
+                                <div className="flex justify-between items-center pb-4 mb-4 border-b border-line-control text-xs">
                                     <span>Họ và tên / Name: _______________________</span>
                                     <span>Lớp / Class: ________</span>
                                     <span>Ngày / Date: ________</span>
@@ -230,11 +230,11 @@ export const MazeEditor: React.FC<MazeEditorProps> = ({ onHome }) => {
                             )}
 
                             <div className="text-center mb-6">
-                                <h1 style={{ fontSize: '1.6em', fontWeight: 800, color: '#0f172a', marginBottom: '0.2em' }}>
+                                <h1 style={{ fontSize: '1.6em', fontWeight: 800, color: '#1c1917', marginBottom: '0.2em' }}>
                                     {config.title}
                                 </h1>
-                                <p style={{ fontSize: '0.85em', color: '#64748b' }}>
-                                    🚀 {i18n.language === 'vi'
+                                <p style={{ fontSize: '0.85em', color: '#6b625a' }}>
+                                    {i18n.language === 'vi'
                                         ? `Giúp ${config.startEmoji} tìm đường đến ${config.goalEmoji}${config.checkpointWord ? ` và thu thập các chữ cái ghép thành từ [${config.checkpointWord.toUpperCase()}]` : ''}!`
                                         : `Help ${config.startEmoji} find the path to ${config.goalEmoji}!`}
                                 </p>
@@ -248,7 +248,7 @@ export const MazeEditor: React.FC<MazeEditorProps> = ({ onHome }) => {
                                         gridTemplateColumns: `repeat(${width}, ${cellSize}px)`,
                                         gap: '0',
                                         backgroundColor: '#ffffff',
-                                        border: '3px solid #0f172a',
+                                        border: '3px solid #1c1917',
                                         borderRadius: '4px',
                                         boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
                                     }}
@@ -265,10 +265,10 @@ export const MazeEditor: React.FC<MazeEditorProps> = ({ onHome }) => {
                                                     style={{
                                                         width: `${cellSize}px`,
                                                         height: `${cellSize}px`,
-                                                        borderTop: cell.top ? '2.5px solid #0f172a' : '2.5px solid transparent',
-                                                        borderRight: cell.right ? '2.5px solid #0f172a' : '2.5px solid transparent',
-                                                        borderBottom: cell.bottom ? '2.5px solid #0f172a' : '2.5px solid transparent',
-                                                        borderLeft: cell.left ? '2.5px solid #0f172a' : '2.5px solid transparent',
+                                                        borderTop: cell.top ? '2.5px solid #1c1917' : '2.5px solid transparent',
+                                                        borderRight: cell.right ? '2.5px solid #1c1917' : '2.5px solid transparent',
+                                                        borderBottom: cell.bottom ? '2.5px solid #1c1917' : '2.5px solid transparent',
+                                                        borderLeft: cell.left ? '2.5px solid #1c1917' : '2.5px solid transparent',
                                                         backgroundColor: isSol ? '#e0f2fe' : '#ffffff',
                                                         display: 'flex',
                                                         alignItems: 'center',

@@ -182,17 +182,17 @@ export const WordSearchImagesEditor: React.FC<WordSearchImagesEditorProps> = ({ 
                         className="w-full mb-6"
                         onClick={() => setPlayMode(true)}
                         style={{
-                            background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+                            background: '#2f7a4f',
                             fontSize: '1.2rem',
                             padding: '1rem',
                             boxShadow: '0 4px 15px rgba(34, 197, 94, 0.4)',
                         }}
                     >
-                        🎮 Chơi Ngay / Play Now
+                        Chơi Ngay / Play Now
                     </Button>
 
-                    <h3 className="mb-4" style={{ fontSize: '0.85rem', color: '#64748b' }}>
-                        ⚙️ {t('editor.config')} (for print/export)
+                    <h3 className="mb-4" style={{ fontSize: '0.85rem', color: '#6b625a' }}>
+                        {t('editor.config')} (for print/export)
                     </h3>
 
                     <Input
@@ -222,9 +222,7 @@ export const WordSearchImagesEditor: React.FC<WordSearchImagesEditorProps> = ({ 
                                     borderRadius: 'var(--radius-sm)',
                                     cursor: 'pointer',
                                     background: item.imageData ? '#e8f5e9' : 'transparent',
-                                }}>
-                                    📷
-                                    <input
+                                }}><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3"/></svg><input
                                         type="file"
                                         accept="image/*"
                                         onChange={e => handleImageUpload(i, e)}
@@ -235,9 +233,7 @@ export const WordSearchImagesEditor: React.FC<WordSearchImagesEditorProps> = ({ 
                                     variant="ghost"
                                     onClick={() => handleRemoveItem(i)}
                                     style={{ padding: '0.25em 0.5em' }}
-                                >
-                                    ✕
-                                </Button>
+                                ><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></Button>
                             </div>
                         ))}
                         <Button variant="secondary" onClick={handleAddItem} className="w-full">
@@ -334,9 +330,7 @@ export const WordSearchImagesEditor: React.FC<WordSearchImagesEditorProps> = ({ 
                                                     borderRadius: '4px',
                                                     margin: '0 auto 0.25em',
                                                     fontSize: '24px',
-                                                }}>
-                                                    🖼️
-                                                </div>
+                                                }}><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></svg></div>
                                             )}
                                             <p style={{ fontSize: '0.8em', fontWeight: 500 }}>{item.word}</p>
                                         </div>

@@ -107,7 +107,7 @@ export const WordSearchImagesPlay: React.FC<WordSearchImagesPlayProps> = ({
         if (matchedPlacement && !foundWords.has(matchedPlacement.word)) {
             setFoundWords(prev => new Set([...prev, matchedPlacement.word]));
 
-            const colors = ['#22c55e', '#3b82f6', '#f59e0b', '#ec4899', '#8b5cf6', '#14b8a6'];
+            const colors = ['#22c55e', '#1d4f91', '#f59e0b', '#ec4899', '#8b5cf6', '#14b8a6'];
             const colorIndex = foundWords.size % colors.length;
             const color = colors[colorIndex];
 
@@ -133,7 +133,7 @@ export const WordSearchImagesPlay: React.FC<WordSearchImagesPlayProps> = ({
 
     const handleShowAnswer = () => {
         if (!showAnswer) {
-            const colors = ['#22c55e', '#3b82f6', '#f59e0b', '#ec4899', '#8b5cf6', '#14b8a6'];
+            const colors = ['#22c55e', '#1d4f91', '#f59e0b', '#ec4899', '#8b5cf6', '#14b8a6'];
             const newHighlights = new Map<string, string>();
 
             result.placements.forEach((placement, idx) => {
@@ -204,10 +204,10 @@ export const WordSearchImagesPlay: React.FC<WordSearchImagesPlayProps> = ({
                                             background: highlightColor
                                                 ? highlightColor
                                                 : isSelected
-                                                    ? 'rgba(99, 102, 241, 0.3)'
-                                                    : '#f1f5f9',
-                                            color: highlightColor ? 'white' : '#1e293b',
-                                            border: isSelected ? '2px solid #6366f1' : '2px solid transparent',
+                                                    ? 'rgba(29, 79, 145, 0.3)'
+                                                    : '#f6f2ed',
+                                            color: highlightColor ? 'white' : '#243044',
+                                            border: isSelected ? '2px solid #1d4f91' : '2px solid transparent',
                                             transform: isSelected ? 'scale(1.1)' : 'scale(1)',
                                         }}
                                         onMouseDown={() => handleMouseDown(rowIdx, colIdx)}
@@ -231,7 +231,7 @@ export const WordSearchImagesPlay: React.FC<WordSearchImagesPlayProps> = ({
                         maxWidth: '250px',
                     }}
                 >
-                    <h3 className="text-lg font-bold text-white mb-4">🔍 Find these words</h3>
+                    <h3 className="text-lg font-bold text-white mb-4">Find these words</h3>
                     <div className="grid grid-cols-2 gap-3">
                         {items.map((item, idx) => {
                             const isFound = foundWords.has(item.word);
@@ -268,9 +268,7 @@ export const WordSearchImagesPlay: React.FC<WordSearchImagesPlayProps> = ({
                                                 justifyContent: 'center',
                                                 fontSize: '24px',
                                             }}
-                                        >
-                                            🖼️
-                                        </div>
+                                        ><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></svg></div>
                                     )}
                                     <span
                                         className="text-xs font-medium text-white mt-1"

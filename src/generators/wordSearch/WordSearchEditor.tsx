@@ -137,20 +137,20 @@ export const WordSearchEditor: React.FC<WordSearchEditorProps> = ({ onHome }) =>
                             className="w-full mb-6"
                             onClick={() => setPlayMode(true)}
                             style={{
-                                background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+                                background: '#2f7a4f',
                                 fontSize: '1.2rem',
                                 padding: '1rem',
                                 boxShadow: '0 4px 15px rgba(34, 197, 94, 0.4)',
                             }}
                         >
-                            🎮 Chơi Ngay / Play Now
+                            Chơi Ngay / Play Now
                         </Button>
 
                         {/* Preset Picker */}
                         <PresetPicker onSelectTopic={handleApplyPreset} />
 
-                        <h3 className="mb-4" style={{ fontSize: '0.85rem', color: '#64748b' }}>
-                            ⚙️ {t('editor.config')} (for print/export)
+                        <h3 className="mb-4" style={{ fontSize: '0.85rem', color: '#6b625a' }}>
+                            {t('editor.config')} (for print/export)
                         </h3>
 
                         <Input
@@ -242,7 +242,7 @@ export const WordSearchEditor: React.FC<WordSearchEditorProps> = ({ onHome }) =>
                             borderTop: '1px solid var(--color-border)',
                         }}>
                             <h4 style={{ marginBottom: 'var(--space-md)', fontSize: '0.9rem' }}>
-                                📄 {t('editor.paperSettings')}
+                                {t('editor.paperSettings')}
                             </h4>
 
                             {/* Border style */}
@@ -332,7 +332,7 @@ export const WordSearchEditor: React.FC<WordSearchEditorProps> = ({ onHome }) =>
                                         inset: config.borderStyle === 'double' ? '6mm' : '8mm',
                                         border: config.borderStyle === 'simple' ? '2px solid #333' :
                                             config.borderStyle === 'dotted' ? '3px dotted #666' :
-                                                config.borderStyle === 'decorative' ? '4px solid #6366f1' :
+                                                config.borderStyle === 'decorative' ? '4px solid #1d4f91' :
                                                     config.borderStyle === 'double' ? '2px solid #333' :
                                                         '1px solid #333',
                                         pointerEvents: 'none',

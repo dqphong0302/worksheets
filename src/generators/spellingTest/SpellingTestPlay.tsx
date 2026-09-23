@@ -135,7 +135,7 @@ export const SpellingTestPlay: React.FC<SpellingTestPlayProps> = ({
                     <>
                         {/* Progress */}
                         <div className="text-white text-lg font-medium">
-                            Từ <span className="font-bold text-2xl text-sky-300">{currentWordIndex + 1}</span> / {words.length}
+                            Từ <span className="font-bold text-2xl text-brand">{currentWordIndex + 1}</span> / {words.length}
                         </div>
 
                         {/* Word Display & Audio card */}
@@ -154,22 +154,20 @@ export const SpellingTestPlay: React.FC<SpellingTestPlayProps> = ({
                                 onClick={speakCurrentWord}
                                 className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl transition-all transform hover:scale-110 active:scale-95 cursor-pointer"
                                 style={{
-                                    background: 'linear-gradient(135deg, #0284c7, #38bdf8)',
+                                    background: '#1d4f91',
                                     color: '#ffffff',
                                     boxShadow: '0 8px 25px rgba(2, 132, 199, 0.4)',
                                 }}
                                 title="Bấm để nghe phát âm / Click to listen"
-                            >
-                                🔊
-                            </button>
+                            ><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><path d="M16 9a5 5 0 0 1 0 6M19.4 18.4a9 9 0 0 0 0-12.7"/></svg></button>
 
-                            <div className="text-sm font-semibold text-slate-500 mb-4">
+                            <div className="text-sm font-semibold text-ink-muted mb-4">
                                 Bấm biểu tượng 🔊 để nghe phát âm từ
                             </div>
 
                             {showHint ? (
                                 <div className="text-2xl font-mono tracking-widest mb-4 py-2 px-4 rounded-xl bg-amber-50 text-amber-900 border border-amber-200">
-                                    💡 Gợi ý: {getHint()}
+                                    Gợi ý: {getHint()}
                                 </div>
                             ) : null}
 
@@ -179,10 +177,10 @@ export const SpellingTestPlay: React.FC<SpellingTestPlayProps> = ({
                                 value={userInput}
                                 onChange={e => setUserInput(e.target.value)}
                                 onKeyDown={handleKeyDown}
-                                className="w-full px-6 py-4 text-2xl text-center rounded-2xl font-semibold text-slate-800"
+                                className="w-full px-6 py-4 text-2xl text-center rounded-2xl font-semibold text-ink"
                                 style={{
-                                    border: '2px solid #cbd5e1',
-                                    backgroundColor: '#f8fafc',
+                                    border: '2px solid #d9cfc3',
+                                    backgroundColor: '#faf8f5',
                                     outline: 'none',
                                 }}
                                 placeholder="Gõ từ bạn nghe được..."
@@ -199,11 +197,11 @@ export const SpellingTestPlay: React.FC<SpellingTestPlayProps> = ({
                                     }}
                                     className="px-4 py-2.5 rounded-xl font-medium text-sm transition-all hover:scale-105"
                                     style={{
-                                        background: showHint ? '#fef3c7' : '#f1f5f9',
-                                        color: showHint ? '#92400e' : '#64748b',
+                                        background: showHint ? '#fef3c7' : '#f6f2ed',
+                                        color: showHint ? '#92400e' : '#6b625a',
                                     }}
                                 >
-                                    💡 {showHint ? 'Ẩn gợi ý' : 'Xem gợi ý'}
+                                    {showHint ? 'Ẩn gợi ý' : 'Xem gợi ý'}
                                 </button>
 
                                 <button
@@ -211,11 +209,11 @@ export const SpellingTestPlay: React.FC<SpellingTestPlayProps> = ({
                                     onClick={handleSubmit}
                                     className="px-6 py-2.5 rounded-xl font-bold text-white transition-all hover:scale-105"
                                     style={{
-                                        background: 'linear-gradient(135deg, #0284c7, #0369a1)',
+                                        background: '#173f75',
                                         boxShadow: '0 4px 15px rgba(2, 132, 199, 0.4)',
                                     }}
                                 >
-                                    Kiểm tra ➤
+                                    Kiểm tra
                                 </button>
                             </div>
                         </div>
@@ -231,7 +229,7 @@ export const SpellingTestPlay: React.FC<SpellingTestPlayProps> = ({
                             overflowY: 'auto',
                         }}
                     >
-                        <h3 className="text-2xl font-bold mb-4 text-center text-slate-800">📊 Kết quả chính tả</h3>
+                        <h3 className="text-2xl font-bold mb-4 text-center text-ink">Kết quả chính tả</h3>
                         <div className="flex flex-col gap-2.5">
                             {results.map((result, idx) => (
                                 <div
@@ -244,7 +242,7 @@ export const SpellingTestPlay: React.FC<SpellingTestPlayProps> = ({
                                 >
                                     <div className="flex items-center gap-3">
                                         <span className="text-xl">{result.isCorrect ? '✅' : '❌'}</span>
-                                        <span className="font-bold text-slate-600">{idx + 1}.</span>
+                                        <span className="font-bold text-ink-muted">{idx + 1}.</span>
                                         <span
                                             className="font-medium text-lg"
                                             style={{
@@ -268,9 +266,7 @@ export const SpellingTestPlay: React.FC<SpellingTestPlayProps> = ({
                                         }}
                                         className="text-lg p-1.5 rounded-lg hover:bg-black/5"
                                         title="Nghe lại"
-                                    >
-                                        🔊
-                                    </button>
+                                    ><svg className="pd-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><path d="M16 9a5 5 0 0 1 0 6M19.4 18.4a9 9 0 0 0 0-12.7"/></svg></button>
                                 </div>
                             ))}
                         </div>
